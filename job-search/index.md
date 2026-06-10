@@ -13,4 +13,6 @@
 
 ## Satellite files (in `satelites/`)
 
-- [resume-v1.md](satelites/resume-v1.md) — current resume (healthcare/clinical navigation version, cleaned up 2026-06-10)
+- [resume-v1.md](satelites/resume-v1.md) — resume v1: healthcare/clinical navigation focus
+- [resume-v2-community-engagement.md](satelites/resume-v2-community-engagement.md) — resume v2: community engagement / cultural consultant focus
+- [cover-letter-template.md](satelites/cover-letter-template.md) — cover letter template with usage tips
