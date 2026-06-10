@@ -13,4 +13,4 @@
 
 ## Satellite files (in `satelites/`)
 
-(none yet — will be created as needed, via `optimize OS`)
+- [resume-v1.md](satelites/resume-v1.md) — current resume (healthcare/clinical navigation version, cleaned up 2026-06-10)
