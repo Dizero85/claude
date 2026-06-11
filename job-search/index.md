@@ -19,3 +19,4 @@
 - [resume-v2-engajamento-comunitario-portugues.md](satelites/resume-v2-engajamento-comunitario-portugues.md) — resume v2: community engagement / cultural consultant focus (Portuguese)
 - [cover-letter-template.md](satelites/cover-letter-template.md) — cover letter template with usage tips
 - [linkedin-about.md](satelites/linkedin-about.md) — LinkedIn About section (updated 2026-06-10)
+- [medicaidsoft-interview-prep.md](satelites/medicaidsoft-interview-prep.md) — MedicaidSoft interview prep (2026-06-10)
