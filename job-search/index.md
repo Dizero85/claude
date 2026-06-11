@@ -20,3 +20,4 @@
 - [cover-letter-template.md](satelites/cover-letter-template.md) — cover letter template with usage tips
 - [linkedin-about.md](satelites/linkedin-about.md) — LinkedIn About section (updated 2026-06-10)
 - [medicaidsoft-interview-prep.md](satelites/medicaidsoft-interview-prep.md) — MedicaidSoft interview prep (2026-06-10)
+- [homera-health-application.md](satelites/homera-health-application.md) — Homera Health application: resume section + cover letter (2026-06-10)
