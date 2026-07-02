@@ -1,5 +1,5 @@
 # Di's OS — Index
-> Updated: 2026-06-09 | 2 contexts | 4 skills
+> Updated: 2026-07-02 | 2 contexts | 5 skills
 
 ## Root
 - [claude.md](claude.md) — global non-negotiable rules
@@ -19,6 +19,7 @@
 2. **Check Delivery** (when finishing something): verifies quality before declaring done
 3. **Optimize OS** (monthly): runs on ONE context, backs up memory, compacts files, hunts orphans
 4. **Optimize Cost** (monthly): cleans Claude's memory and shows estimated monthly savings
+5. **Ligar Loop** (before multi-iteration tasks): designs the right agent loop, then turns it on with guardrails
 
 ## Installed Skills
 Folder: `.meuos/skills/` — the agent reads automatically.
@@ -27,3 +28,4 @@ Folder: `.meuos/skills/` — the agent reads automatically.
 - `fim-do-dia.md` (v3.2)
 - `otimizar-os.md` (v3.3)
 - `otimizar-custo.md` (v1.0)
+- `ligar-loop.md` (v1.0)
