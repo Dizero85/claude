@@ -1,0 +1,1963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wardwell Coordinate — case board demo</title>
+<style>
+  :root{
+    --ink:#111; --gray:#5a5a5a; --gray2:#8a8a8a; --line:#ececec; --line2:#dcdcdc;
+    --bg:#fff; --panel:#fafafa; --accent:#f2c400; --accent-deep:#c99e00;
+    --mono:"Consolas","SF Mono","Menlo",monospace;
+    --ui:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    --warn-bd:#e0b4b4; --warn-bg:#fdf3f3; --warn-fg:#8a1c1c;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--ui);font-size:15px;line-height:1.5;}
+  a{color:inherit}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px 80px}
+  h1,h2,h3{font-weight:600;margin:0}
+  .eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gray2);font-weight:600}
+  .sect-h{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gray);font-weight:700;
+          border-bottom:1px solid var(--line);padding-bottom:8px;margin:38px 0 18px}
+  .sect-h .sub{display:block;text-transform:none;letter-spacing:0;font-weight:400;color:var(--gray2);font-size:12px;margin-top:5px}
+  .muted{color:var(--gray)}
+  .mono{font-family:var(--mono)}
+  button{font-family:var(--ui);font-size:14px;cursor:pointer}
+  .btn{border:1px solid var(--ink);background:var(--ink);color:#fff;padding:9px 15px;border-radius:2px;font-weight:600;letter-spacing:.02em}
+  .btn:hover{background:#000}
+  .btn:disabled{opacity:.4;cursor:not-allowed}
+  .btn.ghost{background:#fff;color:var(--ink)}
+  .btn.ghost:hover{background:var(--panel)}
+  .btn.accent{background:var(--accent);border-color:var(--accent-deep);color:#111}
+  .btn.accent:hover{background:#ffd21a}
+  .btn.sm{padding:6px 11px;font-size:13px}
+  .btn.danger{border-color:var(--warn-bd);background:#fff;color:var(--warn-fg)}
+  .btn.danger:hover{background:var(--warn-bg)}
+  svg.ic{width:15px;height:15px;vertical-align:-2px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+  svg.ic.fill{fill:currentColor;stroke:none}
+
+  /* header */
+  header.top{border-bottom:2px solid var(--ink);padding:26px 0 20px;margin-bottom:0}
+  .brandline{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+  .brand{font-size:26px;font-weight:700;letter-spacing:-.01em}
+  .brand .lens{color:var(--accent-deep)}
+  .tagline{color:var(--gray);font-size:14px}
+
+  /* privacy banner */
+  .privacy{display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line);
+           border-left:3px solid var(--accent);padding:12px 16px;margin:18px 0 6px;font-size:14px}
+  .privacy .shieldwrap{color:var(--accent-deep);flex:0 0 auto}
+  .privacy strong{font-weight:600}
+
+  /* layout: board + rail */
+  .grid{display:grid;grid-template-columns:1fr 340px;gap:26px;align-items:start}
+  @media(max-width:980px){ .grid{grid-template-columns:1fr} }
+
+  /* toolbar: filter chips + import */
+  .toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0 0 14px}
+  .chips{display:flex;flex-wrap:wrap;gap:7px}
+  .chip{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;letter-spacing:.01em;
+        border:1px solid var(--line2);background:#fff;color:var(--ink);padding:5px 10px;border-radius:2px;cursor:pointer}
+  .chip svg.ic{width:13px;height:13px}
+  .chip .ccount{font-family:var(--mono);font-size:11px;color:var(--gray2);font-weight:700}
+  .chip.on{border-color:var(--ink);background:var(--ink);color:#fff}
+  .chip.on .ccount{color:#fff}
+  .chip .cdot{width:9px;height:9px;flex:0 0 auto;border:1px solid rgba(0,0,0,.35)}
+  .spacer{flex:1 1 auto}
+
+  /* kanban board */
+  .board{overflow-x:auto;border:1px solid var(--line);background:#fff;padding:12px}
+  .cols{display:flex;gap:10px;min-width:1180px}
+  .col{flex:1 1 0;min-width:150px;background:var(--panel);border:1px solid var(--line);display:flex;flex-direction:column}
+  .col .ch{padding:9px 10px;border-bottom:1px solid var(--line);background:#fff}
+  .col .ch .n{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;letter-spacing:.02em}
+  .col .ch .num{font-family:var(--mono);font-size:11px;color:#fff;background:var(--ink);border-radius:2px;padding:1px 6px}
+  .col .ch .owner{font-size:11px;color:var(--gray);margin-top:5px;line-height:1.35}
+  .col .ch .cnt{float:right;font-family:var(--mono);font-size:11px;color:var(--gray2);font-weight:700}
+  .col .cbody{padding:8px;display:flex;flex-direction:column;gap:8px;min-height:40px}
+
+  /* ward card */
+  .wcard{border:1px solid var(--line2);border-left:3px solid var(--accent);background:#fff;padding:9px 10px;cursor:pointer;transition:box-shadow .12s}
+  .wcard:hover{box-shadow:0 1px 6px rgba(0,0,0,.10)}
+  .wcard .wn{font-weight:600;font-size:13.5px;line-height:1.2}
+  .wcard .wf{font-size:11.5px;color:var(--gray);margin-top:2px}
+  .wcard .badges{display:flex;flex-wrap:wrap;gap:4px;margin-top:7px}
+  .wcard .dim{font-size:11px;color:var(--gray2);margin-top:6px;font-family:var(--mono)}
+  /* category-tinted left border on the card */
+  .wcard.cat-standard{border-left-color:var(--accent)}
+  .wcard.cat-escalated{border-left-color:#c99e00}
+  .wcard.cat-tough{border-left-color:#7a1fa2}
+  .wcard.cat-protective{border-left-color:#1c3f6a}
+
+  .badge{display:inline-flex;align-items:center;gap:4px;font-size:10.5px;font-weight:600;letter-spacing:.02em;
+         border:1px solid var(--line2);padding:2px 6px;border-radius:2px;background:var(--panel);white-space:nowrap}
+  .badge svg.ic{width:12px;height:12px}
+  .badge.cap-need{border-color:var(--accent-deep);background:#fffdf0;color:#7a5f00}
+  .badge.cap-self{border-color:#bcdcbc;background:#f4fbf4;color:#1c5a1c}
+  .badge.cap-sign{border-color:#b9cfe8;background:#f1f6fc;color:#1c3f6a}
+  .badge.fund-corp{border-color:#111;background:#111;color:#fff}
+  .badge.fund-fam{border-color:var(--line2);background:#fff;color:var(--ink)}
+  /* category badges */
+  .badge.catg-standard{border-color:var(--line2);background:#fff;color:var(--gray)}
+  .badge.catg-escalated{border-color:var(--accent-deep);background:#fffdf0;color:#7a5f00}
+  .badge.catg-tough{border-color:#d4b8e2;background:#f8f2fb;color:#5c1780}
+  .badge.catg-protective{border-color:#b9cfe8;background:#f1f6fc;color:#1c3f6a}
+  .badge.catg-dismissed{border-color:var(--line2);background:var(--panel);color:var(--gray2)}
+  /* representative badges */
+  .badge.rep-family{border-color:#bcdcbc;background:#f4fbf4;color:#1c5a1c}
+  .badge.rep-professional{border-color:#b9cfe8;background:#f1f6fc;color:#1c3f6a}
+  .badge.rep-pending{border-color:var(--warn-bd);background:var(--warn-bg);color:var(--warn-fg)}
+  /* hearing-confidence badge */
+  .badge.hc-confirmed{border-color:#bcdcbc;background:#f4fbf4;color:#1c5a1c}
+  .badge.hc-unverified{border-color:var(--warn-bd);background:var(--warn-bg);color:var(--warn-fg)}
+  /* external task-board sync badge */
+  .badge.sync-on{border-color:var(--accent-deep);background:#fffdf0;color:#7a5f00}
+
+  /* side rail panels */
+  .rail{display:flex;flex-direction:column;gap:22px}
+  .panel{border:1px solid var(--line);background:#fff}
+  .panel .ph{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);font-weight:700;
+             padding:11px 14px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;background:var(--panel)}
+  .panel .ph .cnt{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--gray2)}
+  .panel .pb{padding:12px 14px}
+  .panel .pb.tight{padding:0}
+
+  /* rules list */
+  .rule{padding:11px 14px;border-bottom:1px solid var(--line);font-size:13px}
+  .rule:last-child{border-bottom:none}
+  .rule .rid{font-family:var(--mono);font-size:11px;font-weight:700;color:#fff;background:var(--ink);border-radius:2px;padding:1px 6px;margin-right:6px}
+  .rule .rt{font-weight:600}
+  .rule .rd{color:var(--gray);margin-top:4px;font-size:12.5px}
+  .rule.fired{background:#fffdf0;border-left:3px solid var(--accent)}
+  .rule .firemark{display:none;align-items:center;gap:5px;font-size:11px;font-weight:700;color:var(--accent-deep);margin-top:5px}
+  .rule.fired .firemark{display:inline-flex}
+
+  /* feed / log / tasks */
+  .feed{list-style:none;margin:0;padding:0;max-height:340px;overflow-y:auto}
+  .feed li{padding:9px 14px;border-bottom:1px solid var(--line);font-size:12.5px;display:flex;gap:8px;align-items:flex-start}
+  .feed li:last-child{border-bottom:none}
+  .feed li .ficon{flex:0 0 auto;color:var(--accent-deep);margin-top:1px}
+  .feed li.billing .ficon{color:var(--ink)}
+  .feed li .ftime{font-family:var(--mono);font-size:10.5px;color:var(--gray2);display:block;margin-top:2px}
+  .feed .empty{color:var(--gray2);font-size:12.5px;padding:12px 14px;font-style:italic}
+
+  .task{padding:10px 14px;border-bottom:1px solid var(--line);font-size:13px}
+  .task:last-child{border-bottom:none}
+  .task .tt{font-weight:600;display:flex;gap:7px;align-items:flex-start}
+  .task .tmeta{color:var(--gray);font-size:11.5px;margin-top:3px;font-family:var(--mono)}
+
+  /* court watch table */
+  .cw{width:100%;border-collapse:collapse;font-size:12.5px}
+  .cw th{text-align:left;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--gray2);font-weight:700;
+         padding:8px 10px;border-bottom:1px solid var(--line)}
+  .cw td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  .cw tr:last-child td{border-bottom:none}
+  .cw .cwstatus{display:inline-flex;align-items:center;gap:5px;font-weight:600;font-size:11.5px}
+  .cw .st-await{color:#7a5f00}
+  .cw .st-sched{color:#1c3f6a}
+  .cw .st-order{color:#1c5a1c}
+  .cw .lc{font-family:var(--mono);font-size:10.5px;color:var(--gray2)}
+  .cw .empty{padding:14px;color:var(--gray2);font-style:italic}
+  .cw .hcwarn{display:inline-flex;align-items:center;gap:4px;font-size:10.5px;font-weight:700;color:var(--warn-fg);
+              border:1px solid var(--warn-bd);background:var(--warn-bg);border-radius:2px;padding:1px 5px;margin-top:4px}
+  .cap{font-size:12px;color:var(--gray);padding:10px 14px;border-top:1px solid var(--line);background:var(--panel)}
+
+  /* collapsible closed-case lists */
+  .collapse{border:1px solid var(--line);background:#fff;margin-top:14px}
+  .collapse > summary{list-style:none;cursor:pointer;padding:11px 14px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+                      font-weight:700;color:var(--gray);display:flex;align-items:center;gap:8px;background:var(--panel);user-select:none}
+  .collapse > summary::-webkit-details-marker{display:none}
+  .collapse > summary .cnt{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--gray2)}
+  .collapse > summary .chev{transition:transform .15s}
+  .collapse[open] > summary .chev{transform:rotate(90deg)}
+  .clist{list-style:none;margin:0;padding:0}
+  .clist li{padding:11px 14px;border-top:1px solid var(--line);font-size:13px;display:flex;gap:10px;align-items:flex-start;cursor:pointer}
+  .clist li:hover{background:var(--panel)}
+  .clist li .ci{flex:0 0 auto;margin-top:1px;color:var(--gray)}
+  .clist li.deceased-item .ci{color:var(--gray)}
+  .clist .cln{font-weight:600}
+  .clist .clf{font-size:11.5px;color:var(--gray);margin-top:1px}
+  .clist .clr{font-size:11.5px;color:var(--gray);margin-top:3px;font-family:var(--mono)}
+  .clist .empty{padding:12px 14px;border-top:1px solid var(--line);color:var(--gray2);font-style:italic;font-size:12.5px}
+
+  /* drawer */
+  .scrim{position:fixed;inset:0;background:rgba(17,17,17,.34);display:none;z-index:40}
+  .scrim.open{display:block}
+  .drawer{position:fixed;top:0;right:0;height:100%;width:460px;max-width:94vw;background:#fff;border-left:1px solid var(--line2);
+          box-shadow:-6px 0 24px rgba(0,0,0,.12);transform:translateX(100%);transition:transform .18s ease;z-index:41;
+          display:flex;flex-direction:column}
+  .drawer.open{transform:translateX(0)}
+  .drawer .dh{padding:16px 20px;border-bottom:2px solid var(--ink);display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+  .drawer .dh .dn{font-size:19px;font-weight:700}
+  .drawer .dh .df{font-size:13px;color:var(--gray);margin-top:2px}
+  .drawer .dh .stagepill{font-family:var(--mono);font-size:11px;background:var(--accent);border:1px solid var(--accent-deep);color:#111;
+                         border-radius:2px;padding:2px 8px;font-weight:700;display:inline-block;margin-top:8px}
+  .drawer .dh .stagepill.closed{background:var(--panel);border-color:var(--line2);color:var(--gray)}
+  .xbtn{border:1px solid var(--line2);background:#fff;border-radius:2px;width:30px;height:30px;line-height:1;flex:0 0 auto;color:var(--gray)}
+  .xbtn:hover{background:var(--panel)}
+  .drawer .db{padding:16px 20px;overflow-y:auto;flex:1 1 auto}
+  .drawer .dfoot{padding:14px 20px;border-top:1px solid var(--line);display:flex;gap:10px;flex-wrap:wrap;background:var(--panel)}
+  .dsec{margin-bottom:20px}
+  .dsec .dsh{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gray2);font-weight:700;margin-bottom:9px}
+  .dsec .capnote{font-size:11.5px;color:var(--gray);margin-top:8px;font-style:italic}
+
+  .closed-banner{display:flex;align-items:flex-start;gap:9px;border:1px solid var(--line2);background:var(--panel);
+                 padding:11px 12px;border-radius:2px;font-size:13px;margin-bottom:18px}
+  .closed-banner .cbi{flex:0 0 auto;color:var(--gray);margin-top:1px}
+  .closed-banner.deceased{border-left:3px solid var(--gray2)}
+  .closed-banner.dismissed{border-left:3px solid var(--gray2)}
+  .closed-banner b{font-weight:600}
+
+  .radiorow{display:flex;flex-direction:column;gap:7px}
+  .radiorow label{display:flex;align-items:center;gap:8px;font-size:13.5px;cursor:pointer;border:1px solid var(--line);padding:8px 10px;border-radius:2px}
+  .radiorow label.on{border-color:var(--accent-deep);background:#fffdf0}
+  .radiorow input{margin:0}
+
+  .toggle{display:flex;gap:8px}
+  .toggle button{flex:1;border:1px solid var(--line2);background:#fff;padding:9px 8px;border-radius:2px;font-size:12.5px;font-weight:600;
+                 display:flex;align-items:center;justify-content:center;gap:6px;color:var(--gray)}
+  .toggle button.on{border-color:var(--ink);background:var(--ink);color:#fff}
+
+  .selrow{display:flex;flex-direction:column;gap:8px}
+  .fld{display:flex;flex-direction:column;gap:5px}
+  .fld label{font-size:11.5px;font-weight:600;color:var(--gray)}
+  select,input[type=text],input[type=date],textarea{font-family:var(--ui);font-size:13.5px;border:1px solid var(--line2);
+    border-radius:2px;padding:8px 10px;background:#fff;color:var(--ink);width:100%}
+  textarea{resize:vertical;min-height:52px}
+  select:focus,input:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:-1px}
+
+  .verifyrow{display:flex;align-items:flex-start;gap:10px;border:1px solid var(--line);padding:10px 11px;border-radius:2px;font-size:13px}
+  .verifyrow input{margin:1px 0 0;flex:0 0 auto;width:16px;height:16px}
+  .verifyrow .vl{flex:1}
+  .verifyrow .vreq{font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--accent-deep);
+                   border:1px solid var(--accent-deep);background:#fffdf0;border-radius:2px;padding:1px 5px}
+  .verifyrow.on{border-color:#bcdcbc;background:#f4fbf4}
+
+  .hcbox{border:1px solid var(--warn-bd);background:var(--warn-bg);color:var(--warn-fg);padding:10px 12px;border-radius:2px;font-size:12.5px;margin-top:9px}
+  .hcbox .hcl{font-weight:700;display:flex;align-items:center;gap:6px;margin-bottom:4px}
+
+  .doclist{display:flex;flex-direction:column;gap:0;border:1px solid var(--line)}
+  .doc{display:flex;align-items:center;gap:10px;padding:9px 11px;border-bottom:1px solid var(--line);font-size:13px}
+  .doc:last-child{border-bottom:none}
+  .doc input{margin:0;flex:0 0 auto;width:16px;height:16px}
+  .doc .dl{flex:1}
+  .doc .req{font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--accent-deep);border:1px solid var(--accent-deep);
+            background:#fffdf0;border-radius:2px;padding:1px 5px}
+  .doc .opt{font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--gray2)}
+  .doc.done .dl{color:var(--gray)}
+  .docempty{font-size:12.5px;color:var(--gray2);font-style:italic;padding:10px 0}
+
+  .log{list-style:none;margin:0;padding:0;border:1px solid var(--line);max-height:230px;overflow-y:auto}
+  .log li{padding:8px 11px;border-bottom:1px solid var(--line);font-size:12.5px;display:flex;gap:8px;align-items:flex-start}
+  .log li:last-child{border-bottom:none}
+  .log li .lt{font-family:var(--mono);font-size:10px;color:var(--gray2);flex:0 0 auto;width:64px}
+  .log li .lx{flex:1}
+  .log li .li-ic{flex:0 0 auto;color:var(--gray);margin-top:1px}
+  .log li.rule-entry .lx{color:#7a5f00}
+  .log li.notif-entry .li-ic{color:var(--accent-deep)}
+
+  .advmsg{display:none;margin-top:10px;border:1px solid var(--warn-bd);background:var(--warn-bg);color:var(--warn-fg);padding:10px 12px;font-size:12.5px;border-radius:2px}
+  .advmsg.show{display:block}
+  .advmsg .lbl{font-weight:700;display:flex;align-items:center;gap:6px;margin-bottom:4px}
+
+  /* import dialog */
+  .impscrim{position:fixed;inset:0;background:rgba(17,17,17,.34);display:none;z-index:50;align-items:flex-start;justify-content:center;padding:60px 16px}
+  .impscrim.open{display:flex}
+  .impbox{background:#fff;border:1px solid var(--line2);box-shadow:0 12px 40px rgba(0,0,0,.18);width:560px;max-width:96vw;max-height:82vh;
+          display:flex;flex-direction:column;border-radius:2px}
+  .impbox .ih{padding:15px 18px;border-bottom:2px solid var(--ink);display:flex;justify-content:space-between;align-items:center}
+  .impbox .ih .it{font-size:16px;font-weight:700}
+  .impbox .ibd{padding:16px 18px;overflow-y:auto}
+  .dropzone{border:2px dashed var(--line2);border-radius:2px;padding:26px 16px;text-align:center;color:var(--gray);background:var(--panel)}
+  .dropzone.drag{border-color:var(--accent-deep);background:#fffdf0;color:var(--ink)}
+  .dropzone .dzi{color:var(--gray2)}
+  .impbtns{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;align-items:center}
+  .imprep{margin-top:16px;border:1px solid var(--line);border-radius:2px;font-size:12.5px}
+  .imprep .irh{padding:9px 12px;border-bottom:1px solid var(--line);font-weight:700;display:flex;gap:8px;align-items:center;background:var(--panel)}
+  .imprep .irh.ok{color:#1c5a1c}
+  .imprep .irh.warn{color:var(--warn-fg)}
+  .imprep .irh.err{color:var(--warn-fg)}
+  .imprep ul{list-style:none;margin:0;padding:0;max-height:200px;overflow-y:auto}
+  .imprep li{padding:7px 12px;border-bottom:1px solid var(--line);display:flex;gap:8px;align-items:flex-start}
+  .imprep li:last-child{border-bottom:none}
+  .imprep li .rii{flex:0 0 auto;margin-top:1px}
+  .imprep li.warn .rii{color:var(--warn-fg)}
+  .imprep li.ok .rii{color:#1c5a1c}
+
+  /* selftest banner */
+  #selftest-banner{display:none;padding:14px 18px;margin:18px 0;border:1px solid;font-family:var(--mono);font-size:14px;font-weight:600}
+  #selftest-banner.pass{background:#f4fbf4;border-color:#bcdcbc;color:#1c5a1c}
+  #selftest-banner.fail{background:#fdf3f3;border-color:#e0b4b4;color:#8a1c1c}
+  #selftest-banner .st-ic{margin-right:8px}
+  #selftest-banner ul{margin:8px 0 0;padding-left:20px;font-weight:400}
+
+  footer{margin-top:60px;border-top:1px solid var(--line);padding-top:16px;font-size:12px;color:var(--gray2);line-height:1.7}
+  footer .st{color:var(--accent-deep);font-weight:600}
+
+  .hidden{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div class="brandline">
+      <div class="brand">Wardwell <span class="lens">Coordinate</span></div>
+      <div class="tagline">One board for every guardianship case, every owner, every deadline — with the court calendar watched for you.</div>
+    </div>
+  </header>
+
+  <!-- PRIVACY BANNER -->
+  <div class="privacy">
+    <span class="shieldwrap">
+      <svg class="ic" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+    </span>
+    <span><strong>Everything runs in this page. Nothing is uploaded</strong> — turn off Wi-Fi and it still works. CSV import parses in the browser; files never leave your machine.</span>
+  </div>
+  <p class="muted" style="font-size:13px;margin:6px 0 0">
+    Today this workflow is spread across email, phone calls, a court website checked by hand, and a separate application
+    platform. Wardwell Coordinate collapses it into one board with an explicit, auditable rules engine — no case falls through
+    the gaps between systems.
+  </p>
+
+  <!-- SELF-TEST BANNER -->
+  <div id="selftest-banner"></div>
+
+  <!-- BOARD + RAIL -->
+  <div class="grid" style="margin-top:26px">
+
+    <div>
+      <div class="sect-h" style="margin-top:0">Case pipeline
+        <span class="sub">Eight stages, each with a named owner role and a live count. Click any ward card to open its file.</span>
+      </div>
+
+      <!-- TOOLBAR: category filter chips + court watch + CSV import -->
+      <div class="toolbar">
+        <div class="chips" id="filterChips"></div>
+        <span class="spacer"></span>
+        <button class="btn accent sm" id="courtWatchBtn">
+          <svg class="ic" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16"/><path d="M4 9h16M8 3v4M16 3v4"/><path d="M9 14l2 2 4-4"/></svg>
+          Run court watch now
+        </button>
+        <button class="btn ghost sm" id="importBtn">
+          <svg class="ic" viewBox="0 0 24 24"><path d="M12 3v11"/><path d="M8 10l4 4 4-4"/><path d="M5 20h14"/></svg>
+          Import cases (CSV)
+        </button>
+      </div>
+
+      <div class="board">
+        <div class="cols" id="cols"></div>
+      </div>
+      <p class="muted" style="font-size:12px;margin-top:10px">
+        Drag is not required — open a card and use <b>Advance stage</b> / <b>Send back</b>. Rules fire automatically as cases move.
+      </p>
+
+      <!-- COLLAPSIBLE CLOSED LISTS -->
+      <details class="collapse" id="dismissedWrap">
+        <summary>
+          <svg class="ic chev" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+          <svg class="ic" viewBox="0 0 24 24" style="color:var(--gray2)"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg>
+          Dismissed cases <span class="cnt" id="dismissedCnt">0</span>
+        </summary>
+        <ul class="clist" id="dismissedList"></ul>
+      </details>
+
+      <details class="collapse" id="deceasedWrap">
+        <summary>
+          <svg class="ic chev" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+          <svg class="ic" viewBox="0 0 24 24" style="color:var(--gray2)"><path d="M12 21s-7-4.5-7-10a4 4 0 018-1 4 4 0 018 1c0 5.5-7 10-7 10z" stroke-width="0" fill="none"/><path d="M6 20h12M9 20v-6a3 3 0 016 0v6"/><path d="M12 4v4M10 6h4"/></svg>
+          Closed — deceased <span class="cnt" id="deceasedCnt">0</span>
+        </summary>
+        <ul class="clist" id="deceasedList"></ul>
+      </details>
+    </div>
+
+    <div class="rail">
+
+      <div class="panel">
+        <div class="ph"><svg class="ic" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h10"/></svg> Rules engine</div>
+        <div class="pb tight" id="rulesPanel"></div>
+      </div>
+
+      <div class="panel">
+        <div class="ph"><svg class="ic" viewBox="0 0 24 24"><path d="M4 4h16v12H7l-3 3z"/></svg> Notifications feed
+          <span class="cnt" id="notifCnt">0</span></div>
+        <div class="pb tight"><ul class="feed" id="notifFeed"></ul></div>
+      </div>
+
+      <div class="panel">
+        <div class="ph"><svg class="ic" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg> Tasks
+          <span class="cnt" id="taskCnt">0</span></div>
+        <div class="pb tight" id="taskList"></div>
+      </div>
+
+      <div class="panel">
+        <div class="ph"><svg class="ic" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg> External task board
+          <span class="cnt" id="syncCnt">0</span></div>
+        <div class="pb tight" id="syncList"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- COURT WATCH -->
+  <div class="sect-h">Court watch
+    <span class="sub">Wards currently filed with the court (stages 5–6). Activates automatically under rule R3.</span>
+  </div>
+  <div class="panel">
+    <div class="pb tight">
+      <table class="cw" id="courtWatch">
+        <thead><tr><th>Ward</th><th>Case reference</th><th>Status</th><th>Last checked</th></tr></thead>
+        <tbody id="cwBody"></tbody>
+      </table>
+      <div class="cap">
+        In this demo the court data is simulated. In production a scheduled watcher runs from US-based infrastructure at the
+        per-case cadence (Daily / Every 4 days / Weekly), checks the public state court calendar, and posts alerts to your
+        chat or email — no more manual lookups. Reported dates must be verified against the court record — in production the
+        scheduled court watcher does this automatically.
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div>Prototype by Diogo Augusto Barbosa &middot; diogo@medicaidsoft.com &middot; Synthetic demo data only — no real client information. Not legal advice.</div>
+    <div style="margin-top:4px">engine <span class="st" id="footSelftest">self-test: pass</span> &middot; runs fully offline &middot; deterministic rules, no black box</div>
+  </footer>
+
+</div>
+
+<!-- DRAWER -->
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <div class="dh">
+    <div>
+      <div class="dn" id="dName">—</div>
+      <div class="df" id="dFacility">—</div>
+      <div class="stagepill" id="dStage">—</div>
+    </div>
+    <button class="xbtn" id="dClose" title="Close">&times;</button>
+  </div>
+  <div class="db" id="dBody"></div>
+  <div class="dfoot" id="dFoot">
+    <button class="btn ghost sm" id="dBack"><svg class="ic" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg> Send back</button>
+    <button class="btn accent sm" id="dAdvance">Advance stage <svg class="ic" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+  </div>
+</aside>
+
+<!-- CSV IMPORT DIALOG -->
+<div class="impscrim" id="impScrim">
+  <div class="impbox">
+    <div class="ih">
+      <div class="it">Import cases (CSV)</div>
+      <button class="xbtn" id="impClose" title="Close">&times;</button>
+    </div>
+    <div class="ibd">
+      <p class="muted" style="font-size:12.5px;margin:0 0 12px">
+        Expected header (this demo's sample layout):
+        <span class="mono" style="display:block;margin-top:6px;font-size:11px;color:var(--ink)">case_name,facility,stage,category,funding,representative,filed_date,hearing_date,hearing_confirmed</span>
+      </p>
+      <div class="dropzone" id="dropzone">
+        <div class="dzi"><svg class="ic" viewBox="0 0 24 24" style="width:24px;height:24px"><path d="M12 16V4"/><path d="M7 9l5-5 5 5"/><path d="M5 20h14"/></svg></div>
+        <div style="margin-top:8px">Drop a <b>.csv</b> here, or choose a file.</div>
+      </div>
+      <div class="impbtns">
+        <input type="file" id="fileInput" accept=".csv,text/csv" class="hidden">
+        <button class="btn sm" id="chooseBtn">Choose file…</button>
+        <button class="btn ghost sm" id="sampleBtn">Load embedded sample</button>
+        <span class="muted" style="font-size:11.5px">Parsing runs entirely in your browser.</span>
+      </div>
+      <div id="impReport"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+"use strict";
+
+/* =========================================================================
+   ICONS (inline SVG, no icon fonts) — color-blind safe: always paired with
+   a text label. Icon + label + color, never color alone.
+   ========================================================================= */
+const ICONS = {
+  flag:    '<svg class="ic" viewBox="0 0 24 24"><path d="M6 21V4"/><path d="M6 4h11l-2 4 2 4H6"/></svg>',
+  check:   '<svg class="ic" viewBox="0 0 24 24"><path d="M5 12l5 5 9-11"/></svg>',
+  shield:  '<svg class="ic" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>',
+  bell:    '<svg class="ic" viewBox="0 0 24 24"><path d="M6 9a6 6 0 0112 0c0 5 2 6 2 6H4s2-1 2-6z"/><path d="M10 20a2 2 0 004 0"/></svg>',
+  person:  '<svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg>',
+  gavel:   '<svg class="ic" viewBox="0 0 24 24"><path d="M3 21h9"/><path d="M14 3l7 7"/><path d="M6 14l5-5"/><path d="M9 7l5 5"/><path d="M12 10l-5 5"/></svg>',
+  building:'<svg class="ic" viewBox="0 0 24 24"><path d="M5 21V5l7-2v18"/><path d="M12 21V9l6 2v10"/><path d="M8 8h1M8 12h1M8 16h1M15 13h1M15 17h1"/></svg>',
+  bank:    '<svg class="ic" viewBox="0 0 24 24"><path d="M3 10l9-5 9 5"/><path d="M5 10v8M19 10v8M9 10v8M15 10v8"/><path d="M3 21h18"/></svg>',
+  clock:   '<svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>',
+  cal:     '<svg class="ic" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16"/><path d="M4 9h16M8 3v4M16 3v4"/></svg>',
+  skip:    '<svg class="ic" viewBox="0 0 24 24"><path d="M5 5l8 7-8 7z"/><path d="M18 5v14"/></svg>',
+  doc:     '<svg class="ic" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 13h6M9 17h6"/></svg>',
+  block:   '<svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M7 7l10 10"/></svg>',
+  sign:    '<svg class="ic" viewBox="0 0 24 24"><path d="M4 19c3-1 4-8 7-8s2 5 4 5 2-3 5-3"/></svg>',
+  layers:  '<svg class="ic" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>',
+  arrowup: '<svg class="ic" viewBox="0 0 24 24"><path d="M12 20V6"/><path d="M6 12l6-6 6 6"/></svg>',
+  briefcase:'<svg class="ic" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2M3 12h18"/></svg>',
+  help:    '<svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.2 9a2.8 2.8 0 015.4 1c0 1.9-2.6 2.4-2.6 3.6"/><path d="M12 17h.01"/></svg>',
+  ban:     '<svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg>',
+  urn:     '<svg class="ic" viewBox="0 0 24 24"><path d="M6 20h12M9 20v-6a3 3 0 016 0v6"/><path d="M12 4v4M10 6h4"/></svg>',
+  receipt: '<svg class="ic" viewBox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg>',
+  filter:  '<svg class="ic" viewBox="0 0 24 24"><path d="M3 5h18l-7 8v5l-4 2v-7z"/></svg>',
+  star:    '<svg class="ic" viewBox="0 0 24 24"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg>',
+  alert:   '<svg class="ic" viewBox="0 0 24 24"><path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17h.01"/></svg>',
+};
+
+/* =========================================================================
+   CAPACITY + FUNDING vocab (this replaces the phone-call triage)
+   ========================================================================= */
+const CAPACITY = {
+  need: { label:'Needs guardianship',        icon:ICONS.shield, cls:'cap-need' },
+  self: { label:'Can answer for themselves', icon:ICONS.person, cls:'cap-self' },
+  sign: { label:'Can sign only',             icon:ICONS.sign,   cls:'cap-sign' },
+};
+/* PAYER ROUTING (stage 4). 'family' = private pay, law firm coordinates
+   directly. 'corporate' = corporate-funded, treated as a referral. */
+const FUNDING = {
+  family:    { label:'Family (private pay)', icon:ICONS.person,   cls:'fund-fam'  },
+  corporate: { label:'Corporate-funded',     icon:ICONS.building, cls:'fund-corp' },
+};
+/* Court-watch cadence options (stage 6). */
+const CADENCE = {
+  daily:  { label:'Daily'        },
+  d4:     { label:'Every 4 days' },
+  weekly: { label:'Weekly'       },
+};
+
+/* =========================================================================
+   ESCALATION CATEGORIES — icon + label + color, never color alone.
+   'dismissed' is a terminal state that leaves the active board.
+   ========================================================================= */
+const CATEGORIES = {
+  standard:   { label:'Standard',            icon:ICONS.doc,       cls:'standard',   dot:'#c9c9c9', active:true  },
+  escalated:  { label:'Escalated (paid)',    icon:ICONS.star,      cls:'escalated',  dot:'#c99e00', active:true  },
+  tough:      { label:'Tough case',          icon:ICONS.alert,     cls:'tough',      dot:'#7a1fa2', active:true  },
+  protective: { label:'Protective services', icon:ICONS.shield,    cls:'protective', dot:'#1c3f6a', active:true  },
+  dismissed:  { label:'Dismissed',           icon:ICONS.ban,       cls:'dismissed',  dot:'#8a8a8a', active:false },
+};
+const CATEGORY_KEYS = Object.keys(CATEGORIES);
+
+/* =========================================================================
+   ASSIGNED REPRESENTATIVE — 'pending' blocks reaching stage 7 (R7).
+   ========================================================================= */
+const REPS = {
+  family:       { label:'Family member',       icon:ICONS.person,     cls:'rep-family'       },
+  professional: { label:'Professional guardian',icon:ICONS.briefcase, cls:'rep-professional' },
+  pending:      { label:'Pending',             icon:ICONS.help,       cls:'rep-pending'      },
+};
+
+/* =========================================================================
+   STAGES — id, name, owner role, required + optional documents.
+   Eight-stage real-world guardianship workflow. Every case goes through
+   every stage (no stage is skipped): a corporate-funded case is routed as a
+   referral at stage 4, not fast-tracked.
+   ========================================================================= */
+const STAGES = [
+  { id:1, name:'Request noted',      owner:'Intake',
+    docs:[ {k:'reqlog',   label:'Guardianship request logged', req:true} ] },
+  { id:2, name:'Capacity triage',    owner:'Care team + facility',
+    docs:[ {k:'capstmt',  label:'Capacity statement from facility', req:true} ] },
+  { id:3, name:'Medical documents',  owner:'Medical records',
+    docs:[ {k:'docltr',      label:"Doctor's letter",           req:true},
+           {k:'questionnaire',label:'Guardianship questionnaire',req:true} ] },
+  { id:4, name:'Legal submission',   owner:'Law firm (payer-routed)',
+    docs:[ {k:'submitpkt', label:'Submission packet prepared',  req:true} ] },
+  { id:5, name:'Filed with court',   owner:'Law firm',
+    docs:[ {k:'filecfm',  label:'Filing confirmation',      req:true} ] },
+  { id:6, name:'Court tracking',     owner:'Law firm + care team',
+    docs:[ {k:'hearing',  label:'Hearing notice',           req:true} ] },
+  { id:7, name:'Approved',           owner:'Approver notified',
+    docs:[ {k:'letters',  label:'Letters of guardianship',  req:true} ] },
+  { id:8, name:'Guardian onboarding & accounts', owner:'Onboarding + guardian',
+    docs:[ {k:'acctcfm',  label:'Rep-payee account opened',  req:true} ] },
+];
+const stageById = id => STAGES.find(s=>s.id===id);
+const MAX_STAGE = 8, MIN_STAGE = 1;
+
+/* Rule catalog — displayed verbatim in the Rules panel. */
+const RULES = [
+  { id:'R1', title:'Approver pinged once, at approval',
+    desc:'The Approver is notified ONLY when a case reaches stage 7 (Approved). Never before — one ping, at the end.' },
+  { id:'R2', title:'Request noted opens the medical file',
+    desc:'When a guardianship request is logged (stage 1), a task is auto-created to obtain the medical documents — the doctor’s letter and the guardianship questionnaire.' },
+  { id:'R3', title:'Court watch auto-activates',
+    desc:'When a case enters stage 5 (Filed with court), that ward’s Court Watch entry activates automatically.' },
+  { id:'R4', title:'Approval starts guardian onboarding',
+    desc:'When a case reaches stage 7 (Approved), the Verification Checklist is sent to the guardian, onboarding is notified to close the individual bank accounts and open a managed rep-payee account, and an external-task-board sync entry is created.' },
+  { id:'R5', title:'No advance with missing docs or unverified receipt',
+    desc:'Each stage has a document checklist. A card cannot advance while required docs are unchecked — medical documents (stage 3) need BOTH the doctor’s letter and the questionnaire, and stage 5 also requires the Legal Verified Receipt (LVR). The Advance button says exactly what is missing.' },
+  { id:'R6', title:'Deceased closes the case cleanly',
+    desc:'Marking a ward deceased cancels every pending notification for that case and fires a single Billing notification — “case closed; reconcile billing”. The case moves to the Closed — deceased list with its history intact.' },
+  { id:'R7', title:'No approval with a pending representative',
+    desc:'A case cannot reach stage 7 (Approved) while the assigned guardian/representative is Pending. Guardianship must name who will act for the ward.' },
+  { id:'R8', title:'Medical documents complete → notify the law firm',
+    desc:'When the medical documents are complete and the case reaches stage 4 (Legal submission), an automatic notification fires to the law firm to prepare and submit the guardianship petition.' },
+  { id:'R9', title:'Payer routing at legal submission',
+    desc:'Payer = Family (private pay): the law firm coordinates the submission directly. Payer = Corporate-funded: the case is treated as a referral — the corporate payer coordinates the initial fee; the owner differs and a note is logged.' },
+  { id:'R10', title:'Court date confirmed → dated note',
+    desc:'When a reported hearing date is confirmed against the court record, a dated note is written to the case record.' },
+];
+
+/* =========================================================================
+   SYNTHETIC WARD DATA — all names fully invented. No real client data.
+   ========================================================================= */
+function seedDocs(stageId, opts){
+  opts = opts||{};
+  const docs = {};
+  for(const s of STAGES){
+    if(s.id > stageId) break;
+    const withhold = (s.id===stageId && opts.withholdCurrent);
+    for(const d of s.docs){
+      if(d.req) docs[d.k] = withhold ? false : true;
+      else docs[d.k] = !!opts.optionalOn;
+    }
+  }
+  return docs;
+}
+
+function mkWard(o){
+  return {
+    id:o.id, name:o.name, facility:o.facility,
+    capacity:o.capacity, funding:o.funding, stage:o.stage,
+    daysInStage:o.daysInStage!=null?o.daysInStage:0,
+    caseRef:o.caseRef||null,
+    category:o.category||'standard',
+    representative:o.representative||'pending',
+    repName:o.repName||'',
+    lvr: !!o.lvr,                                 // Legal Verified Receipt (stage 5)
+    hearingConfirmed: !!o.hearingConfirmed,       // hearing-date confidence
+    courtCadence:o.courtCadence||'weekly',        // court-watch cadence (stage 6)
+    syncedToTaskBoard: !!o.syncedToTaskBoard,     // external task-board sync (stage 7+)
+    deceasedDate:o.deceasedDate||null,            // ISO/text date when deceased
+    dismissedReason:o.dismissedReason||'',
+    docs:seedDocs(o.stage,{withholdCurrent:o.withholdCurrent, optionalOn:o.optionalOn}),
+    timeline:o.timeline?o.timeline.slice():[],
+    log:[],
+    courtWatch:o.courtWatch||null,                // {status,date,lastChecked}
+  };
+}
+
+/* 9 synthetic wards spread across the 8 stages. */
+const WARD_SEED = [
+  { id:'W1', name:'Harold Bennett',      facility:'Cedar Bluff Care Center',   capacity:'need', funding:'family',    stage:1, daysInStage:2, category:'standard',   representative:'pending' },
+  { id:'W2', name:'Margaret Alvarez',    facility:'Lindenwood Rehab',          capacity:'sign', funding:'family',    stage:2, daysInStage:4, withholdCurrent:true, category:'standard',  representative:'family', repName:'niece, T. Alvarez' },
+  { id:'W3', name:'Frank Delgado',       facility:'Maple Terrace Nursing',     capacity:'need', funding:'family',    stage:3, daysInStage:1, withholdCurrent:true, category:'tough', representative:'family', repName:'son, R. Delgado' },
+  { id:'W4', name:'Patricia Holloway',   facility:'Riverstone Senior Living',  capacity:'need', funding:'corporate', stage:4, daysInStage:3, category:'escalated',  representative:'professional' },
+  { id:'W5', name:'Robert Ashford',      facility:'Birchwood Manor',           capacity:'need', funding:'family',    stage:5, daysInStage:6, caseRef:'PB-2026-04417', category:'protective', representative:'professional' },
+  { id:'W6', name:'Eleanor Prescott',    facility:'Hollowmere Care Home',      capacity:'sign', funding:'corporate', stage:6, daysInStage:9, caseRef:'PB-2026-04390', category:'standard', representative:'professional' },
+  { id:'W7', name:'Walter Tillman',      facility:'Stonegate Assisted Living', capacity:'need', funding:'family',    stage:7, daysInStage:1, category:'standard',   representative:'family', repName:'daughter, M. Tillman' },
+  { id:'W8', name:'Dorothy Langston',    facility:'Fairhaven Care Center',     capacity:'self', funding:'family',    stage:8, daysInStage:5, category:'standard',   representative:'professional' },
+  { id:'W9', name:'Raymond Coleman',     facility:'Wexford Nursing Home',      capacity:'need', funding:'corporate', stage:4, daysInStage:2, optionalOn:true, category:'escalated', representative:'professional' },
+];
+
+/* =========================================================================
+   APP STATE
+   ========================================================================= */
+let WARDS = [];
+let NOTIFS = [];         // {id,text,time,ward,kind}
+let TASKS = [];          // {id,text,owner,ward,time}
+let SYNCS = [];          // {id,text,ward,time} — external task-board sync entries
+let firedRules = new Set();
+let openWardId = null;
+let activeFilter = 'all'; // 'all' or a category key
+let CLOCK = 9*3600;
+let idSeq = 100;
+
+const $  = s => document.querySelector(s);
+const $$ = s => Array.from(document.querySelectorAll(s));
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+function tick(){ CLOCK += 60 + Math.floor(Math.random()*180); return stamp(); }
+function stamp(){
+  const h = Math.floor(CLOCK/3600)%24, m = Math.floor((CLOCK%3600)/60);
+  const hh = ((h+11)%12)+1, ap = h<12?'AM':'PM';
+  return (hh<10?' ':'')+hh+':'+String(m).padStart(2,'0')+' '+ap;
+}
+
+/* Closed-state helpers. A ward is "active" (on the board) unless deceased or dismissed. */
+function isDeceased(w){ return !!w.deceasedDate; }
+function isDismissed(w){ return w.category==='dismissed'; }
+function isClosed(w){ return isDeceased(w) || isDismissed(w); }
+function isActive(w){ return !isClosed(w); }
+function activeWards(){ return WARDS.filter(isActive); }
+
+/* =========================================================================
+   LOGGING + NOTIFICATIONS + TASKS
+   ========================================================================= */
+function logEntry(ward, text, kind){
+  ward.log.push({ time:stamp(), text, kind:kind||'move' });
+}
+function notify(ward, text, kind){
+  const t = tick();
+  NOTIFS.unshift({ id:'N'+(NOTIFS.length+1), text, time:t, ward:ward?ward.id:null, kind:kind||'rule' });
+  if(ward) logEntry(ward, 'Notification sent — '+text, 'notif');
+}
+/* Cancel all pending notifications for a ward (R6). Returns count cancelled. */
+function cancelNotifsFor(wardId){
+  const before = NOTIFS.length;
+  NOTIFS = NOTIFS.filter(n=>n.ward!==wardId);
+  return before - NOTIFS.length;
+}
+function addTask(ward, text, owner){
+  const t = tick();
+  TASKS.unshift({ id:'T'+(TASKS.length+1), text, owner, ward:ward?ward.id:null, time:t });
+  if(ward) logEntry(ward, 'Task created for '+owner+' — '+text, 'rule');
+}
+/* External task-board sync entry (R4, at approval). */
+function addTaskBoardSync(ward, text){
+  const t = tick();
+  SYNCS.unshift({ id:'S'+(SYNCS.length+1), text:text||'Onboarding case synced to external task board — documents tracked externally.', ward:ward?ward.id:null, time:t });
+  if(ward){ ward.syncedToTaskBoard = true; logEntry(ward, 'External task-board sync entry created (rule R4).', 'rule'); }
+}
+/* Court-watch cadence setter (R-less config, stage 6). Persists on the ward. */
+function setCourtCadence(ward, val){
+  if(!CADENCE[val]) return;
+  ward.courtCadence = val;
+  if(ward.courtWatch) ward.courtWatch.lastChecked = stamp();
+  logEntry(ward, 'Court-watch cadence set to '+CADENCE[val].label+'.', 'move');
+}
+function markRuleFired(rid){ firedRules.add(rid); }
+
+/* =========================================================================
+   DOC HELPERS
+   ========================================================================= */
+function missingRequiredDocs(ward){
+  const st = stageById(ward.stage);
+  return st.docs.filter(d=>d.req && !ward.docs[d.k]);
+}
+function stageDocsSatisfied(ward){ return missingRequiredDocs(ward).length===0; }
+
+/* =========================================================================
+   STAGE TRANSITIONS + RULE FIRING (the engine)
+   ========================================================================= */
+function applyStageEntryRules(ward){
+  // R2 — request noted opens the medical file (auto-create the medical-docs task).
+  if(ward.stage===1){
+    markRuleFired('R2');
+    addTask(ward, "Obtain the doctor's letter and the guardianship questionnaire.", 'Medical records');
+  }
+  // R8 + R9 — medical documents complete: notify the law firm to submit, and route by payer.
+  if(ward.stage===4){
+    markRuleFired('R8');
+    notify(ward, 'The law firm notified: medical documents complete — prepare and submit the guardianship petition.');
+    markRuleFired('R9');
+    if(ward.funding==='corporate'){
+      ward.timeline.push('Corporate-funded: treated as a referral — the corporate payer coordinates the initial fee (owner differs from the law-firm-direct route).');
+      logEntry(ward, 'Payer routing (rule R9): Corporate-funded → referral route. Owner: corporate payer, who coordinates the initial fee.', 'rule');
+    } else {
+      ward.timeline.push('Family (private pay): the law firm coordinates the submission directly.');
+      logEntry(ward, 'Payer routing (rule R9): Family (private pay) → the law firm coordinates directly.', 'rule');
+    }
+  }
+  // R3 — entering stage 5 activates court watch.
+  if(ward.stage===5 && !ward.courtWatch){
+    if(!ward.caseRef) ward.caseRef = 'PB-2026-0'+(4400+Math.floor(Math.random()*99));
+    ward.courtWatch = { status:'await', date:null, lastChecked:stamp() };
+    markRuleFired('R3');
+    logEntry(ward, 'Court Watch activated (rule R3) — case '+ward.caseRef, 'rule');
+    notify(ward, ownerLabel(5)+' notified: submission complete, case filed with the county probate court');
+  }
+  // stage 6 — hearing scheduled (simulated docket match). New dates start UNVERIFIED.
+  if(ward.stage===6 && ward.courtWatch){
+    ward.courtWatch.status = 'sched';
+    ward.courtWatch.date = simHearingDate();
+    ward.courtWatch.lastChecked = stamp();
+    ward.hearingConfirmed = false;   // reported by docket scrape; must be verified
+    notify(ward, ownerLabel(6)+' notified: hearing reported '+ward.courtWatch.date+' (pending verification against the court record)');
+  }
+  // R1 — Approver notified ONLY at stage 7. R4 — approval starts guardian onboarding.
+  if(ward.stage===7){
+    if(ward.courtWatch){ ward.courtWatch.status='order'; ward.courtWatch.lastChecked=stamp(); }
+    markRuleFired('R1');
+    notify(ward, 'Approver notified: guardianship approved (R1).');
+    markRuleFired('R4');
+    notify(ward, 'Verification Checklist sent to the guardian to begin collecting onboarding documents.');
+    notify(ward, 'Onboarding notified: close the individual bank accounts and open a managed rep-payee account (eases future renewals).');
+    addTask(ward, 'Close individual bank accounts; open a managed rep-payee account.', 'Onboarding');
+    addTaskBoardSync(ward);
+  }
+  // stage 8 — guardian onboarding & accounts complete
+  if(ward.stage===8){
+    notify(ward, ownerLabel(8)+' notified: rep-payee account opened, onboarding complete');
+  }
+}
+function ownerLabel(stageId){
+  const map = {4:'The law firm', 5:'The law firm', 6:'The law firm + care team', 8:'Onboarding'};
+  return map[stageId] || stageById(stageId).owner;
+}
+function simHearingDate(){
+  const base = new Date(Date.UTC(2026,6,10));
+  base.setUTCDate(base.getUTCDate() + 7 + Math.floor(Math.random()*20));
+  const MN=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  return MN[base.getUTCMonth()]+' '+base.getUTCDate()+', '+base.getUTCFullYear();
+}
+
+function nextStage(ward){
+  // Every case moves through every stage in order — a corporate-funded case is
+  // routed as a referral at stage 4 (R9), it is not fast-tracked past any stage.
+  return ward.stage + 1;
+}
+
+/* Advance: enforce R5 (docs + LVR) and R7 (rep not pending), then move + fire entry rules. */
+function advanceWard(ward){
+  if(isClosed(ward)){
+    return { ok:false, reason:'This case is closed ('+(isDeceased(ward)?'deceased':'dismissed')+') and cannot be advanced.' };
+  }
+  if(ward.stage>=MAX_STAGE){
+    return { ok:false, reason:'This case is already at the final stage (8 Accounts & funding).' };
+  }
+  const missing = missingRequiredDocs(ward);
+  if(missing.length){
+    return {
+      ok:false,
+      reason:'Cannot advance from stage '+ward.stage+' ('+stageById(ward.stage).name+'). '+
+             'Required document'+(missing.length>1?'s':'')+' still unchecked: '+
+             missing.map(d=>d.label).join(', ')+'.'
+    };
+  }
+  // R5 — stage 5 also requires the Legal Verified Receipt.
+  if(ward.stage===5 && !ward.lvr){
+    return {
+      ok:false,
+      reason:'Cannot advance from stage 5 (Filed with court). The Legal Verified Receipt (LVR) — “Legal receipt verified” — must be checked before the case moves to the court date.'
+    };
+  }
+  // R7 — cannot reach stage 7 with representative = Pending.
+  const to0 = nextStage(ward);
+  if(to0===7 && ward.representative==='pending'){
+    markRuleFired('R7');
+    return {
+      ok:false,
+      reason:'Cannot reach stage 7 (Approved) while the assigned representative is Pending. Assign a Family member or Professional guardian first — guardianship must name who will act for the ward (rule R7).'
+    };
+  }
+  const from = ward.stage;
+  const to = to0;
+  ward.stage = to;
+  ward.daysInStage = 0;
+  logEntry(ward, 'Advanced: stage '+from+' → stage '+to+' ('+stageById(to).name+')', 'move');
+  applyStageEntryRules(ward);
+  return { ok:true, from, to };
+}
+function sendBackWard(ward){
+  if(isClosed(ward)) return { ok:false, reason:'Closed cases cannot be moved.' };
+  if(ward.stage<=MIN_STAGE) return { ok:false, reason:'Already at the first stage.' };
+  let to = ward.stage - 1;
+  const from = ward.stage;
+  ward.stage = to; ward.daysInStage = 0;
+  logEntry(ward, 'Sent back: stage '+from+' → stage '+to+' ('+stageById(to).name+')', 'move');
+  return { ok:true, from, to };
+}
+
+/* R6 — mark deceased: cancel pending notifications, fire one Billing notification. */
+function markDeceased(ward, dateStr){
+  if(isDeceased(ward)) return { ok:false, reason:'Already marked deceased.' };
+  ward.deceasedDate = dateStr;
+  const cancelled = cancelNotifsFor(ward.id);
+  logEntry(ward, 'Marked deceased ('+dateStr+'). '+cancelled+' pending notification'+(cancelled===1?'':'s')+' cancelled (rule R6).', 'rule');
+  markRuleFired('R6');
+  notify(ward, 'Billing: case closed; reconcile billing.', 'billing');
+  return { ok:true, cancelled };
+}
+
+/* Dismiss: move off the active board, preserve history + reason. */
+function dismissWard(ward, reason){
+  if(isDismissed(ward)) return { ok:false, reason:'Already dismissed.' };
+  ward.category = 'dismissed';
+  ward.dismissedReason = reason||'';
+  logEntry(ward, 'Case dismissed'+(reason?(' — '+reason):'')+'. Removed from active board; history preserved.', 'rule');
+  return { ok:true };
+}
+function reinstateWard(ward, category){
+  ward.category = category||'standard';
+  ward.dismissedReason = '';
+  logEntry(ward, 'Case reinstated to active board as “'+CATEGORIES[ward.category].label+'”.', 'move');
+}
+
+/* =========================================================================
+   RENDER — badges
+   ========================================================================= */
+function capBadge(w){ const c=CAPACITY[w.capacity]; return `<span class="badge ${c.cls}">${c.icon}${c.label}</span>`; }
+function fundBadge(w){ const f=FUNDING[w.funding]; return `<span class="badge ${f.cls}">${f.icon}${f.label}</span>`; }
+function catBadge(w){ const c=CATEGORIES[w.category]; return `<span class="badge catg-${c.cls}">${c.icon}${c.label}</span>`; }
+function repBadge(w){
+  const r=REPS[w.representative];
+  const nm = (w.representative==='family' && w.repName) ? ' ('+esc(w.repName)+')' : '';
+  return `<span class="badge ${r.cls}">${r.icon}${r.label}${nm}</span>`;
+}
+function hearingBadge(w){
+  if(w.stage<6 || !w.courtWatch || !w.courtWatch.date) return '';
+  if(w.hearingConfirmed){
+    return `<span class="badge hc-confirmed">${ICONS.check}Hearing confirmed (on file)</span>`;
+  }
+  return `<span class="badge hc-unverified">${ICONS.help}Hearing reported, not verified</span>`;
+}
+function syncBadge(w){
+  if(w.stage!==8 || !w.syncedToTaskBoard) return '';
+  return `<span class="badge sync-on">${ICONS.layers}Synced to external task board</span>`;
+}
+
+/* =========================================================================
+   RENDER — filter chips
+   ========================================================================= */
+function renderFilterChips(){
+  const el = $('#filterChips');
+  const act = activeWards();
+  const allCount = act.length;
+  let html = `<button class="chip ${activeFilter==='all'?'on':''}" data-filter="all">${ICONS.filter}All<span class="ccount">${allCount}</span></button>`;
+  // only category chips that can appear on the active board (exclude dismissed)
+  for(const k of CATEGORY_KEYS){
+    if(k==='dismissed') continue;
+    const c = CATEGORIES[k];
+    const n = act.filter(w=>w.category===k).length;
+    html += `<button class="chip ${activeFilter===k?'on':''}" data-filter="${k}">`
+          + `<span class="cdot" style="background:${c.dot}"></span>${c.icon}${esc(c.label)}<span class="ccount">${n}</span></button>`;
+  }
+  el.innerHTML = html;
+  $$('#filterChips .chip').forEach(b=>b.addEventListener('click',()=>{
+    activeFilter = b.getAttribute('data-filter');
+    renderBoard(); renderFilterChips();
+  }));
+}
+
+/* =========================================================================
+   RENDER — board
+   ========================================================================= */
+function renderBoard(){
+  const visible = activeWards().filter(w=> activeFilter==='all' || w.category===activeFilter );
+  const cols = STAGES.map(st=>{
+    const inCol = visible.filter(w=>w.stage===st.id);
+    const cards = inCol.map(w=>`
+      <div class="wcard cat-${CATEGORIES[w.category].cls}" data-ward="${w.id}">
+        <div class="wn">${esc(w.name)}</div>
+        <div class="wf">${esc(w.facility)}</div>
+        <div class="badges">${catBadge(w)}${capBadge(w)}${fundBadge(w)}${repBadge(w)}${hearingBadge(w)}${syncBadge(w)}</div>
+        <div class="dim">${w.daysInStage} day${w.daysInStage===1?'':'s'} in stage</div>
+      </div>`).join('') || '<div class="muted" style="font-size:11px;padding:4px 2px">—</div>';
+    return `
+      <div class="col">
+        <div class="ch">
+          <div class="n"><span class="num">${st.id}</span> ${esc(st.name)}<span class="cnt">${inCol.length}</span></div>
+          <div class="owner">Owner: ${esc(st.owner)}</div>
+        </div>
+        <div class="cbody">${cards}</div>
+      </div>`;
+  }).join('');
+  $('#cols').innerHTML = cols;
+  $$('#cols .wcard').forEach(el=>el.addEventListener('click',()=>openDrawer(el.getAttribute('data-ward'))));
+  renderClosedLists();
+}
+
+/* Collapsible Dismissed + Closed-deceased lists. */
+function renderClosedLists(){
+  const dismissed = WARDS.filter(isDismissed);
+  const deceased  = WARDS.filter(isDeceased);
+  $('#dismissedCnt').textContent = dismissed.length;
+  $('#deceasedCnt').textContent  = deceased.length;
+
+  const dl = $('#dismissedList');
+  dl.innerHTML = dismissed.length ? dismissed.map(w=>`
+    <li data-ward="${w.id}" class="dismissed-item">
+      <span class="ci">${ICONS.ban}</span>
+      <span><span class="cln">${esc(w.name)}</span>
+        <div class="clf">${esc(w.facility)} · was stage ${w.stage} (${esc(stageById(w.stage).name)})</div>
+        <div class="clr">Reason: ${esc(w.dismissedReason||'—')}</div></span>
+    </li>`).join('') : '<li class="empty">No dismissed cases. Dismissed cases leave the active board here, with history and a reason preserved.</li>';
+
+  const el = $('#deceasedList');
+  el.innerHTML = deceased.length ? deceased.map(w=>`
+    <li data-ward="${w.id}" class="deceased-item">
+      <span class="ci">${ICONS.urn}</span>
+      <span><span class="cln">${esc(w.name)}</span>
+        <div class="clf">${esc(w.facility)} · was stage ${w.stage} (${esc(stageById(w.stage).name)})</div>
+        <div class="clr">Deceased ${esc(w.deceasedDate)} · billing reconciliation notified</div></span>
+    </li>`).join('') : '<li class="empty">No cases in this state. Marking a ward deceased moves the case here respectfully, with its history intact.</li>';
+
+  $$('#dismissedList li[data-ward]').forEach(li=>li.addEventListener('click',()=>openDrawer(li.getAttribute('data-ward'))));
+  $$('#deceasedList li[data-ward]').forEach(li=>li.addEventListener('click',()=>openDrawer(li.getAttribute('data-ward'))));
+}
+
+/* Rules panel */
+function renderRules(){
+  $('#rulesPanel').innerHTML = RULES.map(r=>`
+    <div class="rule ${firedRules.has(r.id)?'fired':''}">
+      <div><span class="rid">${r.id}</span><span class="rt">${esc(r.title)}</span></div>
+      <div class="rd">${esc(r.desc)}</div>
+      <div class="firemark">${ICONS.check} fired in this session</div>
+    </div>`).join('');
+}
+
+/* Notifications feed */
+function renderNotifs(){
+  $('#notifCnt').textContent = NOTIFS.length;
+  const feed = $('#notifFeed');
+  if(!NOTIFS.length){ feed.innerHTML='<li class="empty">No notifications yet. Advance a card — only rule-driven pings appear here.</li>'; return; }
+  feed.innerHTML = NOTIFS.map(n=>`
+    <li class="${n.kind==='billing'?'billing':''}"><span class="ficon">${n.kind==='billing'?ICONS.bank:ICONS.bell}</span>
+      <span>${esc(n.text)}<span class="ftime">${esc(n.time)}${n.ward?' · '+esc(wardName(n.ward)):''}</span></span></li>`).join('');
+}
+
+/* Tasks */
+function renderTasks(){
+  $('#taskCnt').textContent = TASKS.length;
+  const el = $('#taskList');
+  if(!TASKS.length){ el.innerHTML='<div class="feed"><li class="empty">No tasks yet. A logged request opens the medical-documents task (R2); approval opens the rep-payee account task (R4).</li></div>'; return; }
+  el.innerHTML = TASKS.map(t=>`
+    <div class="task">
+      <div class="tt">${ICONS.check}<span>${esc(t.text)}</span></div>
+      <div class="tmeta">Owner: ${esc(t.owner)} · ${esc(t.time)}${t.ward?' · '+esc(wardName(t.ward)):''}</div>
+    </div>`).join('');
+}
+
+/* External task-board sync entries (R4, at approval) */
+function renderSyncs(){
+  $('#syncCnt').textContent = SYNCS.length;
+  const el = $('#syncList');
+  if(!SYNCS.length){ el.innerHTML='<div class="feed"><li class="empty">No sync entries yet. Reaching stage 7 (Approved) syncs the case to the external task board (R4).</li></div>'; return; }
+  el.innerHTML = SYNCS.map(s=>`
+    <div class="task">
+      <div class="tt">${ICONS.layers}<span>${esc(s.text)}</span></div>
+      <div class="tmeta">${esc(s.time)}${s.ward?' · '+esc(wardName(s.ward)):''}</div>
+    </div>`).join('');
+}
+
+/* Court watch table (stages 5–6 active wards, plus any active ward with a watch) */
+function renderCourtWatch(){
+  const rows = activeWards().filter(w=>(w.stage===5||w.stage===6) || (w.courtWatch && w.stage<8));
+  const body = $('#cwBody');
+  if(!rows.length){ body.innerHTML='<tr><td colspan="4" class="empty">No wards currently before the court. Entries activate when a case reaches stage 5 (R3).</td></tr>'; return; }
+  const STAT = {
+    await:{cls:'st-await', icon:ICONS.clock, label:'Awaiting docket match'},
+    sched:{cls:'st-sched', icon:ICONS.cal,   label:d=>'Hearing '+d},
+    order:{cls:'st-order', icon:ICONS.gavel, label:'Order issued'},
+  };
+  body.innerHTML = rows.map(w=>{
+    const cw = w.courtWatch || { status:'await', date:null, lastChecked:stamp() };
+    const s = STAT[cw.status];
+    const lbl = (typeof s.label==='function') ? s.label(cw.date) : s.label;
+    const unverified = (cw.status==='sched' && cw.date && !w.hearingConfirmed);
+    const warnLine = unverified
+      ? `<div class="hcwarn">${ICONS.help} Reported, not verified</div>`
+      : (cw.status==='sched' && w.hearingConfirmed ? `<div class="cwstatus st-order" style="margin-top:4px;font-size:10.5px">${ICONS.check} Confirmed (document on file)</div>` : '');
+    return `<tr>
+      <td><b>${esc(w.name)}</b><br><span class="muted" style="font-size:11px">${esc(w.facility)}</span></td>
+      <td class="mono">${esc(w.caseRef||'—')}</td>
+      <td><span class="cwstatus ${s.cls}">${s.icon}${esc(lbl)}</span>${warnLine}</td>
+      <td class="lc">checked ${esc(cw.lastChecked)}</td>
+    </tr>`;
+  }).join('');
+}
+
+function wardName(id){ const w=WARDS.find(x=>x.id===id); return w?w.name:id; }
+
+function renderAll(){
+  renderFilterChips(); renderBoard(); renderRules(); renderNotifs(); renderTasks(); renderSyncs(); renderCourtWatch();
+  if(openWardId) renderDrawer();
+}
+
+/* =========================================================================
+   DRAWER
+   ========================================================================= */
+function openDrawer(id){
+  openWardId = id;
+  $('#scrim').classList.add('open');
+  $('#drawer').classList.add('open');
+  $('#drawer').setAttribute('aria-hidden','false');
+  renderDrawer();
+}
+function closeDrawer(){
+  openWardId = null;
+  $('#scrim').classList.remove('open');
+  $('#drawer').classList.remove('open');
+  $('#drawer').setAttribute('aria-hidden','true');
+}
+function currentWard(){ return WARDS.find(w=>w.id===openWardId); }
+
+function renderDrawer(){
+  const w = currentWard(); if(!w) return;
+  $('#dName').textContent = w.name;
+  $('#dFacility').textContent = w.facility;
+  const st = stageById(w.stage);
+  const pill = $('#dStage');
+  if(isDeceased(w)){
+    pill.textContent = 'Closed — deceased '+w.deceasedDate+' · was stage '+w.stage+' ('+st.name+')';
+    pill.classList.add('closed');
+  } else if(isDismissed(w)){
+    pill.textContent = 'Dismissed · was stage '+w.stage+' ('+st.name+')';
+    pill.classList.add('closed');
+  } else {
+    pill.textContent = 'Stage '+w.stage+' · '+st.name+' · owner: '+st.owner;
+    pill.classList.remove('closed');
+  }
+  const closed = isClosed(w);
+  $('#dAdvance').disabled = closed || (w.stage>=MAX_STAGE);
+  $('#dBack').disabled = closed || (w.stage<=MIN_STAGE);
+  renderDrawerBody();
+}
+
+function renderDrawerBody(){
+  const w = currentWard(); if(!w) return;
+  const st = stageById(w.stage);
+  const closed = isClosed(w);
+
+  // closed-state banner
+  let closedBanner = '';
+  if(isDeceased(w)){
+    closedBanner = `<div class="closed-banner deceased">
+      <span class="cbi">${ICONS.urn}</span>
+      <span><b>Ward deceased — ${esc(w.deceasedDate)}.</b> Pending notifications were cancelled and a single Billing notification was sent (rule R6). History below is preserved.</span></div>`;
+  } else if(isDismissed(w)){
+    closedBanner = `<div class="closed-banner dismissed">
+      <span class="cbi">${ICONS.ban}</span>
+      <span><b>Case dismissed.</b> Reason: ${esc(w.dismissedReason||'—')}. Off the active board; history preserved below.</span></div>`;
+  }
+
+  // category select
+  const catOpts = CATEGORY_KEYS.filter(k=>k!=='dismissed').map(k=>
+    `<option value="${k}" ${w.category===k?'selected':''}>${esc(CATEGORIES[k].label)}</option>`).join('');
+
+  // capacity radios
+  const capHtml = Object.keys(CAPACITY).map(k=>{
+    const c=CAPACITY[k], on=(w.capacity===k);
+    return `<label class="${on?'on':''}"><input type="radio" name="cap" value="${k}" ${on?'checked':''} ${closed?'disabled':''}>${c.icon} ${c.label}</label>`;
+  }).join('');
+
+  // funding toggle
+  const fundHtml = Object.keys(FUNDING).map(k=>{
+    const f=FUNDING[k], on=(w.funding===k);
+    return `<button data-fund="${k}" class="${on?'on':''}" ${closed?'disabled':''}>${f.icon} ${f.label}</button>`;
+  }).join('');
+
+  // representative
+  const repOpts = Object.keys(REPS).map(k=>
+    `<option value="${k}" ${w.representative===k?'selected':''}>${esc(REPS[k].label)}</option>`).join('');
+  const repNameFld = w.representative==='family'
+    ? `<div class="fld" style="margin-top:8px"><label>Family member name</label>
+         <input type="text" id="repNameInput" value="${esc(w.repName)}" placeholder="e.g. daughter, name" ${closed?'disabled':''}></div>`
+    : '';
+
+  // LVR verification (stage 5)
+  const lvrHtml = (w.stage===5) ? `
+    <div class="dsec">
+      <div class="dsh">Legal Verified Receipt (LVR)</div>
+      <label class="verifyrow ${w.lvr?'on':''}">
+        <input type="checkbox" id="lvrCheck" ${w.lvr?'checked':''} ${closed?'disabled':''}>
+        <span class="vl">Legal receipt verified — the court's file-stamped receipt is on hand and matches this case.</span>
+        <span class="vreq">Required to advance</span>
+      </label>
+      <div class="capnote">Rule R5: the case cannot leave stage 5 until this is checked. In production this is verified against the court's electronic filing receipt.</div>
+    </div>` : '';
+
+  // court-watch cadence (stage 6)
+  let cadenceHtml = '';
+  if(w.stage===6){
+    const cadOpts = Object.keys(CADENCE).map(k=>
+      `<option value="${k}" ${w.courtCadence===k?'selected':''}>${esc(CADENCE[k].label)}</option>`).join('');
+    cadenceHtml = `
+    <div class="dsec">
+      <div class="dsh">Court-watch cadence</div>
+      <div class="fld">
+        <label>How often the court watcher re-checks the docket for this case</label>
+        <select id="cadenceSelect" ${closed?'disabled':''}>${cadOpts}</select>
+      </div>
+      <div class="capnote">In production the scheduled court watcher runs at this cadence from US-based infrastructure. The chosen value persists on the case.</div>
+    </div>`;
+  }
+
+  // hearing confidence (stage 6+ with a date)
+  let hearingHtml = '';
+  if(w.stage>=6 && w.courtWatch && w.courtWatch.date){
+    const unv = !w.hearingConfirmed;
+    hearingHtml = `
+    <div class="dsec">
+      <div class="dsh">Hearing date confidence</div>
+      <div class="fld">
+        <div style="display:flex;align-items:center;gap:8px;font-weight:600">
+          ${ICONS.cal}<span>${esc(w.courtWatch.date)}</span>
+          ${w.hearingConfirmed
+            ? `<span class="badge hc-confirmed">${ICONS.check}Confirmed (document on file)</span>`
+            : `<span class="badge hc-unverified">${ICONS.help}Reported, not verified</span>`}
+        </div>
+      </div>
+      <label class="verifyrow ${w.hearingConfirmed?'on':''}" style="margin-top:9px">
+        <input type="checkbox" id="hcCheck" ${w.hearingConfirmed?'checked':''} ${closed?'disabled':''}>
+        <span class="vl">Confirmed — the hearing notice document is on file and matches the court record.</span>
+      </label>
+      ${unv?`<div class="hcbox"><div class="hcl">${ICONS.help} Reported, not verified</div>
+        Reported dates must be verified against the court record — in production the scheduled court watcher does this automatically.</div>`:''}
+    </div>`;
+  }
+
+  // doc checklist for current stage
+  const docs = st.docs.map(d=>{
+    const on = !!w.docs[d.k];
+    return `<div class="doc ${on?'done':''}">
+      <input type="checkbox" data-doc="${d.k}" ${on?'checked':''} ${closed?'disabled':''}>
+      <span class="dl">${esc(d.label)}</span>
+      ${d.req?'<span class="req">Required</span>':'<span class="opt">Optional</span>'}
+    </div>`;
+  }).join('') || '<div class="docempty">No documents required at this stage.</div>';
+
+  // R2 timeline notes
+  const tl = w.timeline.length
+    ? `<div class="dsec"><div class="dsh">Timeline notes</div>${w.timeline.map(t=>`<div class="capnote" style="font-style:normal">${ICONS.skip} ${esc(t)}</div>`).join('')}</div>`
+    : '';
+
+  // activity log
+  const log = w.log.length
+    ? w.log.slice().reverse().map(e=>{
+        const cls = e.kind==='rule'?'rule-entry':(e.kind==='notif'?'notif-entry':'');
+        const ic = e.kind==='notif'?ICONS.bell:(e.kind==='rule'?ICONS.flag:ICONS.check);
+        return `<li class="${cls}"><span class="li-ic">${ic}</span><span class="lt">${esc(e.time)}</span><span class="lx">${esc(e.text)}</span></li>`;
+      }).join('')
+    : '<li><span class="lx muted">No activity yet — advance the case to see rule firings logged here.</span></li>';
+
+  // close-case controls (only for active cases)
+  const closeControls = closed ? '' : `
+    <div class="dsec">
+      <div class="dsh">Close case</div>
+      <div class="fld">
+        <label>Dismissal reason (kept on file)</label>
+        <input type="text" id="dismissReason" placeholder="e.g. ward regained capacity; petition withdrawn">
+      </div>
+      <div style="display:flex;gap:9px;flex-wrap:wrap;margin-top:9px">
+        <button class="btn danger sm" id="dismissBtn">${ICONS.ban} Dismiss case</button>
+      </div>
+      <div class="fld" style="margin-top:14px">
+        <label>Mark deceased (date)</label>
+        <input type="date" id="deceasedDate">
+      </div>
+      <div style="display:flex;gap:9px;flex-wrap:wrap;margin-top:9px">
+        <button class="btn ghost sm" id="deceasedBtn">${ICONS.urn} Mark deceased</button>
+      </div>
+      <div class="capnote">Marking deceased cancels pending notifications and fires one Billing notification (R6). Dismissing preserves the full history.</div>
+    </div>`;
+
+  // reinstate control for dismissed cases
+  const reinstate = isDismissed(w) ? `
+    <div class="dsec">
+      <div class="dsh">Reinstate</div>
+      <button class="btn ghost sm" id="reinstateBtn">${ICONS.arrowup} Return to active board (Standard)</button>
+    </div>` : '';
+
+  $('#dBody').innerHTML = `
+    ${closedBanner}
+    <div class="dsec">
+      <div class="dsh">Escalation category</div>
+      <select id="catSelect" ${closed?'disabled':''}>${catOpts}</select>
+      <div class="capnote">Paid escalation, tough cases, and protective-services cases are tracked distinctly. Category tints the card and drives the filter chips above the board.</div>
+    </div>
+    <div class="dsec">
+      <div class="dsh">Assigned representative</div>
+      <div class="selrow">
+        <select id="repSelect" ${closed?'disabled':''}>${repOpts}</select>
+        ${repNameFld}
+      </div>
+      <div class="capnote">A case cannot reach stage 7 (Approved) while this is Pending (rule R7).</div>
+    </div>
+    <div class="dsec">
+      <div class="dsh">Capacity triage</div>
+      <div class="radiorow" id="capRow">${capHtml}</div>
+      <div class="capnote">Replaces the phone-call triage: the capacity decision is captured here, on the record, instead of over the phone.</div>
+    </div>
+    <div class="dsec">
+      <div class="dsh">Payer routing</div>
+      <div class="toggle" id="fundRow">${fundHtml}</div>
+      <div class="capnote">${w.funding==='corporate'
+        ? 'Corporate-funded: treated as a <b>referral</b> — the corporate payer coordinates the initial fee. Owner differs from the law-firm-direct route (rule R9).'
+        : 'Family (private pay): the <b>law firm coordinates the submission directly</b> (rule R9).'}</div>
+    </div>
+    ${lvrHtml}
+    ${cadenceHtml}
+    ${hearingHtml}
+    ${tl}
+    <div class="dsec">
+      <div class="dsh">Documents — stage ${w.stage} (${esc(st.name)})</div>
+      <div class="doclist">${docs}</div>
+      <div class="advmsg" id="advMsg"><div class="lbl">${ICONS.block} Action blocked</div><span id="advMsgTxt"></span></div>
+    </div>
+    ${closeControls}
+    ${reinstate}
+    <div class="dsec">
+      <div class="dsh">Activity log</div>
+      <ul class="log">${log}</ul>
+    </div>`;
+
+  wireDrawerBody(w);
+}
+
+function wireDrawerBody(w){
+  const closed = isClosed(w);
+  // category
+  const catSel = $('#catSelect');
+  if(catSel && !closed) catSel.addEventListener('change',()=>{
+    w.category = catSel.value;
+    logEntry(w,'Category set to “'+CATEGORIES[w.category].label+'”','move');
+    renderAll();
+  });
+  // representative
+  const repSel = $('#repSelect');
+  if(repSel && !closed) repSel.addEventListener('change',()=>{
+    w.representative = repSel.value;
+    if(w.representative!=='family') w.repName='';
+    logEntry(w,'Representative set to “'+REPS[w.representative].label+'”','move');
+    renderBoard(); renderDrawerBody();
+  });
+  const repNameInp = $('#repNameInput');
+  if(repNameInp && !closed) repNameInp.addEventListener('input',()=>{
+    w.repName = repNameInp.value;
+    renderBoard();
+  });
+  // capacity
+  $$('#capRow input').forEach(inp=>inp.addEventListener('change',()=>{
+    if(closed) return;
+    w.capacity=inp.value;
+    logEntry(w,'Capacity set to “'+CAPACITY[w.capacity].label+'”','move');
+    renderBoard(); renderDrawerBody();
+  }));
+  // funding
+  $$('#fundRow button').forEach(b=>b.addEventListener('click',()=>{
+    if(closed) return;
+    w.funding=b.getAttribute('data-fund');
+    logEntry(w,'Funding path set to “'+FUNDING[w.funding].label+'”','move');
+    renderBoard(); renderDrawerBody();
+  }));
+  // LVR
+  const lvr = $('#lvrCheck');
+  if(lvr && !closed) lvr.addEventListener('change',()=>{
+    w.lvr = lvr.checked;
+    logEntry(w,(lvr.checked?'Legal Verified Receipt confirmed':'Legal Verified Receipt un-confirmed'),'move');
+    renderDrawerBody();
+  });
+  // court-watch cadence
+  const cad = $('#cadenceSelect');
+  if(cad && !closed) cad.addEventListener('change',()=>{
+    setCourtCadence(w, cad.value);
+    renderCourtWatch(); renderDrawerBody();
+  });
+  // hearing confidence
+  const hc = $('#hcCheck');
+  if(hc && !closed) hc.addEventListener('change',()=>{
+    w.hearingConfirmed = hc.checked;
+    if(w.courtWatch) w.courtWatch.lastChecked = stamp();
+    if(hc.checked){
+      // R10 — court date confirmed writes a dated note to the case record.
+      markRuleFired('R10');
+      const dateStr = (w.courtWatch && w.courtWatch.date) ? w.courtWatch.date : 'date on file';
+      logEntry(w,'Court date confirmed — dated note written to the case record: hearing '+dateStr+' verified against the court record (rule R10).','rule');
+    } else {
+      logEntry(w,'Hearing date returned to reported / unverified.','move');
+    }
+    renderBoard(); renderCourtWatch(); renderDrawerBody();
+  });
+  // docs
+  $$('#dBody .doc input').forEach(cb=>cb.addEventListener('change',()=>{
+    if(closed) return;
+    const k=cb.getAttribute('data-doc');
+    w.docs[k]=cb.checked;
+    logEntry(w,(cb.checked?'Document checked':'Document unchecked')+': '+docLabel(k),'move');
+    renderDrawerBody();
+  }));
+  // dismiss
+  const dismissBtn = $('#dismissBtn');
+  if(dismissBtn) dismissBtn.addEventListener('click',()=>{
+    const reason = ($('#dismissReason')||{}).value || '';
+    dismissWard(w, reason.trim());
+    renderAll(); renderDrawer();
+  });
+  // deceased
+  const deceasedBtn = $('#deceasedBtn');
+  if(deceasedBtn) deceasedBtn.addEventListener('click',()=>{
+    const dv = ($('#deceasedDate')||{}).value;
+    if(!dv){ showAdvMsg('Enter the date of death before marking the ward deceased.'); return; }
+    markDeceased(w, dv);
+    renderAll(); renderDrawer();
+  });
+  // reinstate
+  const reinstateBtn = $('#reinstateBtn');
+  if(reinstateBtn) reinstateBtn.addEventListener('click',()=>{
+    reinstateWard(w,'standard');
+    renderAll(); renderDrawer();
+  });
+}
+function docLabel(k){
+  for(const s of STAGES){ const d=s.docs.find(x=>x.k===k); if(d) return d.label; }
+  return k;
+}
+
+function showAdvMsg(text){
+  const box=$('#advMsg'), t=$('#advMsgTxt');
+  if(!box||!t) return;
+  t.textContent = text;
+  box.classList.add('show');
+}
+
+/* Drawer buttons */
+function doAdvance(){
+  const w = currentWard(); if(!w) return;
+  const res = advanceWard(w);
+  if(!res.ok){ showAdvMsg(res.reason); return; }
+  renderAll(); renderDrawer();
+}
+function doSendBack(){
+  const w = currentWard(); if(!w) return;
+  const res = sendBackWard(w);
+  if(!res.ok){ showAdvMsg(res.reason); return; }
+  renderAll(); renderDrawer();
+}
+
+/* =========================================================================
+   CSV IMPORT
+   Header (exact, order-insensitive on values but header must match set):
+   case_name,facility,stage,category,funding,representative,filed_date,
+   hearing_date,hearing_confirmed
+   ========================================================================= */
+const CSV_HEADER = ['case_name','facility','stage','category','funding','representative','filed_date','hearing_date','hearing_confirmed'];
+
+/* Robust CSV parser: handles quoted fields, escaped quotes (""), commas and
+   newlines inside quotes, CRLF, and a UTF-8 BOM. Returns array of row arrays. */
+function parseCSV(text){
+  if(text.charCodeAt(0)===0xFEFF) text = text.slice(1); // strip BOM
+  const rows=[]; let row=[]; let field=''; let i=0; let inQ=false;
+  const n=text.length;
+  while(i<n){
+    const ch=text[i];
+    if(inQ){
+      if(ch==='"'){
+        if(text[i+1]==='"'){ field+='"'; i+=2; continue; }
+        inQ=false; i++; continue;
+      }
+      field+=ch; i++; continue;
+    }
+    if(ch==='"'){ inQ=true; i++; continue; }
+    if(ch===','){ row.push(field); field=''; i++; continue; }
+    if(ch==='\r'){ i++; continue; }
+    if(ch==='\n'){ row.push(field); field=''; rows.push(row); row=[]; i++; continue; }
+    field+=ch; i++;
+  }
+  // flush last field/row if any content
+  if(field.length>0 || row.length>0){ row.push(field); rows.push(row); }
+  // drop fully-empty rows
+  return rows.filter(r=>!(r.length===1 && r[0].trim()===''));
+}
+
+function normStage(v){
+  const n = parseInt(String(v).trim(),10);
+  if(isNaN(n)) return {val:1, warn:'stage "'+v+'" not a number; row skipped', skip:true};
+  if(n<MIN_STAGE) return {val:MIN_STAGE, warn:'stage '+n+' out of range (1-8); row skipped', skip:true};
+  if(n>MAX_STAGE) return {val:MAX_STAGE, warn:'stage '+n+' out of range (1-8); clamped to 8, row skipped', skip:true};
+  return {val:n, warn:null, skip:false};
+}
+function mapCategory(v){
+  const k=String(v).trim().toLowerCase().replace(/\s*\(.*\)\s*/,'').replace(/\s+/g,'');
+  const map={standard:'standard',escalated:'escalated','escalatedpaid':'escalated',tough:'tough','toughcase':'tough',
+             protective:'protective','protectiveservices':'protective',dismissed:'dismissed'};
+  if(map[k]) return {val:map[k], warn:null};
+  return {val:'standard', warn:'category "'+v+'" unknown; defaulted to Standard'};
+}
+function normFunding(v){
+  const k=String(v).trim().toLowerCase();
+  if(/corp/.test(k)) return {val:'corporate', warn:null};
+  if(/fam|priv/.test(k)) return {val:'family', warn:null};
+  return {val:'family', warn:'funding "'+v+'" unknown; defaulted to Family (private pay)'};
+}
+function normRep(v){
+  const k=String(v).trim().toLowerCase();
+  if(/prof/.test(k)) return {val:'professional', rep:'', warn:null};
+  if(/pend/.test(k) || k==='') return {val:'pending', rep:'', warn:null};
+  if(/fam/.test(k)){
+    const m=v.match(/\(([^)]*)\)/);
+    return {val:'family', rep:m?m[1].trim():'', warn:null};
+  }
+  return {val:'pending', rep:'', warn:'representative "'+v+'" unknown; defaulted to Pending'};
+}
+function normBool(v){
+  const k=String(v).trim().toLowerCase();
+  if(['1','true','yes','y','confirmed','on'].includes(k)) return true;
+  return false;
+}
+
+/* Build wards from CSV text. Returns {ok, wards, warnings, imported, message}. */
+function importCSV(text){
+  const rows = parseCSV(text);
+  if(!rows.length) return {ok:false, message:'The file is empty.'};
+  const header = rows[0].map(h=>h.trim().toLowerCase().replace(/^﻿/,''));
+  const headerMatches = CSV_HEADER.length===header.length && CSV_HEADER.every((h,idx)=>header[idx]===h);
+  if(!headerMatches){
+    return {ok:false, message:'This demo expects the sample column layout — production imports adapt to your existing spreadsheet.'};
+  }
+  const idx = {}; CSV_HEADER.forEach((h,i)=>idx[h]=i);
+  const wards=[]; const warnings=[]; let imported=0;
+  for(let r=1;r<rows.length;r++){
+    const cells=rows[r];
+    const rowNo=r; // 1-based data row (header is row 0)
+    const get=h=>{ const c=cells[idx[h]]; return c==null?'':c.trim(); };
+    const name=get('case_name');
+    if(!name){ warnings.push('Row '+rowNo+': missing case_name; skipped.'); continue; }
+    const facility=get('facility')||'(facility not given)';
+    const st=normStage(get('stage'));
+    // Out-of-range / non-numeric stage: report a warning and skip the row (do not import).
+    if(st.skip){
+      warnings.push('Row '+rowNo+' ('+name+'): '+st.warn);
+      continue;
+    }
+    const cat=mapCategory(get('category'));
+    const fund=normFunding(get('funding'));
+    const rep=normRep(get('representative'));
+    const hearingConfirmed=normBool(get('hearing_confirmed'));
+    const hearingDate=get('hearing_date');
+    const rowWarns=[cat.warn,fund.warn,rep.warn].filter(Boolean);
+    rowWarns.forEach(msg=>warnings.push('Row '+rowNo+' ('+name+'): '+msg));
+
+    idSeq++;
+    const o={
+      id:'I'+idSeq, name, facility,
+      capacity:'need', funding:fund.val, stage:st.val,
+      daysInStage:0, category:cat.val,
+      representative:rep.val, repName:rep.rep,
+      hearingConfirmed:hearingConfirmed,
+    };
+    const wd = mkWard(o);
+    // rehydrate court watch consistently for stages 5-6
+    if(wd.stage===5 || wd.stage===6){
+      if(!wd.caseRef) wd.caseRef='PB-2026-0'+(4400+Math.floor(Math.random()*99));
+      wd.courtWatch={
+        status: wd.stage===6?'sched':'await',
+        date: wd.stage===6?(hearingDate||simHearingDate()):null,
+        lastChecked:stamp(),
+      };
+    }
+    // stage-5 imported cases: mark LVR present so history is consistent for docs already satisfied
+    if(wd.stage>5){ wd.lvr=true; }
+    if(wd.stage>=4){
+      wd.timeline.push(fund.val==='corporate'
+        ? 'Corporate-funded: treated as a referral — the corporate payer coordinates the initial fee (owner differs from the law-firm-direct route).'
+        : 'Family (private pay): the law firm coordinates the submission directly.');
+    }
+    if(wd.stage>=7){ wd.syncedToTaskBoard=true; }
+    logEntry(wd,'Imported from CSV (row '+rowNo+').','move');
+    wards.push(wd);
+    imported++;
+  }
+  return {ok:true, wards, warnings, imported, message:null};
+}
+
+/* Apply an import result to the live board. */
+function applyImport(res){
+  for(const w of res.wards) WARDS.push(w);
+  renderAll();
+}
+
+/* Render the import report inside the dialog. */
+function renderImportReport(res){
+  const el=$('#impReport');
+  if(!res.ok){
+    el.innerHTML=`<div class="imprep"><div class="irh err">${ICONS.block} Import not applied</div>
+      <ul><li class="warn"><span class="rii">${ICONS.alert}</span><span>${esc(res.message)}</span></li></ul></div>`;
+    return;
+  }
+  const cls = res.warnings.length?'warn':'ok';
+  const head = `${res.imported} imported`+(res.warnings.length?`, ${res.warnings.length} warning${res.warnings.length===1?'':'s'}`:', 0 warnings');
+  el.innerHTML=`<div class="imprep">
+    <div class="irh ${cls}">${res.warnings.length?ICONS.alert:ICONS.check} ${esc(head)}</div>
+    <ul>
+      <li class="ok"><span class="rii">${ICONS.check}</span><span>${res.imported} case${res.imported===1?'':'s'} added to the board.</span></li>
+      ${res.warnings.map(wn=>`<li class="warn"><span class="rii">${ICONS.alert}</span><span>${esc(wn)}</span></li>`).join('')}
+    </ul></div>`;
+}
+
+function handleCSVText(text){
+  const res = importCSV(text);
+  renderImportReport(res);
+  if(res.ok) applyImport(res);
+  return res;
+}
+
+function openImport(){ $('#impScrim').classList.add('open'); $('#impReport').innerHTML=''; }
+function closeImport(){ $('#impScrim').classList.remove('open'); }
+
+/* =========================================================================
+   EMBEDDED SAMPLE CSV — mirrors sample_cases.csv on disk (12 rows).
+   Fully synthetic, ward + facility names distinct from the 9 built-ins.
+   One row has an invalid stage (99) to exercise the clamp/warning path.
+   ========================================================================= */
+const SAMPLE_CSV = `case_name,facility,stage,category,funding,representative,filed_date,hearing_date,hearing_confirmed
+Helen Carver,Sunnybrook Health Pavilion,1,Standard,Family (private pay),Pending,,,
+George Mercer,Elmcrest Care Suites,2,Escalated (paid),Corporate-funded,Professional guardian,2026-06-18,,
+Nancy Whitfield,Oakhaven Skilled Nursing,3,Tough case,Family (private pay),Family member (grandson C. Whitfield),2026-06-20,,
+Arthur Sullivan,Thornfield Senior Residences,4,Protective services,Corporate-funded,Professional guardian,2026-06-22,,
+Ruth Callahan,Brookmeadow Rehabilitation,5,Standard,Family (private pay),Professional guardian,2026-06-25,,
+Joseph Underwood,Pinecrest Assisted Living,6,Escalated (paid),Corporate-funded,Professional guardian,2026-06-15,"Jul 22, 2026",yes
+Gloria Ellison,Fernvale Care Community,6,Standard,Family (private pay),Family member (son P. Ellison),2026-06-16,"Jul 18, 2026",no
+Howard Pratt,Meadowgate Nursing Center,7,Protective services,Corporate-funded,Professional guardian,2026-06-10,"Jul 09, 2026",yes
+Marion Sinclair,Larkspur Memory Care,8,Standard,Family (private pay),Professional guardian,2026-06-05,"Jul 02, 2026",yes
+Clarence Whitmore,Cliffside Retirement Villa,99,Standard,Family (private pay),Pending,,,
+Evelyn Barrett,Harborview Senior Care,4,Tough case,Corporate-funded,Professional guardian,2026-06-21,,
+Leonard Fisher,Rosewood Convalescent Home,2,Standard,Family (private pay),Family member (wife L. Fisher),2026-06-19,,
+`;
+
+/* =========================================================================
+   INIT
+   ========================================================================= */
+function seedWorld(){
+  WARDS = WARD_SEED.map(mkWard);
+  NOTIFS = []; TASKS = []; SYNCS = []; firedRules = new Set(); CLOCK = 9*3600;
+  activeFilter = 'all'; idSeq = 100;
+  for(const w of WARDS){
+    // Payer-routing note (R9) is persistent ward state once a case has passed legal submission.
+    if(w.stage>=4){
+      w.timeline.push(w.funding==='corporate'
+        ? 'Corporate-funded: treated as a referral — the corporate payer coordinates the initial fee (owner differs from the law-firm-direct route).'
+        : 'Family (private pay): the law firm coordinates the submission directly.');
+    }
+    if(w.stage===5 || w.stage===6){
+      w.courtWatch = {
+        status: w.stage===6?'sched':'await',
+        date: w.stage===6?simHearingDate():null,
+        lastChecked: stamp(),
+      };
+    }
+    // stage-5+ wards have satisfied their filing; give them a verified receipt so
+    // they render as consistent (except W5 at stage 5, left UNVERIFIED to show LVR block)
+    if(w.stage>5) w.lvr=true;
+    // W6 (stage 6) starts with a reported/unverified hearing to show the warning treatment.
+    if(w.stage===6) w.hearingConfirmed=false;
+    // stage-7+ wards were approved in a past session: the external task-board sync is persistent state.
+    if(w.stage>=7) w.syncedToTaskBoard=true;
+  }
+}
+
+/* =========================================================================
+   SELF-TEST (?selftest=1)
+   ========================================================================= */
+/* Forbidden strings assembled from fragments so the literal terms never appear
+   contiguously in this file — otherwise the DOM grep would flag its own list. */
+const FORBIDDEN = [
+  'vic'+'tor', 'bari'+'viera', 'wil'+'low', 'voy'+'ant', 'r'+'mc',
+  'rocky '+'mountain', 'utah '+'pay', 'utah '+'payee', 'ja'+'son',
+  'step'+'hie', 'nag'+'bot', 'de'+'rek', 'has'+'lam', 'sty'+'les',
+  'zo'+'ho', 'my'+'case', 'jes'+'se', 'rf'+'ms',
+  // real ward surnames from source material — must never appear
+  'cag'+'le', 'poul'+'sen', 'sni'+'der', 'isaac'+'son', 'proc'+'tor',
+  'march'+'ant', 'spi'+'cer', 'hen'+'dry', 'brit'+'ton', 'or'+'ton',
+  'niel'+'sen', 'jac'+'obs', 'lun'+'ner', 'jim'+'enez'
+];
+
+function freshWard(over){
+  const base = { id:'TX', name:'Test Ward', facility:'Test Facility',
+                 capacity:'need', funding:'family', stage:1, daysInStage:0,
+                 category:'standard', representative:'professional' };
+  return mkWard(Object.assign(base, over||{}));
+}
+function fillAllDocs(w){ for(const s of STAGES){ for(const d of s.docs){ if(d.req) w.docs[d.k]=true; } } }
+
+function runSelfTest(){
+  const notes=[]; let pass=true;
+  function assert(cond,msg){ if(!cond){ pass=false; notes.push(msg); } }
+
+  const saveN=NOTIFS, saveT=TASKS, saveS=SYNCS, saveF=firedRules, saveW=WARDS, saveSeq=idSeq;
+
+  // (a) corporate-funded ward moves through EVERY stage — no skip. Stage 2 -> stage 3 (Medical documents).
+  NOTIFS=[]; TASKS=[]; SYNCS=[]; firedRules=new Set();
+  let a = freshWard({funding:'corporate', stage:2});
+  for(const d of stageById(2).docs){ if(d.req) a.docs[d.k]=true; }
+  let ra = advanceWard(a);
+  assert(ra.ok, '(a) corporate advance from stage 2 was blocked unexpectedly');
+  assert(a.stage===3, '(a) corporate ward landed on stage '+a.stage+', expected 3 (Medical documents; no skip)');
+  assert(stageById(3).name==='Medical documents', '(a) stage 3 is not the Medical documents stage');
+
+  // (b) family-funded ward advancing to stage 7 fires EXACTLY ONE Approver notification
+  NOTIFS=[]; TASKS=[]; firedRules=new Set();
+  let b = freshWard({funding:'family', stage:1, representative:'professional'});
+  fillAllDocs(b); b.lvr=true;
+  let sawApproverBefore7=false;
+  while(b.stage<7){
+    const before=b.stage;
+    const r=advanceWard(b);
+    assert(r.ok, '(b) advance blocked at stage '+before+' unexpectedly: '+(r.reason||''));
+    const newPings = NOTIFS.filter(n=>/Approver notified/i.test(n.text)).length;
+    if(b.stage<7 && newPings>0) sawApproverBefore7=true;
+    if(!r.ok) break;
+  }
+  const approverPings = NOTIFS.filter(n=>/Approver notified/i.test(n.text)).length;
+  assert(b.stage===7, '(b) family ward ended at stage '+b.stage+', expected 7');
+  assert(!sawApproverBefore7, '(b) Approver was notified before stage 7 (violates R1)');
+  assert(approverPings===1, '(b) expected exactly 1 Approver notification, got '+approverPings);
+
+  // (c) advancing with a missing required doc is rejected with explanatory text
+  NOTIFS=[]; TASKS=[]; SYNCS=[]; firedRules=new Set();
+  let c = freshWard({funding:'family', stage:1});
+  c.docs['reqlog']=false;
+  let rc = advanceWard(c);
+  assert(!rc.ok, '(c) advance with missing doc was NOT rejected');
+  assert(/Guardianship request logged/.test(rc.reason||''), '(c) rejection did not name the missing doc: '+(rc.reason||''));
+  assert(c.stage===1, '(c) ward moved despite missing doc');
+
+  // (d) entering stage 5 activates court watch for that ward
+  NOTIFS=[]; TASKS=[]; firedRules=new Set();
+  let d = freshWard({funding:'family', stage:4});
+  fillAllDocs(d);
+  let rd = advanceWard(d);   // 4 -> 5
+  assert(rd.ok && d.stage===5, '(d) ward did not reach stage 5: '+(rd.reason||''));
+  assert(!!d.courtWatch, '(d) court watch not activated at stage 5 (R3)');
+  assert(firedRules.has('R3'), '(d) R3 not fired');
+  assert(!!d.caseRef, '(d) no case reference assigned on court-watch activation');
+
+  // (e) reaching stage 7 creates the R4 Onboarding rep-payee task
+  NOTIFS=[]; TASKS=[]; SYNCS=[]; firedRules=new Set();
+  let e = freshWard({funding:'family', stage:6, representative:'professional'});
+  fillAllDocs(e); e.lvr=true;
+  let re = advanceWard(e);   // 6 -> 7
+  assert(re.ok && e.stage===7, '(e) ward did not reach stage 7: '+(re.reason||''));
+  assert(firedRules.has('R4'), '(e) R4 not fired');
+  const boTask = TASKS.find(t=>t.owner==='Onboarding' && /rep-payee account/.test(t.text));
+  assert(!!boTask, '(e) Onboarding rep-payee task not created (R4)');
+
+  // (g) dismissing a case removes it from active counts and preserves log
+  NOTIFS=[]; TASKS=[]; firedRules=new Set();
+  WARDS = [ freshWard({id:'G1', stage:3}), freshWard({id:'G2', stage:4}) ];
+  const gTarget = WARDS[0];
+  const activeBefore = activeWards().length;
+  const logLenBefore = gTarget.log.length;
+  dismissWard(gTarget, 'ward regained capacity');
+  assert(activeWards().length===activeBefore-1, '(g) dismiss did not drop active count');
+  assert(!activeWards().some(w=>w.id==='G1'), '(g) dismissed ward still counted active');
+  assert(gTarget.log.length>logLenBefore, '(g) dismiss did not preserve/extend log');
+  assert(gTarget.dismissedReason==='ward regained capacity', '(g) dismissal reason not stored');
+
+  // (h) marking deceased cancels pending notifications and fires exactly one Billing notification
+  NOTIFS=[]; TASKS=[]; firedRules=new Set();
+  let h = freshWard({id:'H1', stage:5});
+  WARDS=[h];
+  // seed some pending notifications for this ward
+  notify(h,'Law Firm notified: something pending A');
+  notify(h,'Care Team notified: something pending B');
+  const pendingForH = NOTIFS.filter(n=>n.ward==='H1' && n.kind!=='billing').length;
+  assert(pendingForH===2, '(h) setup: expected 2 pending notifications, got '+pendingForH);
+  const mr = markDeceased(h, '2026-06-30');
+  assert(mr.ok, '(h) markDeceased failed');
+  const remainingNonBilling = NOTIFS.filter(n=>n.ward==='H1' && n.kind!=='billing').length;
+  assert(remainingNonBilling===0, '(h) pending notifications not cancelled: '+remainingNonBilling+' remain');
+  const billing = NOTIFS.filter(n=>n.ward==='H1' && n.kind==='billing');
+  assert(billing.length===1, '(h) expected exactly 1 Billing notification, got '+billing.length);
+  assert(/reconcile billing/i.test(billing[0]?billing[0].text:''), '(h) Billing notification text wrong');
+  assert(firedRules.has('R6'), '(h) R6 not fired');
+  assert(!activeWards().some(w=>w.id==='H1'), '(h) deceased ward still on active board');
+
+  // (i) advancing from stage 5 without LVR is blocked with a message naming it
+  NOTIFS=[]; TASKS=[]; firedRules=new Set();
+  let iw = freshWard({stage:5, representative:'professional'});
+  fillAllDocs(iw); iw.lvr=false;
+  let ri = advanceWard(iw);
+  assert(!ri.ok, '(i) advance from stage 5 without LVR was NOT blocked');
+  assert(/Legal Verified Receipt|LVR|Legal receipt verified/.test(ri.reason||''), '(i) block message did not name the LVR: '+(ri.reason||''));
+  assert(iw.stage===5, '(i) ward advanced despite missing LVR');
+  // and once LVR is checked, it advances
+  iw.lvr=true;
+  let ri2 = advanceWard(iw);
+  assert(ri2.ok && iw.stage===6, '(i) ward did not advance after LVR checked: '+(ri2.reason||''));
+
+  // (j) a case with rep=Pending cannot reach stage 7
+  NOTIFS=[]; TASKS=[]; firedRules=new Set();
+  let j = freshWard({stage:6, representative:'pending'});
+  fillAllDocs(j); j.lvr=true;
+  let rj = advanceWard(j);   // 6 -> 7 should block
+  assert(!rj.ok, '(j) rep=Pending case reached stage 7 (should block)');
+  assert(/stage 7|Approved|Pending|R7/.test(rj.reason||''), '(j) block message did not explain rep/stage-7: '+(rj.reason||''));
+  assert(j.stage===6, '(j) ward advanced to 7 despite Pending rep');
+  assert(firedRules.has('R7'), '(j) R7 not fired');
+  // after assigning a real rep, it advances
+  j.representative='professional';
+  let rj2 = advanceWard(j);
+  assert(rj2.ok && j.stage===7, '(j) ward did not reach 7 after assigning a representative: '+(rj2.reason||''));
+
+  // (n) Medical documents stage blocks advance until BOTH required docs are checked
+  NOTIFS=[]; TASKS=[]; SYNCS=[]; firedRules=new Set();
+  let n1 = freshWard({stage:3, funding:'family', representative:'professional'});
+  n1.docs['docltr']=true; n1.docs['questionnaire']=false;
+  let rn1 = advanceWard(n1);
+  assert(!rn1.ok, '(n) advance from Medical documents with one doc missing was NOT blocked');
+  assert(/Guardianship questionnaire/i.test(rn1.reason||''), '(n) block did not name the missing questionnaire: '+(rn1.reason||''));
+  assert(n1.stage===3, '(n) ward advanced despite a missing medical document');
+  n1.docs['questionnaire']=true;
+  let rn2 = advanceWard(n1);
+  assert(rn2.ok && n1.stage===4, '(n) ward did not advance after both medical documents were checked: '+(rn2.reason||''));
+
+  // (o) completing the medical documents fires EXACTLY ONE law-firm submission notification (R8)
+  NOTIFS=[]; TASKS=[]; SYNCS=[]; firedRules=new Set();
+  let o1 = freshWard({stage:3, funding:'family', representative:'professional'});
+  o1.docs['docltr']=true; o1.docs['questionnaire']=true;
+  let ro = advanceWard(o1);   // 3 -> 4
+  assert(ro.ok && o1.stage===4, '(o) ward did not reach Legal submission: '+(ro.reason||''));
+  const lawPings = NOTIFS.filter(x=>/law firm/i.test(x.text) && /submit/i.test(x.text)).length;
+  assert(lawPings===1, '(o) expected exactly 1 law-firm submission notification, got '+lawPings);
+  assert(firedRules.has('R8'), '(o) R8 not fired');
+
+  // (p) payer = Corporate-funded logs the referral route (owner differs) (R9)
+  NOTIFS=[]; TASKS=[]; SYNCS=[]; firedRules=new Set();
+  let p1 = freshWard({stage:3, funding:'corporate', representative:'professional'});
+  p1.docs['docltr']=true; p1.docs['questionnaire']=true;
+  let rp = advanceWard(p1);   // 3 -> 4
+  assert(rp.ok && p1.stage===4, '(p) corporate ward did not reach Legal submission: '+(rp.reason||''));
+  assert(firedRules.has('R9'), '(p) R9 not fired');
+  const referralNoted = p1.timeline.some(t=>/referral/i.test(t)) || p1.log.some(e=>/referral/i.test(e.text));
+  assert(referralNoted, '(p) corporate case did not log the referral route');
+
+  // (r) approval creates the external-task-board sync entry + sends the Verification Checklist (R4)
+  NOTIFS=[]; TASKS=[]; SYNCS=[]; firedRules=new Set();
+  let r1 = freshWard({stage:6, funding:'family', representative:'professional'});
+  fillAllDocs(r1); r1.lvr=true;
+  let rr = advanceWard(r1);   // 6 -> 7
+  assert(rr.ok && r1.stage===7, '(r) ward did not reach Approved: '+(rr.reason||''));
+  assert(firedRules.has('R4'), '(r) R4 not fired');
+  const syncEntry = SYNCS.find(s=>s.ward===r1.id);
+  assert(!!syncEntry, '(r) external task-board sync entry not created at approval');
+  assert(r1.syncedToTaskBoard===true, '(r) ward not flagged as synced to the external task board');
+  const vcSent = NOTIFS.some(x=>/verification checklist/i.test(x.text));
+  assert(vcSent, '(r) Verification Checklist notification not sent at approval');
+
+  // (k) unverified hearing date renders the warning state in Court Watch (live DOM)
+  NOTIFS=saveN; TASKS=saveT; SYNCS=saveS; firedRules=saveF; WARDS=saveW; idSeq=saveSeq;
+  // seed a live ward at stage 6 with an unverified hearing and re-render court watch
+  seedWorld();
+  const kw = WARDS.find(w=>w.stage===6);
+  if(kw){ kw.hearingConfirmed=false; if(!kw.courtWatch) kw.courtWatch={status:'sched',date:simHearingDate(),lastChecked:stamp()}; kw.courtWatch.status='sched'; if(!kw.courtWatch.date) kw.courtWatch.date=simHearingDate(); }
+  renderCourtWatch();
+  const cwHTML = $('#cwBody').innerHTML.toLowerCase();
+  assert(kw!=null, '(k) no stage-6 ward to test the unverified hearing warning');
+  assert(/reported, not verified/.test(cwHTML), '(k) Court Watch did not render the "reported, not verified" warning');
+
+  // (l) importing the embedded sample yields 11 cards + 1 warning row
+  NOTIFS=[]; TASKS=[]; SYNCS=[]; firedRules=new Set(); WARDS=[]; idSeq=100;
+  const impRes = importCSV(SAMPLE_CSV);
+  assert(impRes.ok, '(l) sample import rejected: '+(impRes.message||''));
+  assert(impRes.imported===11, '(l) expected 11 imported cards, got '+impRes.imported);
+  assert(impRes.warnings.length===1, '(l) expected exactly 1 warning row, got '+impRes.warnings.length+' -> '+impRes.warnings.join(' | '));
+  assert(/clamp/i.test(impRes.warnings[0]||''), '(l) the warning was not the invalid-stage clamp: '+(impRes.warnings[0]||''));
+
+  // restore the live world for normal viewing
+  NOTIFS=saveN; TASKS=saveT; SYNCS=saveS; firedRules=saveF; WARDS=saveW; idSeq=saveSeq;
+  seedWorld();
+  renderAll();
+
+  // (q) court-watch cadence selector persists the chosen value (live DOM)
+  const qw = WARDS.find(w=>w.stage===6);
+  assert(qw!=null, '(q) no stage-6 ward to test the cadence selector');
+  if(qw){
+    openDrawer(qw.id);
+    const sel = $('#cadenceSelect');
+    assert(!!sel, '(q) cadence selector not rendered for the stage-6 ward');
+    if(sel){
+      sel.value='d4';
+      sel.dispatchEvent(new Event('change'));
+      assert(qw.courtCadence==='d4', '(q) cadence value not persisted on the ward, got '+qw.courtCadence);
+      const sel2 = $('#cadenceSelect');
+      assert(!!sel2 && sel2.value==='d4', '(q) re-rendered selector did not retain the chosen value');
+    }
+    closeDrawer();
+  }
+
+  // (m) forbidden-names grep over the rendered DOM (includes this script)
+  const html = document.documentElement.outerHTML.toLowerCase();
+  const hits = FORBIDDEN.filter(f=>html.includes(f));
+  assert(hits.length===0, '(m) forbidden string(s) present in DOM: '+hits.join(', '));
+
+  // (s) extended forbidden-names DOM grep — the newly-added names must never appear
+  const NEW_FORBIDDEN = ['vic'+'tor','bari'+'viera','nag'+'bot','de'+'rek','rf'+'ms','ja'+'son','step'+'hie'];
+  const newHits = NEW_FORBIDDEN.filter(f=>html.includes(f));
+  assert(newHits.length===0, '(s) extended forbidden string(s) present in DOM: '+newHits.join(', '));
+
+  // banner
+  const labels = 'a b c d e g h i j k l m n o p q r s'.split(' ');
+  const banner=$('#selftest-banner');
+  banner.style.display='block';
+  banner.className=pass?'pass':'fail';
+  banner.innerHTML=`<span class="st-ic">${pass?ICONS.check:ICONS.flag}</span>`
+    +`ENGINE SELF-TEST: ${pass?'PASS':'FAIL'} — assertions (a)–(s): corporate no-skip, single R1 ping, missing-doc block, R3 court-watch, `
+    +`R4 onboarding task, dismiss, deceased/R6 billing, LVR block, R7 pending-rep block, unverified-hearing warning, CSV sample (11+1), forbidden grep, `
+    +`medical-docs block (n), law-firm submission ping (o), corporate referral route (p), court-cadence persists (q), approval sync + Verification Checklist (r), extended forbidden grep (s).`
+    +(notes.length?`<ul>${notes.map(n=>'<li>'+esc(n)+'</li>').join('')}</ul>`:`<ul><li>All ${labels.length} assertions green.</li></ul>`);
+  $('#footSelftest').textContent = pass ? 'self-test: pass' : 'self-test: FAIL';
+  return pass;
+}
+
+/* =========================================================================
+   BOOT
+   ========================================================================= */
+/* =========================================================================
+   RUN COURT WATCH (demo button). Simulates the scheduled watcher checking
+   the public court calendar: any case that is "awaiting a docket match" has
+   its hearing date discovered and posted — reported, not verified — and a
+   notification fires. In production this runs on a schedule from US-based
+   infrastructure; here it is a manual button so the automation is visible
+   live during a walkthrough. Court data is simulated (synthetic case refs).
+   ========================================================================= */
+function runCourtWatch(){
+  const targets = activeWards().filter(w=>w.courtWatch && w.courtWatch.status==='await');
+  // Every watched case gets its "last checked" time bumped, whether or not a
+  // date was found — that is what a real sweep does.
+  activeWards().forEach(w=>{ if(w.courtWatch) w.courtWatch.lastChecked = stamp(); });
+  let found = 0;
+  for(const w of targets){
+    w.courtWatch.status = 'sched';
+    w.courtWatch.date = simHearingDate();
+    w.courtWatch.lastChecked = stamp();
+    w.hearingConfirmed = false;   // reported by the calendar scrape; must be verified
+    notify(w, ownerLabel(6)+' notified: hearing reported '+w.courtWatch.date+' (pending verification against the court record)');
+    logEntry(w, 'Court watch checked the public court calendar and found a hearing date: '+w.courtWatch.date+' (reported, not verified).','rule');
+    found++;
+  }
+  renderAll();
+  return found;
+}
+
+(function boot(){
+  seedWorld();
+  renderAll();
+  $('#courtWatchBtn').addEventListener('click',()=>{
+    const btn=$('#courtWatchBtn');
+    const n=runCourtWatch();
+    const cw=document.getElementById('courtWatch');
+    if(cw) cw.scrollIntoView({behavior:'smooth',block:'center'});
+    const orig=btn.innerHTML;
+    btn.disabled=true;
+    btn.textContent = n>0
+      ? ('Court watch ran — '+n+' hearing date'+(n===1?'':'s')+' found')
+      : 'Court watch ran — no new dates';
+    setTimeout(()=>{ btn.disabled=false; btn.innerHTML=orig; }, 3200);
+  });
+  $('#dClose').addEventListener('click',closeDrawer);
+  $('#scrim').addEventListener('click',closeDrawer);
+  $('#dAdvance').addEventListener('click',doAdvance);
+  $('#dBack').addEventListener('click',doSendBack);
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ closeDrawer(); closeImport(); } });
+
+  // CSV import wiring
+  $('#importBtn').addEventListener('click',openImport);
+  $('#impClose').addEventListener('click',closeImport);
+  $('#impScrim').addEventListener('click',e=>{ if(e.target===$('#impScrim')) closeImport(); });
+  $('#chooseBtn').addEventListener('click',()=>$('#fileInput').click());
+  $('#sampleBtn').addEventListener('click',()=>handleCSVText(SAMPLE_CSV));
+  $('#fileInput').addEventListener('change',e=>{
+    const f=e.target.files&&e.target.files[0]; if(!f) return;
+    const rd=new FileReader(); rd.onload=()=>handleCSVText(String(rd.result)); rd.readAsText(f);
+    e.target.value='';
+  });
+  const dz=$('#dropzone');
+  ['dragenter','dragover'].forEach(ev=>dz.addEventListener(ev,e=>{e.preventDefault();dz.classList.add('drag');}));
+  ['dragleave','drop'].forEach(ev=>dz.addEventListener(ev,e=>{e.preventDefault();dz.classList.remove('drag');}));
+  dz.addEventListener('drop',e=>{
+    const f=e.dataTransfer&&e.dataTransfer.files&&e.dataTransfer.files[0]; if(!f) return;
+    const rd=new FileReader(); rd.onload=()=>handleCSVText(String(rd.result)); rd.readAsText(f);
+  });
+
+  const params=new URLSearchParams(location.search);
+  if(params.get('selftest')==='1'){ runSelfTest(); }
+})();
+</script>
+</body>
+</html>
