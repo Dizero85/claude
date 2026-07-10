@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wardwell Coordinate — guardianship coordination + court watch</title>
+<style>
+  :root{
+    --ink:#111; --gray:#5a5a5a; --gray2:#8a8a8a; --line:#ececec; --line2:#dcdcdc;
+    --bg:#fff; --panel:#fafafa; --accent:#f2c400; --accent-deep:#c99e00;
+    --mono:"Consolas","SF Mono","Menlo",monospace;
+    --ui:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    --warn-bd:#e0b4b4; --warn-bg:#fdf3f3; --warn-fg:#8a1c1c;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--ui);font-size:15px;line-height:1.5;}
+  a{color:inherit}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px 80px}
+  h1,h2,h3{font-weight:600;margin:0}
+  .eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gray2);font-weight:600}
+  .sect-h{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gray);font-weight:700;
+          border-bottom:1px solid var(--line);padding-bottom:8px;margin:38px 0 18px}
+  .sect-h .sub{display:block;text-transform:none;letter-spacing:0;font-weight:400;color:var(--gray2);font-size:12px;margin-top:5px}
+  .muted{color:var(--gray)}
+  .mono{font-family:var(--mono)}
+  button{font-family:var(--ui);font-size:14px;cursor:pointer}
+  .btn{border:1px solid var(--ink);background:var(--ink);color:#fff;padding:9px 15px;border-radius:2px;font-weight:600;letter-spacing:.02em}
+  .btn:hover{background:#000}
+  .btn:disabled{opacity:.4;cursor:not-allowed}
+  .btn.ghost{background:#fff;color:var(--ink)}
+  .btn.ghost:hover{background:var(--panel)}
+  .btn.accent{background:var(--accent);border-color:var(--accent-deep);color:#111}
+  .btn.accent:hover{background:#ffd21a}
+  .btn.sm{padding:6px 11px;font-size:13px}
+  .btn.danger{border-color:var(--warn-bd);background:#fff;color:var(--warn-fg)}
+  .btn.danger:hover{background:var(--warn-bg)}
+  svg.ic{width:15px;height:15px;vertical-align:-2px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+
+  header.top{border-bottom:2px solid var(--ink);padding:26px 0 20px;margin-bottom:0}
+  .brandline{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+  .brand{font-size:26px;font-weight:700;letter-spacing:-.01em}
+  .brand .lens{color:var(--accent-deep)}
+  .tagline{color:var(--gray);font-size:14px}
+
+  .privacy{display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line);
+           border-left:3px solid var(--accent);padding:12px 16px;margin:18px 0 6px;font-size:14px}
+  .privacy .shieldwrap{color:var(--accent-deep);flex:0 0 auto}
+  .privacy strong{font-weight:600}
+
+  .grid{display:grid;grid-template-columns:1fr 340px;gap:26px;align-items:start}
+  @media(max-width:980px){ .grid{grid-template-columns:1fr} }
+
+  .toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0 0 14px}
+  .chips{display:flex;flex-wrap:wrap;gap:7px}
+  .chip{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;letter-spacing:.01em;
+        border:1px solid var(--line2);background:#fff;color:var(--ink);padding:5px 10px;border-radius:2px;cursor:pointer}
+  .chip svg.ic{width:13px;height:13px}
+  .chip .ccount{font-family:var(--mono);font-size:11px;color:var(--gray2);font-weight:700}
+  .chip.on{border-color:var(--ink);background:var(--ink);color:#fff}
+  .chip.on .ccount{color:#fff}
+  .chip .cdot{width:9px;height:9px;flex:0 0 auto;border:1px solid rgba(0,0,0,.35)}
+  .spacer{flex:1 1 auto}
+
+  .board{overflow-x:auto;border:1px solid var(--line);background:#fff;padding:12px}
+  .cols{display:flex;gap:10px;min-width:1180px}
+  .col{flex:1 1 0;min-width:150px;background:var(--panel);border:1px solid var(--line);display:flex;flex-direction:column}
+  .col .ch{padding:9px 10px;border-bottom:1px solid var(--line);background:#fff}
+  .col .ch .n{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;letter-spacing:.02em}
+  .col .ch .num{font-family:var(--mono);font-size:11px;color:#fff;background:var(--ink);border-radius:2px;padding:1px 6px}
+  .col .ch .owner{font-size:11px;color:var(--gray);margin-top:5px;line-height:1.35}
+  .col .ch .cnt{float:right;font-family:var(--mono);font-size:11px;color:var(--gray2);font-weight:700}
+  .col .cbody{padding:8px;display:flex;flex-direction:column;gap:8px;min-height:40px}
+
+  .wcard{border:1px solid var(--line2);border-left:3px solid var(--accent);background:#fff;padding:9px 10px;cursor:pointer;transition:box-shadow .12s}
+  .wcard:hover{box-shadow:0 1px 6px rgba(0,0,0,.10)}
+  .wcard .wn{font-weight:600;font-size:13.5px;line-height:1.2}
+  .wcard .wf{font-size:11.5px;color:var(--gray);margin-top:2px}
+  .wcard .badges{display:flex;flex-wrap:wrap;gap:4px;margin-top:7px}
+  .wcard .dim{font-size:11px;color:var(--gray2);margin-top:6px;font-family:var(--mono)}
+  .wcard.cat-standard{border-left-color:var(--accent)}
+  .wcard.cat-escalated{border-left-color:#c99e00}
+  .wcard.cat-tough{border-left-color:#7a1fa2}
+  .wcard.cat-protective{border-left-color:#1c3f6a}
+
+  .badge{display:inline-flex;align-items:center;gap:4px;font-size:10.5px;font-weight:600;letter-spacing:.02em;
+         border:1px solid var(--line2);padding:2px 6px;border-radius:2px;background:var(--panel);white-space:nowrap}
+  .badge svg.ic{width:12px;height:12px}
+  .badge.cap-need{border-color:var(--accent-deep);background:#fffdf0;color:#7a5f00}
+  .badge.cap-self{border-color:#bcdcbc;background:#f4fbf4;color:#1c5a1c}
+  .badge.cap-sign{border-color:#b9cfe8;background:#f1f6fc;color:#1c3f6a}
+  .badge.fund-corporate{border-color:#111;background:#111;color:#fff}
+  .badge.fund-family{border-color:var(--line2);background:#fff;color:var(--ink)}
+  .badge.catg-standard{border-color:var(--line2);background:#fff;color:var(--gray)}
+  .badge.catg-escalated{border-color:var(--accent-deep);background:#fffdf0;color:#7a5f00}
+  .badge.catg-tough{border-color:#d4b8e2;background:#f8f2fb;color:#5c1780}
+  .badge.catg-protective{border-color:#b9cfe8;background:#f1f6fc;color:#1c3f6a}
+  .badge.catg-dismissed{border-color:var(--line2);background:var(--panel);color:var(--gray2)}
+  .badge.rep-family{border-color:#bcdcbc;background:#f4fbf4;color:#1c5a1c}
+  .badge.rep-professional{border-color:#b9cfe8;background:#f1f6fc;color:#1c3f6a}
+  .badge.rep-pending{border-color:var(--warn-bd);background:var(--warn-bg);color:var(--warn-fg)}
+  .badge.hc-confirmed{border-color:#bcdcbc;background:#f4fbf4;color:#1c5a1c}
+  .badge.hc-unverified{border-color:var(--warn-bd);background:var(--warn-bg);color:var(--warn-fg)}
+  .badge.sync-on{border-color:var(--accent-deep);background:#fffdf0;color:#7a5f00}
+
+  .rail{display:flex;flex-direction:column;gap:22px}
+  .panel{border:1px solid var(--line);background:#fff}
+  .panel .ph{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);font-weight:700;
+             padding:11px 14px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;background:var(--panel)}
+  .panel .ph .cnt{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--gray2)}
+  .panel .pb{padding:12px 14px}
+  .panel .pb.tight{padding:0}
+
+  .rule{padding:11px 14px;border-bottom:1px solid var(--line);font-size:13px}
+  .rule:last-child{border-bottom:none}
+  .rule .rid{font-family:var(--mono);font-size:11px;font-weight:700;color:#fff;background:var(--ink);border-radius:2px;padding:1px 6px;margin-right:6px}
+  .rule .rt{font-weight:600}
+  .rule .rd{color:var(--gray);margin-top:4px;font-size:12.5px}
+  .rule.fired{background:#fffdf0;border-left:3px solid var(--accent)}
+  .rule .firemark{display:none;align-items:center;gap:5px;font-size:11px;font-weight:700;color:var(--accent-deep);margin-top:5px}
+  .rule.fired .firemark{display:inline-flex}
+
+  .feed{list-style:none;margin:0;padding:0;max-height:340px;overflow-y:auto}
+  .feed li{padding:9px 14px;border-bottom:1px solid var(--line);font-size:12.5px;display:flex;gap:8px;align-items:flex-start}
+  .feed li:last-child{border-bottom:none}
+  .feed li .ficon{flex:0 0 auto;color:var(--accent-deep);margin-top:1px}
+  .feed li.billing .ficon{color:var(--ink)}
+  .feed li .ftime{font-family:var(--mono);font-size:10.5px;color:var(--gray2);display:block;margin-top:2px}
+  .feed .empty{color:var(--gray2);font-size:12.5px;padding:12px 14px;font-style:italic}
+  .feed li .sentvia{font-family:var(--mono);font-size:10px;color:var(--gray2)}
+
+  .task{padding:10px 14px;border-bottom:1px solid var(--line);font-size:13px}
+  .task:last-child{border-bottom:none}
+  .task .tt{font-weight:600;display:flex;gap:7px;align-items:flex-start}
+  .task .tmeta{color:var(--gray);font-size:11.5px;margin-top:3px;font-family:var(--mono)}
+  .task.cancelled{opacity:.5;text-decoration:line-through}
+
+  .cw{width:100%;border-collapse:collapse;font-size:12.5px}
+  .cw th{text-align:left;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--gray2);font-weight:700;
+         padding:8px 10px;border-bottom:1px solid var(--line)}
+  .cw td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  .cw tr:last-child td{border-bottom:none}
+  .cw .cwstatus{display:inline-flex;align-items:center;gap:5px;font-weight:600;font-size:11.5px}
+  .cw .st-await{color:#7a5f00}
+  .cw .st-sched{color:#1c3f6a}
+  .cw .st-order{color:#1c5a1c}
+  .cw .lc{font-family:var(--mono);font-size:10.5px;color:var(--gray2)}
+  .cw .empty{padding:14px;color:var(--gray2);font-style:italic}
+  .cw .hcwarn{display:inline-flex;align-items:center;gap:4px;font-size:10.5px;font-weight:700;color:var(--warn-fg);
+              border:1px solid var(--warn-bd);background:var(--warn-bg);border-radius:2px;padding:1px 5px;margin-top:4px}
+  .cap{font-size:12px;color:var(--gray);padding:10px 14px;border-top:1px solid var(--line);background:var(--panel)}
+
+  .collapse{border:1px solid var(--line);background:#fff;margin-top:14px}
+  .collapse > summary{list-style:none;cursor:pointer;padding:11px 14px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+                      font-weight:700;color:var(--gray);display:flex;align-items:center;gap:8px;background:var(--panel);user-select:none}
+  .collapse > summary::-webkit-details-marker{display:none}
+  .collapse > summary .cnt{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--gray2)}
+  .collapse > summary .chev{transition:transform .15s}
+  .collapse[open] > summary .chev{transform:rotate(90deg)}
+  .clist{list-style:none;margin:0;padding:0}
+  .clist li{padding:11px 14px;border-top:1px solid var(--line);font-size:13px;display:flex;gap:10px;align-items:flex-start;cursor:pointer}
+  .clist li:hover{background:var(--panel)}
+  .clist li .ci{flex:0 0 auto;margin-top:1px;color:var(--gray)}
+  .clist .cln{font-weight:600}
+  .clist .clf{font-size:11.5px;color:var(--gray);margin-top:1px}
+  .clist .clr{font-size:11.5px;color:var(--gray);margin-top:3px;font-family:var(--mono)}
+  .clist .empty{padding:12px 14px;border-top:1px solid var(--line);color:var(--gray2);font-style:italic;font-size:12.5px}
+
+  .scrim{position:fixed;inset:0;background:rgba(17,17,17,.34);display:none;z-index:40}
+  .scrim.open{display:block}
+  .drawer{position:fixed;top:0;right:0;height:100%;width:460px;max-width:94vw;background:#fff;border-left:1px solid var(--line2);
+          box-shadow:-6px 0 24px rgba(0,0,0,.12);transform:translateX(100%);transition:transform .18s ease;z-index:41;
+          display:flex;flex-direction:column}
+  .drawer.open{transform:translateX(0)}
+  .drawer .dh{padding:16px 20px;border-bottom:2px solid var(--ink);display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+  .drawer .dh .dn{font-size:19px;font-weight:700}
+  .drawer .dh .df{font-size:13px;color:var(--gray);margin-top:2px}
+  .drawer .dh .stagepill{font-family:var(--mono);font-size:11px;background:var(--accent);border:1px solid var(--accent-deep);color:#111;
+                         border-radius:2px;padding:2px 8px;font-weight:700;display:inline-block;margin-top:8px}
+  .drawer .dh .stagepill.closed{background:var(--panel);border-color:var(--line2);color:var(--gray)}
+  .xbtn{border:1px solid var(--line2);background:#fff;border-radius:2px;width:30px;height:30px;line-height:1;flex:0 0 auto;color:var(--gray)}
+  .xbtn:hover{background:var(--panel)}
+  .drawer .db{padding:16px 20px;overflow-y:auto;flex:1 1 auto}
+  .drawer .dfoot{padding:14px 20px;border-top:1px solid var(--line);display:flex;gap:10px;flex-wrap:wrap;background:var(--panel)}
+  .dsec{margin-bottom:20px}
+  .dsec .dsh{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gray2);font-weight:700;margin-bottom:9px}
+  .dsec .capnote{font-size:11.5px;color:var(--gray);margin-top:8px;font-style:italic}
+
+  .closed-banner{display:flex;align-items:flex-start;gap:9px;border:1px solid var(--line2);background:var(--panel);
+                 padding:11px 12px;border-radius:2px;font-size:13px;margin-bottom:18px}
+  .closed-banner .cbi{flex:0 0 auto;color:var(--gray);margin-top:1px}
+  .closed-banner.deceased{border-left:3px solid var(--gray2)}
+  .closed-banner.dismissed{border-left:3px solid var(--gray2)}
+  .closed-banner b{font-weight:600}
+
+  .radiorow{display:flex;flex-direction:column;gap:7px}
+  .radiorow label{display:flex;align-items:center;gap:8px;font-size:13.5px;cursor:pointer;border:1px solid var(--line);padding:8px 10px;border-radius:2px}
+  .radiorow label.on{border-color:var(--accent-deep);background:#fffdf0}
+  .radiorow input{margin:0}
+
+  .toggle{display:flex;gap:8px}
+  .toggle button{flex:1;border:1px solid var(--line2);background:#fff;padding:9px 8px;border-radius:2px;font-size:12.5px;font-weight:600;
+                 display:flex;align-items:center;justify-content:center;gap:6px;color:var(--gray)}
+  .toggle button.on{border-color:var(--ink);background:var(--ink);color:#fff}
+
+  .selrow{display:flex;flex-direction:column;gap:8px}
+  .fld{display:flex;flex-direction:column;gap:5px}
+  .fld label{font-size:11.5px;font-weight:600;color:var(--gray)}
+  select,input[type=text],input[type=date],textarea{font-family:var(--ui);font-size:13.5px;border:1px solid var(--line2);
+    border-radius:2px;padding:8px 10px;background:#fff;color:var(--ink);width:100%}
+  select:focus,input:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:-1px}
+
+  .verifyrow{display:flex;align-items:flex-start;gap:10px;border:1px solid var(--line);padding:10px 11px;border-radius:2px;font-size:13px}
+  .verifyrow input{margin:1px 0 0;flex:0 0 auto;width:16px;height:16px}
+  .verifyrow .vl{flex:1}
+  .verifyrow .vreq{font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--accent-deep);
+                   border:1px solid var(--accent-deep);background:#fffdf0;border-radius:2px;padding:1px 5px}
+  .verifyrow.on{border-color:#bcdcbc;background:#f4fbf4}
+
+  .hcbox{border:1px solid var(--warn-bd);background:var(--warn-bg);color:var(--warn-fg);padding:10px 12px;border-radius:2px;font-size:12.5px;margin-top:9px}
+  .hcbox .hcl{font-weight:700;display:flex;align-items:center;gap:6px;margin-bottom:4px}
+
+  .doclist{display:flex;flex-direction:column;gap:0;border:1px solid var(--line)}
+  .doc{display:flex;align-items:center;gap:10px;padding:9px 11px;border-bottom:1px solid var(--line);font-size:13px}
+  .doc:last-child{border-bottom:none}
+  .doc input{margin:0;flex:0 0 auto;width:16px;height:16px}
+  .doc .dl{flex:1}
+  .doc .req{font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--accent-deep);border:1px solid var(--accent-deep);
+            background:#fffdf0;border-radius:2px;padding:1px 5px}
+  .doc .opt{font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--gray2)}
+  .doc.done .dl{color:var(--gray)}
+
+  .log{list-style:none;margin:0;padding:0;border:1px solid var(--line);max-height:230px;overflow-y:auto}
+  .log li{padding:8px 11px;border-bottom:1px solid var(--line);font-size:12.5px;display:flex;gap:8px;align-items:flex-start}
+  .log li:last-child{border-bottom:none}
+  .log li .lt{font-family:var(--mono);font-size:10px;color:var(--gray2);flex:0 0 auto;width:120px}
+  .log li .lx{flex:1}
+  .log li .li-ic{flex:0 0 auto;color:var(--gray);margin-top:1px}
+  .log li.rule-entry .lx{color:#7a5f00}
+
+  .advmsg{display:none;margin-top:10px;border:1px solid var(--warn-bd);background:var(--warn-bg);color:var(--warn-fg);padding:10px 12px;font-size:12.5px;border-radius:2px}
+  .advmsg.show{display:block}
+  .advmsg .lbl{font-weight:700;display:flex;align-items:center;gap:6px;margin-bottom:4px}
+
+  .impscrim{position:fixed;inset:0;background:rgba(17,17,17,.34);display:none;z-index:50;align-items:flex-start;justify-content:center;padding:60px 16px}
+  .impscrim.open{display:flex}
+  .impbox{background:#fff;border:1px solid var(--line2);box-shadow:0 12px 40px rgba(0,0,0,.18);width:560px;max-width:96vw;max-height:82vh;
+          display:flex;flex-direction:column;border-radius:2px}
+  .impbox .ih{padding:15px 18px;border-bottom:2px solid var(--ink);display:flex;justify-content:space-between;align-items:center}
+  .impbox .it{font-size:16px;font-weight:700}
+  .impbox .ibd{padding:16px 18px;overflow-y:auto}
+  .dropzone{border:2px dashed var(--line2);border-radius:2px;padding:26px 16px;text-align:center;color:var(--gray);background:var(--panel)}
+  .impbtns{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;align-items:center}
+  .imprep{margin-top:16px;border:1px solid var(--line);border-radius:2px;font-size:12.5px}
+  .imprep .irh{padding:9px 12px;border-bottom:1px solid var(--line);font-weight:700;display:flex;gap:8px;align-items:center;background:var(--panel)}
+  .imprep .irh.ok{color:#1c5a1c}
+  .imprep .irh.warn{color:var(--warn-fg)}
+  .imprep .irh.err{color:var(--warn-fg)}
+  .imprep ul{list-style:none;margin:0;padding:0;max-height:200px;overflow-y:auto}
+  .imprep li{padding:7px 12px;border-bottom:1px solid var(--line);display:flex;gap:8px;align-items:flex-start}
+  .imprep li:last-child{border-bottom:none}
+  .imprep li.warn .rii{color:var(--warn-fg)}
+  .imprep li.ok .rii{color:#1c5a1c}
+
+  footer{margin-top:60px;border-top:1px solid var(--line);padding-top:16px;font-size:12px;color:var(--gray2);line-height:1.7}
+  footer .st{color:var(--accent-deep);font-weight:600}
+  .hidden{display:none!important}
+  .toast{position:fixed;bottom:20px;right:20px;background:var(--ink);color:#fff;padding:10px 16px;border-radius:2px;font-size:13px;z-index:60;
+         box-shadow:0 6px 20px rgba(0,0,0,.2)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div class="brandline">
+      <div class="brand">Wardwell <span class="lens">Coordinate</span></div>
+      <div class="tagline">One board for every guardianship case, every owner, every deadline — with the court calendar watched for you.</div>
+    </div>
+  </header>
+
+  <div class="privacy">
+    <span class="shieldwrap">
+      <svg class="ic" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+    </span>
+    <span><strong id="backendStatus">Connecting to the local Wardwell Coordinate server…</strong></span>
+  </div>
+  <p class="muted" style="font-size:13px;margin:6px 0 0">
+    This is the real pilot backend: a SQLite database, a server-side rules engine, and a scheduled court-watch job —
+    not the in-browser demo. Court watch defaults to a mock provider (no network calls) unless you configure a real one; see the README.
+  </p>
+
+  <div class="grid" style="margin-top:26px">
+
+    <div>
+      <div class="sect-h" style="margin-top:0">Case pipeline
+        <span class="sub">Eight stages, each with a named owner role and a live count. Click any ward card to open its file.</span>
+      </div>
+
+      <div class="toolbar">
+        <div class="chips" id="filterChips"></div>
+        <span class="spacer"></span>
+        <button class="btn ghost sm" id="courtWatchRunBtn">
+          <svg class="ic" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16"/><path d="M4 9h16"/><path d="M9 14l2 2 4-4"/></svg>
+          Run court watch now
+        </button>
+        <button class="btn ghost sm" id="importBtn">
+          <svg class="ic" viewBox="0 0 24 24"><path d="M12 3v11"/><path d="M8 10l4 4 4-4"/><path d="M5 20h14"/></svg>
+          Import cases (CSV)
+        </button>
+      </div>
+
+      <div class="board">
+        <div class="cols" id="cols"></div>
+      </div>
+      <p class="muted" style="font-size:12px;margin-top:10px">
+        Open a card and use <b>Advance stage</b> / <b>Send back</b>. Rules run server-side — the API is the source of truth, not this page.
+      </p>
+
+      <details class="collapse" id="dismissedWrap">
+        <summary>
+          <svg class="ic chev" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+          Dismissed cases <span class="cnt" id="dismissedCnt">0</span>
+        </summary>
+        <ul class="clist" id="dismissedList"></ul>
+      </details>
+
+      <details class="collapse" id="deceasedWrap">
+        <summary>
+          <svg class="ic chev" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+          Closed — deceased <span class="cnt" id="deceasedCnt">0</span>
+        </summary>
+        <ul class="clist" id="deceasedList"></ul>
+      </details>
+    </div>
+
+    <div class="rail">
+      <div class="panel">
+        <div class="ph"><svg class="ic" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h10"/></svg> Rules engine (server-side)</div>
+        <div class="pb tight" id="rulesPanel"></div>
+      </div>
+
+      <div class="panel">
+        <div class="ph"><svg class="ic" viewBox="0 0 24 24"><path d="M4 4h16v12H7l-3 3z"/></svg> Notifications
+          <span class="cnt" id="notifCnt">0</span></div>
+        <div class="pb tight"><ul class="feed" id="notifFeed"></ul></div>
+      </div>
+
+      <div class="panel">
+        <div class="ph"><svg class="ic" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg> Tasks
+          <span class="cnt" id="taskCnt">0</span></div>
+        <div class="pb tight" id="taskList"></div>
+      </div>
+
+      <div class="panel">
+        <div class="ph"><svg class="ic" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg> External task board
+          <span class="cnt" id="syncCnt">0</span></div>
+        <div class="pb tight" id="syncList"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sect-h">Court watch
+    <span class="sub">Wards currently filed with the court (stages 5–6). A scheduled job checks these on the cadence set per case.</span>
+  </div>
+  <div class="panel">
+    <div class="pb tight">
+      <table class="cw" id="courtWatch">
+        <thead><tr><th>Ward</th><th>Case reference</th><th>Status</th><th>Last checked</th></tr></thead>
+        <tbody id="cwBody"></tbody>
+      </table>
+      <div class="cap" id="courtWatchCaption"></div>
+    </div>
+  </div>
+
+  <footer>
+    <div>Wardwell Coordinate pilot backend &middot; SQLite + Express &middot; server-side rules engine, no black box.</div>
+    <div style="margin-top:4px" id="footTests">Run <span class="mono">npm test</span> in <span class="mono">wardwell-coordinate/</span> to verify the rules engine and CSV importer.</div>
+  </footer>
+
+</div>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <div class="dh">
+    <div>
+      <div class="dn" id="dName">—</div>
+      <div class="df" id="dFacility">—</div>
+      <div class="stagepill" id="dStage">—</div>
+    </div>
+    <button class="xbtn" id="dClose" title="Close">&times;</button>
+  </div>
+  <div class="db" id="dBody"></div>
+  <div class="dfoot" id="dFoot">
+    <button class="btn ghost sm" id="dBack"><svg class="ic" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg> Send back</button>
+    <button class="btn accent sm" id="dAdvance">Advance stage <svg class="ic" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+  </div>
+</aside>
+
+<div class="impscrim" id="impScrim">
+  <div class="impbox">
+    <div class="ih">
+      <div class="it">Import cases (CSV)</div>
+      <button class="xbtn" id="impClose" title="Close">&times;</button>
+    </div>
+    <div class="ibd">
+      <p class="muted" style="font-size:12.5px;margin:0 0 12px">
+        Expected header: <span class="mono" style="display:block;margin-top:6px;font-size:11px;color:var(--ink)" id="csvHeaderHint">case_name,facility,stage,category,funding,representative,filed_date,hearing_date,hearing_confirmed</span>
+      </p>
+      <div class="dropzone" id="dropzone">Drop a <b>.csv</b> here, or choose a file.</div>
+      <div class="impbtns">
+        <input type="file" id="fileInput" accept=".csv,text/csv" class="hidden">
+        <button class="btn sm" id="chooseBtn">Choose file…</button>
+        <button class="btn ghost sm" id="sampleBtn">Load shipped sample</button>
+        <span class="muted" style="font-size:11.5px">Parsed server-side, saved to the database.</span>
+      </div>
+      <div id="impReport"></div>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
