@@ -1,13 +1,13 @@
 case_name,facility,stage,category,funding,representative,filed_date,hearing_date,hearing_confirmed
-Agatha Merriweather,Sunnybrook Health Pavilion,1,Standard,Family (private pay),Pending,,,
-Rufus Blackwood,Elmcrest Care Suites,2,Escalated (paid),Corporate-funded,Professional guardian,2026-06-18,,
-Priscilla Vandermeer,Oakhaven Skilled Nursing,3,Tough case,Family (private pay),Family member (grandson C. Vandermeer),2026-06-20,,
-Barnaby Wickersham,Thornfield Senior Residences,4,Protective services,Corporate-funded,Professional guardian,2026-06-22,,
-Millicent Ravensworth,Brookmeadow Rehabilitation,5,Standard,Family (private pay),Professional guardian,2026-06-25,,
-Ignatius Hollingsworth,Pinecrest Assisted Living,6,Escalated (paid),Corporate-funded,Professional guardian,2026-06-15,"Jul 22, 2026",yes
-Seraphina Ellsworth,Fernvale Care Community,6,Standard,Family (private pay),Family member (son P. Ellsworth),2026-06-16,"Jul 18, 2026",no
-Percival Ashcombe,Meadowgate Nursing Center,7,Protective services,Corporate-funded,Professional guardian,2026-06-10,"Jul 09, 2026",yes
-Cordelia Fairweather,Larkspur Memory Care,8,Standard,Family (private pay),Professional guardian,2026-06-05,"Jul 02, 2026",yes
-Horatio Pemberton,Cliffside Retirement Villa,99,Standard,Family (private pay),Pending,,,
-Beatrice Wolcott,Harborview Senior Care,4,Tough case,Corporate-funded,Professional guardian,2026-06-21,,
-Ambrose Fitzgerald,Rosewood Convalescent Home,2,Standard,Family (private pay),Family member (wife L. Fitzgerald),2026-06-19,,
+Helen Carver,Sunnybrook Health Pavilion,1,Standard,Family (private pay),Pending,,,
+George Mercer,Elmcrest Care Suites,2,Escalated (paid),Corporate-funded,Professional guardian,2026-06-18,,
+Nancy Whitfield,Oakhaven Skilled Nursing,3,Tough case,Family (private pay),Family member (grandson C. Whitfield),2026-06-20,,
+Arthur Sullivan,Thornfield Senior Residences,4,Protective services,Corporate-funded,Professional guardian,2026-06-22,,
+Ruth Callahan,Brookmeadow Rehabilitation,5,Standard,Family (private pay),Professional guardian,2026-06-25,,
+Joseph Underwood,Pinecrest Assisted Living,6,Escalated (paid),Corporate-funded,Professional guardian,2026-06-15,"Jul 22, 2026",yes
+Gloria Ellison,Fernvale Care Community,6,Standard,Family (private pay),Family member (son P. Ellison),2026-06-16,"Jul 18, 2026",no
+Howard Pratt,Meadowgate Nursing Center,7,Protective services,Corporate-funded,Professional guardian,2026-06-10,"Jul 09, 2026",yes
+Marion Sinclair,Larkspur Memory Care,8,Standard,Family (private pay),Professional guardian,2026-06-05,"Jul 02, 2026",yes
+Clarence Whitmore,Cliffside Retirement Villa,99,Standard,Family (private pay),Pending,,,
+Evelyn Barrett,Harborview Senior Care,4,Tough case,Corporate-funded,Professional guardian,2026-06-21,,
+Leonard Fisher,Rosewood Convalescent Home,2,Standard,Family (private pay),Family member (wife L. Fisher),2026-06-19,,

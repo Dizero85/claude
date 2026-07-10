@@ -43,14 +43,14 @@ test('skips a row with no case_name and warns', () => {
 
 test('a stage-6 imported case carries its hearing date and starts unverified when hearing_confirmed=no', () => {
   const res = importCSV(SAMPLE, harness());
-  const sera = res.wards.find((w) => w.ward.name === 'Seraphina Ellsworth').ward;
-  assert.equal(sera.stage, 6);
-  assert.equal(sera.courtWatch.date, 'Jul 18, 2026');
-  assert.equal(sera.hearingConfirmed, false);
+  const gloria = res.wards.find((w) => w.ward.name === 'Gloria Ellison').ward;
+  assert.equal(gloria.stage, 6);
+  assert.equal(gloria.courtWatch.date, 'Jul 18, 2026');
+  assert.equal(gloria.hearingConfirmed, false);
 });
 
 test('corporate-funded rows at stage >=4 get the referral timeline note', () => {
   const res = importCSV(SAMPLE, harness());
-  const barnaby = res.wards.find((w) => w.ward.name === 'Barnaby Wickersham').ward;
-  assert.ok(barnaby.timeline.some((t) => t.includes('referral')));
+  const arthur = res.wards.find((w) => w.ward.name === 'Arthur Sullivan').ward;
+  assert.ok(arthur.timeline.some((t) => t.includes('referral')));
 });

@@ -13,15 +13,15 @@ import { mkWard } from './rules.js';
 import { saveWard, genCaseRef, insertLog } from './store.js';
 
 const WARD_SEED = [
-  { name: 'Harold Pennyworth', facility: 'Cedar Bluff Care Center', capacity: 'need', funding: 'family', stage: 1, category: 'standard', representative: 'pending' },
-  { name: 'Marguerite Alcott', facility: 'Lindenwood Rehab', capacity: 'sign', funding: 'family', stage: 2, withholdCurrent: true, category: 'standard', representative: 'family', repName: 'niece, T. Alcott' },
-  { name: 'Delbert Fanshaw', facility: 'Maple Terrace Nursing', capacity: 'need', funding: 'family', stage: 3, withholdCurrent: true, category: 'tough', representative: 'family', repName: 'son, R. Fanshaw' },
-  { name: 'Ophelia Grimsby', facility: 'Riverstone Senior Living', capacity: 'need', funding: 'corporate', stage: 4, category: 'escalated', representative: 'professional' },
-  { name: 'Cornelius Ashby', facility: 'Birchwood Manor', capacity: 'need', funding: 'family', stage: 5, category: 'protective', representative: 'professional' },
-  { name: 'Winifred Prentiss', facility: 'Hollowmere Care Home', capacity: 'sign', funding: 'corporate', stage: 6, category: 'standard', representative: 'professional' },
-  { name: 'Ezra Tillingham', facility: 'Stonegate Assisted Living', capacity: 'need', funding: 'family', stage: 7, category: 'standard', representative: 'family', repName: 'daughter, M. Tillingham' },
-  { name: 'Beatrix Longworth', facility: 'Fairhaven Care Center', capacity: 'self', funding: 'family', stage: 8, category: 'standard', representative: 'professional' },
-  { name: 'Thaddeus Corliss', facility: 'Wexford Nursing Home', capacity: 'need', funding: 'corporate', stage: 4, optionalOn: true, category: 'escalated', representative: 'professional' },
+  { name: 'Harold Bennett', facility: 'Cedar Bluff Care Center', capacity: 'need', funding: 'family', stage: 1, category: 'standard', representative: 'pending' },
+  { name: 'Margaret Alvarez', facility: 'Lindenwood Rehab', capacity: 'sign', funding: 'family', stage: 2, withholdCurrent: true, category: 'standard', representative: 'family', repName: 'niece, T. Alvarez' },
+  { name: 'Frank Delgado', facility: 'Maple Terrace Nursing', capacity: 'need', funding: 'family', stage: 3, withholdCurrent: true, category: 'tough', representative: 'family', repName: 'son, R. Delgado' },
+  { name: 'Patricia Holloway', facility: 'Riverstone Senior Living', capacity: 'need', funding: 'corporate', stage: 4, category: 'escalated', representative: 'professional' },
+  { name: 'Robert Ashford', facility: 'Birchwood Manor', capacity: 'need', funding: 'family', stage: 5, category: 'protective', representative: 'professional' },
+  { name: 'Eleanor Prescott', facility: 'Hollowmere Care Home', capacity: 'sign', funding: 'corporate', stage: 6, category: 'standard', representative: 'professional' },
+  { name: 'Walter Tillman', facility: 'Stonegate Assisted Living', capacity: 'need', funding: 'family', stage: 7, category: 'standard', representative: 'family', repName: 'daughter, M. Tillman' },
+  { name: 'Dorothy Langston', facility: 'Fairhaven Care Center', capacity: 'self', funding: 'family', stage: 8, category: 'standard', representative: 'professional' },
+  { name: 'Raymond Coleman', facility: 'Wexford Nursing Home', capacity: 'need', funding: 'corporate', stage: 4, optionalOn: true, category: 'escalated', representative: 'professional' },
 ];
 
 export function seedWorld(db) {
