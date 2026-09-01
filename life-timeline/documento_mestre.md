@@ -18,7 +18,15 @@ Create a timeline-style presentation telling the story of Di's life — a storyl
 
 ## Current Status
 
-**Idea captured — nothing built yet.** Di raised this on 2026-09-01, said he wants to work on it "in the next couple days," and will bring photos and more details once he has them. This session only registered the context; no presentation content or format has been created.
+**Scope clarified — building first draft.** Di confirmed on 2026-09-01:
+
+- **Format:** slideshow, delivered as a PDF export. Presented live to a team over Google Meet (screen share) — not a casual scrollable webpage.
+- **Scope:** NOT his whole life — just his move/career story, in 4 stages:
+  1. Where he's from (Brazil)
+  2. When he moved to the US
+  3. The type of work he did in the US
+  4. Working at the hospital, and why he moved back to Brazil
+- Photos still to come — building the deck structure and text first, photos get dropped in later.
 
 ## Known building blocks (from claude.md / soul.md — NOT yet confirmed as timeline entries)
 
@@ -30,12 +38,22 @@ These are facts already known about Di from the OS's root files. They are a star
 - Currently in Brazil staying with friends and family
 - At a crossroads: stay in Brazil, return to the US, or take a potential NYC opportunity
 
-## Open Questions (ask Di when picking this back up)
+## Open Questions — ANSWERED 2026-09-01
 
-- [ ] What format does he want? (scrollable webpage, slideshow, printed/PDF, video)
-- [ ] What's the scope — whole life from childhood, or a specific chapter (e.g. career, the move to Brazil)?
-- [ ] Who's the audience — just for himself, family, or something more public (e.g. LinkedIn/portfolio)?
-- [ ] Does he have photos ready, or do we start with placeholders and swap them in later?
+- [x] Format → slideshow / PDF export, presented live over Google Meet
+- [x] Scope → 4 stages: from Brazil → moved to US → work in the US → hospital work + move back to Brazil
+- [x] Audience → a team, in a Google Meet presentation (professional context, not just personal/family)
+- [x] Photos → not ready yet, come later; build structure/text first
+
+## Still missing (needed before the deck can be more than a skeleton)
+
+- [ ] Hometown/region in Brazil he's from
+- [ ] Year he moved to the US, and why
+- [ ] Specific roles/employers for "work in the US" stage (have partial info from claude.md: Denver Health, then Activate Care, 12+ years, colon cancer prevention/patient navigation — needs Di's confirmation these are the right ones to feature, plus dates/titles)
+- [ ] Hospital name + his role there for the last stage
+- [ ] Exact reason(s) for moving back to Brazil (claude.md says Activate Care ended its CO contract — confirm if that's the whole story or there's more to say to a team)
+- [ ] Tone/purpose: is this a "get to know me" intro deck, a professional bio for a new team, a goodbye/transition story, or something else? Changes how stage 4 should be framed
+- [ ] Photos per stage, once he has them
 
 ## Rules of operation
 
