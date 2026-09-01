@@ -18,7 +18,9 @@ Create a timeline-style presentation telling the story of Di's life — a storyl
 
 ## Current Status
 
-**Scope clarified — building first draft.** Di confirmed on 2026-09-01:
+**Gathering material — partway through the story.** Di has given stages 1-2 (from Ipatinga/Belo Horizonte to New York to Denver) and started stage 3 (Denver Health, 12 years). He paused deliberately ("let's stop there, I'll continue later") before finishing stage 3 and reaching stage 4. Full raw material is in `satelites/raw-material.md`. Don't draft actual slide text yet — wait until he has given enough for at least one full stage plus photos, or ask him if he wants a skeleton now.
+
+Scope confirmed on 2026-09-01 (first pass):
 
 - **Format:** slideshow, delivered as a PDF export. Presented live to a team over Google Meet (screen share) — not a casual scrollable webpage.
 - **Scope:** NOT his whole life — just his move/career story, in 4 stages:
@@ -45,14 +47,25 @@ These are facts already known about Di from the OS's root files. They are a star
 - [x] Audience → a team, in a Google Meet presentation (professional context, not just personal/family)
 - [x] Photos → not ready yet, come later; build structure/text first
 
-## Still missing (needed before the deck can be more than a skeleton)
+## Answered 2026-09-01 (part 2) — see satelites/raw-material.md for exact wording
 
-- [ ] Hometown/region in Brazil he's from
-- [ ] Year he moved to the US, and why
-- [ ] Specific roles/employers for "work in the US" stage (have partial info from claude.md: Denver Health, then Activate Care, 12+ years, colon cancer prevention/patient navigation — needs Di's confirmation these are the right ones to feature, plus dates/titles)
-- [ ] Hospital name + his role there for the last stage
-- [ ] Exact reason(s) for moving back to Brazil (claude.md says Activate Care ended its CO contract — confirm if that's the whole story or there's more to say to a team)
-- [ ] Tone/purpose: is this a "get to know me" intro deck, a professional bio for a new team, a goodbye/transition story, or something else? Changes how stage 4 should be framed
+- [x] Tone/purpose → get-to-know-me intro deck for the team
+- [x] Hometown → Ipatinga, Minas Gerais (mid-sized town) → moved to Belo Horizonte for school
+- [x] University/degree → Communications, university name given as "Univega, University of Belo Horizonte" — **needs spelling confirmation, don't guess the real name**
+- [x] Move to US → end of 2007, right after graduating
+- [x] New York → lived there 7 years (~end 2007 – ~2014) — but what he *did* there is still unknown
+- [x] Colorado → moved to Denver; worked at Denver Health for 12 years
+
+Di said "let's stop there, I'll continue later" — pausing here is expected, not a gap to chase.
+
+## Still missing (for when Di continues)
+
+- [ ] What he actually did for work in New York (7 years — currently a blank in the story)
+- [ ] Denver Health: role/title, what the colon cancer prevention work looked like
+- [ ] Activate Care: role, dates, how it fits with the Denver Health 12 years (claude.md implies the 12+ years spans both employers — Di said 12 years at Denver Health specifically; don't resolve this myself, ask him)
+- [ ] Stage 4: hospital name + role there
+- [ ] Why he moved back to Brazil, framed for a team audience (claude.md says Activate Care ended its CO contract — confirm if that's the whole story)
+- [ ] University name spelling ("Univega" / University of Belo Horizonte)
 - [ ] Photos per stage, once he has them
 
 ## Rules of operation

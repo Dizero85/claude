@@ -13,4 +13,4 @@
 
 ## Satellite files (in `satelites/`)
 
-(none yet — will be created as needed, e.g. draft milestone lists or photo notes)
+- [satelites/raw-material.md](satelites/raw-material.md) — Di's story, captured in his own words, session by session
