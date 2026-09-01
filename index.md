@@ -1,5 +1,5 @@
 # Di's OS — Index
-> Updated: 2026-06-09 | 2 contexts | 4 skills
+> Updated: 2026-09-01 | 3 contexts | 4 skills
 
 ## Root
 - [claude.md](claude.md) — global non-negotiable rules
@@ -9,10 +9,11 @@
 - [changelog.md](changelog.md) — general history
 - [index.md](index.md) — this catalog
 
-## Contexts (2)
+## Contexts (3)
 
 - [job-search](job-search/index.md) — finding remote-only jobs that fit Di's healthcare background
 - [personal-finances](personal-finances/index.md) — managing finances and exploring income growth with AI tools
+- [life-timeline](life-timeline/index.md) — timeline-style presentation of Di's life story
 
 ## How to Use
 1. **End of Day** (each session): agent synthesizes the session, you confirm; updates master, captures learnings (~5 min)
