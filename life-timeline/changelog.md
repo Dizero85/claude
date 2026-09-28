@@ -5,6 +5,12 @@
 
 ---
 
+## 2026-09-28 (part 9) — New "hobbies" slide: beach travel
+
+- Di sent 4 Brazil vacation photos (beach x3, colonial-town plaza x1), asked for a dedicated hobbies slide — beach trips are his first named hobby
+- Added a new slide, `hobbies`, after `brazil` and before `closing` — not tied to a life stage, so no chapter number, same treatment as `denver-life`/`new-york-photos`
+- Built with the polaroid-scatter pattern; more hobby photos expected, may need to grow or split later
+
 ## 2026-09-28 (part 8) — 14 Denver photos: photo grid + hospital corner accent
 
 - Di sent 14 photos: 12 outdoors/city (mountains, hikes, snow, Red Rocks, Big Blue Bear, aerial Boulder) and 2 from the hospital he worked at

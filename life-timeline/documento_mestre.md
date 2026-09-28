@@ -44,7 +44,9 @@ Part 8 (same day): Di sent **14 Denver photos** — 12 outdoors/city (mountains,
 - `denver-life`: replaced the 3 generic icon cards with an actual 4x3 photo grid (all 12 outdoor/city photos) — real photos beat icons, so the icons are gone from this slide now
 - `denver` (career slide): added the 2 hospital photos as a small pinned polaroid-style pair in the top-right corner; narrowed the heading's width slightly so it doesn't collide with them
 
-Still no photos for: Ipatinga (swimming), Belo Horizonte, Brazil, cover. Two patterns now established for reuse:
+Still no photos for: Ipatinga (swimming), Belo Horizonte, Brazil, cover. Part 9 (same day): Di sent 4 Brazil vacation photos (2 crowded beach, 1 empty beach, 1 colonial-town plaza — likely Ouro Preto or similar) and asked for a new **hobbies** slide — his first hobby: beach trips/travel. This is a different kind of content than the chronological chapters (not tied to a life stage), so it got its own slide, placed after `brazil` and before `closing`, no chapter number (same treatment as `denver-life`/`new-york-photos`). Built with the polaroid-scatter pattern. Di said more hobby photos are coming — this slide may need to grow or split into more than one once they arrive.
+
+Two patterns now established for reuse:
 - **Photo grid** (denver-life): `display:grid` of `<img object-fit:cover>` tiles, good for many photos of one theme
 - **Polaroid scatter** (new-york-photos, and the small corner pair on denver): white-padded cards, box-shadow, slight `rotate()`, `position:absolute` — good for a handful of photos as a creative accent
 
