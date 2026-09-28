@@ -5,6 +5,12 @@
 
 ---
 
+## 2026-09-28 (part 11) — First photo on the Ipatinga slide
+
+- Di sent one photo: a pre-made collage of 6 childhood swim-team photos from Ipatinga
+- Redesigned the Ipatinga slide's right column — photo now prominent, the 3 career stats condensed into small pill badges below it instead of a full text-only stat card
+- Still missing photos: Belo Horizonte, Brazil (the move-back chapter), cover
+
 ## 2026-09-28 (part 10) — Second hobby: live music / concerts
 
 - Di sent 10 concert photos (club and stadium shows, a couple of named artists) — his second hobby is live music, especially big stadium shows

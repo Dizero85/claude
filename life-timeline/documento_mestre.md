@@ -48,6 +48,8 @@ Still no photos for: Ipatinga (swimming), Belo Horizonte, Brazil, cover. Part 9 
 
 Part 10 (same day): Second hobby — Di sent 10 concert photos (club shows, arena/stadium shows, a couple of named-artist shots like Marina) and said his hobby is live music/concerts, especially big stadium shows. As predicted, the hobbies content grew past one slide — added `hobbies-concerts` right after `hobbies`, using the photo-grid pattern (5x2) since 10 photos is too many for the polaroid-scatter style. Deck is now 12 slides. If more hobbies come up, keep splitting into one slide per hobby rather than cramming into `hobbies`.
 
+Part 11 (same day): First photo for the **Ipatinga** slide — Di sent one image, already a pre-made collage of 6 childhood swim-team photos (team group shots, poolside, a young kid at the beach). Redesigned the Ipatinga slide's right column: the photo now takes the prominent spot (large, rounded, shadowed) with the three stats ("15 years," "Top 10 in Brazil," "Dozens of medals") condensed into small pill badges below it, replacing the old all-text dark stat card. This is the first chapter slide with a real photo — same "photo beats icons/stats" principle as the Denver redesign. Still no photos for Belo Horizonte, Brazil, or the cover.
+
 Two patterns now established for reuse:
 - **Photo grid** (denver-life): `display:grid` of `<img object-fit:cover>` tiles, good for many photos of one theme
 - **Polaroid scatter** (new-york-photos, and the small corner pair on denver): white-padded cards, box-shadow, slight `rotate()`, `position:absolute` — good for a handful of photos as a creative accent
