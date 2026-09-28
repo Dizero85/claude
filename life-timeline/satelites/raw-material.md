@@ -6,6 +6,13 @@
 
 ---
 
+## Session 2026-09-28 (part 12) — NY duration confirmed, new job, deck review feedback
+
+- **Confirmed: 5 years in New York.** This settles the earlier back-and-forth (7 years said twice, then date-math implying ~4-5 years) — 5 years is now the number, and it lines up with the dates (end of 2007 to 2012).
+- New job in NY: **personal assistant**, alongside restaurants, dog walking, and English classes
+- Deck review feedback (not biographical, but important for future slides): don't want text content in white/dark "boxes" — compared it to a past presentation he didn't like the look of. Explicitly likes the photo montages/collages — keep those as they are. Applied a deck-wide style change (see documento_mestre.md) replacing boxed cards with a thin top-rule accent.
+- Also asked to merge the two New York slides (text + photos) into one, since the text-only one felt empty on its own
+
 ## Session 2026-09-28 (part 2) — confirmations + one new wrinkle
 
 **Resolved:**

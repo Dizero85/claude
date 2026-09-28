@@ -48,7 +48,19 @@ Still no photos for: Ipatinga (swimming), Belo Horizonte, Brazil, cover. Part 9 
 
 Part 10 (same day): Second hobby — Di sent 10 concert photos (club shows, arena/stadium shows, a couple of named-artist shots like Marina) and said his hobby is live music/concerts, especially big stadium shows. As predicted, the hobbies content grew past one slide — added `hobbies-concerts` right after `hobbies`, using the photo-grid pattern (5x2) since 10 photos is too many for the polaroid-scatter style. Deck is now 12 slides. If more hobbies come up, keep splitting into one slide per hobby rather than cramming into `hobbies`.
 
-Part 11 (same day): First photo for the **Ipatinga** slide — Di sent one image, already a pre-made collage of 6 childhood swim-team photos (team group shots, poolside, a young kid at the beach). Redesigned the Ipatinga slide's right column: the photo now takes the prominent spot (large, rounded, shadowed) with the three stats ("15 years," "Top 10 in Brazil," "Dozens of medals") condensed into small pill badges below it, replacing the old all-text dark stat card. This is the first chapter slide with a real photo — same "photo beats icons/stats" principle as the Denver redesign. Still no photos for Belo Horizonte, Brazil, or the cover.
+Part 11 (same day): First photo for the **Ipatinga** slide — Di sent one image, already a pre-made collage of 6 childhood swim-team photos (team group shots, poolside, a young kid at the beach). Redesigned the Ipatinga slide's right column: the photo now takes the prominent spot (large, rounded, shadowed) with the three stats ("15 years," "Top 10 in Brazil," "Dozens of medals") condensed into small pill badges below it, replacing the old all-text dark stat card. This is the first chapter slide with a real photo — same "photo beats icons/stats" principle as the Denver redesign.
+
+Part 12 (same day) — **visual refresh + New York merge.** Di reviewed the deck and gave two pieces of feedback:
+1. The New York slide felt empty/text-only sitting apart from its photo slide — merge them into one slide with text AND photos, don't leave a bare slide.
+2. New content: **5 years in New York** (this resolves the earlier 7-vs-dates discrepancy in Di's favor — confirmed 5, matching the 2007→2012 math). Also a 4th job: **personal assistant** (alongside restaurants, dog walking, English classes).
+3. Overall visual note: he doesn't want the deck's card/box look — "don't want it to be like those boxes... looked like the last presentation I did." He explicitly said the **photo montages are great, keep those** — the complaint is about the white/dark rounded-rectangle stat cards used for text content.
+
+Applied:
+- Merged `new-york` + `new-york-photos` into a single `new-york` slide: short narrative paragraph (English, restaurants, dog walking, personal assistant, 5 years) + the same 4-photo polaroid collage, scaled to fit alongside the text. Deleted `new-york-photos` from the deck (order, sections, and the file itself).
+- **De-boxed the stat/content cards deck-wide**: removed white/dark fill + shadow + border-radius from `journey`, `belo-horizonte`, `denver` (stat cards only — the 2 pinned hospital photos kept their polaroid-photo treatment), `brazil`, and `ipatinga`'s stat pills. New pattern: a thin `border-top:3px solid #DD9A3D` + generous top padding, text directly on the slide's own background — editorial/rule-based instead of "dashboard card." Icons, photos (polaroid scatter + grid), and typography untouched — those were explicitly praised.
+- This is now the deck's established visual language for any future content slides: **no filled/shadowed boxes for text; top-rule accents only. Photos keep their polaroid or grid treatment.**
+
+Still no photos for Belo Horizonte, Brazil, or the cover.
 
 Two patterns now established for reuse:
 - **Photo grid** (denver-life): `display:grid` of `<img object-fit:cover>` tiles, good for many photos of one theme

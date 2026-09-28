@@ -5,6 +5,14 @@
 
 ---
 
+## 2026-09-28 (part 12) — Visual refresh: de-boxed the deck, merged New York slides
+
+- Di reviewed the deck: New York felt empty apart from its photo slide, and he doesn't want the "boxy" card look (compared it to a past presentation he didn't like) — but said the photo montages are great, keep those
+- Content updates: confirmed **5 years in New York** (resolves the earlier 7-years discrepancy), added a 4th NY job: **personal assistant**
+- Merged `new-york` + `new-york-photos` into one slide (narrative text + the same photo collage, resized); deleted `new-york-photos` entirely
+- De-boxed stat/content cards deck-wide (`journey`, `belo-horizonte`, `denver`'s stat cards, `brazil`, `ipatinga`'s stat line): dropped filled/shadowed rounded boxes for a thin gold top-rule + padding, text straight on the background. Photo treatments (polaroid scatter, grids, the Denver hospital photo pair) untouched.
+- This top-rule style is now the standard for any future text/stat content; photos keep their existing patterns
+
 ## 2026-09-28 (part 11) — First photo on the Ipatinga slide
 
 - Di sent one photo: a pre-made collage of 6 childhood swim-team photos from Ipatinga
