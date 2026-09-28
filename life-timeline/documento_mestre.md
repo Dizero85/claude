@@ -23,9 +23,9 @@ Create a timeline-style presentation telling the story of Di's life — a storyl
 **Deck:** https://claude.ai/artifact/WQoCraSQzZ2A8dCvVAH5qL — "My Story — From Ipatinga to Denver"
 Slides: cover → the journey (4-city overview) → Ipatinga (swimming career) → Belo Horizonte (college) → New York (English/restaurants/dog walking) → Denver (patient navigation career) → closing ("to be continued")
 
-Two things left as visible placeholders on the slides, flagged in speaker notes too:
-- Belo Horizonte slide: `[University name]` — the name he gave ("Univega") didn't parse cleanly, needs his confirmation
-- Denver slide: years at the hospital shown as "more than a decade" — he's said both 12 and 14 years in different sessions, not resolved
+Both placeholders resolved and applied to the deck (2026-09-28 part 2): university is **UniBH**, hospital tenure is **13 years**.
+
+New open item from that same follow-up — do NOT resolve on my own, ask Di directly: he gave a quick recap that said "Belo Horizonte High School," which conflicts with the earlier, more detailed story where Belo Horizonte was clearly college (UniBH). Didn't touch the deck for this — needs his confirmation first. Also re-confirmed "7 years in New York," which still doesn't reconcile with the hospital starting in 2012 (see `satelites/raw-material.md` for the math). Deck currently doesn't state an NY duration, so this isn't blocking, but worth resolving before he presents.
 
 No photos yet — deck is text/icon-only for now. Still waiting on stage 5 (why he moved back to Brazil) before the story is complete for a team audience. Full raw material is in `satelites/raw-material.md`.
 

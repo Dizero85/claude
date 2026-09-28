@@ -5,6 +5,12 @@
 
 ---
 
+## 2026-09-28 (part 2) — Placeholders resolved, one new wrinkle flagged
+
+- Confirmed: university is UniBH (not "Univega"); hospital tenure is 13 years — both applied to the deck
+- Di gave a quick recap that said "Belo Horizonte High School," conflicting with the earlier, more detailed story where Belo Horizonte was college — flagged for him to clarify, did NOT change the deck based on the recap alone
+- Re-confirmed 7 years in New York, which still doesn't reconcile with the hospital starting 2012 — unresolved, not blocking since the deck states no NY duration
+
 ## 2026-09-28 — First draft deck built
 
 - Di confirmed enough material and said "let's start here" — built the first draft

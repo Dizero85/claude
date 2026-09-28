@@ -6,6 +6,21 @@
 
 ---
 
+## Session 2026-09-28 (part 2) — confirmations + one new wrinkle
+
+**Resolved:**
+- University in Belo Horizonte: **UniBH** (not "Univega" — that was a transcription miss). Updated on the Belo Horizonte slide.
+- Years at the hospital: **13 years**, confirmed. Di also said "you can say more than a decade for Denver Health" — so either phrasing is fine with him, but the deck now shows the exact number, 13 years. Denver slide updated.
+
+**New wrinkle — NOT yet resolved, don't change the deck for this on my own:**
+Di gave a quick recap: "I went to Ipatinga, live in Ipatinga, then I went to **Belo Horizonte High School**, graduate, moved to New York, lived there for **seven years**, and then moved to Denver."
+
+Two things to flag to Di directly, don't guess:
+1. Earlier (session 2026-09-28 part 1) he clearly described Belo Horizonte as **college** — "after high school, I moved to the capital... studied Communications... at UniBH." This recap says "Belo Horizonte High School." Likely just an imprecise recap / voice-transcription slip (same as "Univega" earlier), not a real change to the story — but don't assume. Ask him directly: was high school in Ipatinga and college in Belo Horizonte (as first described), or something else?
+2. He re-confirmed "seven years" in New York. That still doesn't reconcile with the hospital starting in 2012: end of 2007 + 7 years ≈ end of 2014, but the hospital job started "beginning of 2012." This is the same unresolved timeline gap flagged in the first session — still open.
+
+The deck's Belo Horizonte and New York slides were NOT changed based on this recap — they still reflect the original, more detailed narrative (college in BH, no NY duration stated). Only the two confirmed facts above (UniBH, 13 years) were applied.
+
 ## Session 2026-09-28 — Di said "let's start here" (green light to begin building)
 
 **Ipatinga (childhood/school):**
