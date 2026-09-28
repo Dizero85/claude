@@ -27,6 +27,19 @@ The deck's Belo Horizonte and New York slides were NOT changed based on this rec
 
 With December 2012 + 13 years ≈ December 2025 at Denver Health, that also lines up with root claude.md's note that Activate Care came after Denver Health, briefly, before he lost that job and moved back to Brazil (2026) — the pieces now fit.
 
+## Session 2026-09-28 (part 5) — Chapter 5: back to Brazil
+
+- After 14-15 years in Colorado, moved back to Brazil to be close to his mother, family, and longtime friends
+- Added as a new "Chapter 5" slide; used this framing (not the job-loss reason from root claude.md) since Di didn't bring that up himself and this deck is for a team, not a private audience
+
+## Session 2026-09-28 (part 6) — More Denver detail + "hang on, I'll get photos"
+
+- Part of the **Denver Walk for Colorectal Cancer**
+- Did **TV interviews**
+- Outside of work: lots of **hiking, camping, and fun**
+- Applied to the deck: Denver slide's third card now names the Denver Walk specifically; new `denver-life` slide added for the hiking/camping/fun side
+- Di said he's going to gather photos to "put in between these lines" (i.e. between the existing chapters) — expect a pause, no new narrative content until he returns with images
+
 ## Session 2026-09-28 — Di said "let's start here" (green light to begin building)
 
 **Ipatinga (childhood/school):**

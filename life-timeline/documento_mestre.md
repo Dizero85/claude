@@ -29,9 +29,15 @@ The "Belo Horizonte High School" wording was resolved (2026-09-28 part 3): confi
 
 Resolved (part 4): Di gave precise dates — NY end of 2007, Denver 2012, Denver Health start **December 2012**. Treating this as accurate over the earlier "7 years" claim (dates > round numbers). NY duration works out to ~4-5 years. Deck doesn't state an NY duration, so no slide change was needed. This also lines up December 2012 + 13 years ≈ end of 2025 at Denver Health, consistent with Activate Care coming after and ending recently (per root claude.md).
 
-**Story now complete — 8 slides.** Di gave stage 5 on 2026-09-28 (part 5): after 14-15 years in Colorado, moved back to Brazil to be close to his mother, family, and longtime friends. Added a "Chapter 5 — Back to Brazil" slide (family-focused framing, not the job-loss angle from root claude.md — that's a deliberate choice for a team-facing "get to know me" deck, flagged in the slide's speaker notes as a separate, more private conversation if anyone asks). Rewrote the closing slide from "to be continued" to a "full circle" wrap-up, since all 5 planned chapters are now in.
+**Story complete, deck now 9 slides — waiting on photos.** Di gave stage 5 on 2026-09-28 (part 5): after 14-15 years in Colorado, moved back to Brazil to be close to his mother, family, and longtime friends. Added a "Chapter 5 — Back to Brazil" slide (family-focused framing, not the job-loss angle from root claude.md — deliberate choice for a team-facing "get to know me" deck; flagged in the slide's speaker notes as a separate, more private conversation if anyone asks). Rewrote the closing slide from "to be continued" to a "full circle" wrap-up.
 
-No photos yet — deck is text/icon-only. Next step is purely visual (photos per chapter), not narrative — the story itself doesn't need more content unless Di wants to add something. Full raw material is in `satelites/raw-material.md`.
+Part 6 (same day): Di added detail to the Denver chapter — he was part of the **Denver Walk for Colorectal Cancer**, did **TV interviews**, and outside work did a lot of **hiking, camping, and fun**. Applied:
+- Updated the existing Denver slide's third card to name the Denver Walk specifically (was generic "TV spokesperson")
+- Added a new slide, `denver-life`, between Denver and Brazil — "life outside work" (hiking, camping, good times), no chapter number (a side-note to Chapter 4, not a new chapter)
+
+Di then said he's going to go get photos and "put them in between these lines" — expect a pause here. When he returns with images: read `project/deck.json` fresh, and for each photo, `<img src="/_blob/<id>">` after uploading the file as an asset via the Artifact tool (`asset:true`), following the deck's own image workflow in `artifact-type/reference/images.md` if more detail is needed. Good candidate slides for photos, roughly in order of how well they'd land: ipatinga (swimming), denver-life (hiking/camping), denver (TV interviews/Walk), new-york, belo-horizonte, brazil, cover.
+
+Full raw material is in `satelites/raw-material.md`.
 
 Scope confirmed on 2026-09-01 (first pass):
 

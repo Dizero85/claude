@@ -5,6 +5,13 @@
 
 ---
 
+## 2026-09-28 (part 6) — Added Denver Walk / TV interviews + a "life outside work" slide; Di stepping away for photos
+
+- Denver slide's third card now names the Denver Walk for Colorectal Cancer specifically (was generic "TV spokesperson")
+- Added a new 9th slide, `denver-life`: hiking, camping, good times — a personal beat after the career highlight, no chapter number
+- Di said he's going to get photos to add "in between these lines" — next session should expect photos, not more narrative, unless he says otherwise
+- Documented the photo-upload workflow (Artifact `asset:true` → `/_blob/<id>`) and a suggested slide order for adding them in `documento_mestre.md`
+
 ## 2026-09-28 (part 5) — Story complete: added Chapter 5 (back to Brazil)
 
 - Di gave the final chapter: after 14-15 years in Colorado, moved back to Brazil to be close to his mother, family, and longtime friends
