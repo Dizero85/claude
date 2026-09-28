@@ -5,6 +5,12 @@
 
 ---
 
+## 2026-09-28 (part 3) — "Belo Horizonte High School" wrinkle resolved
+
+- Di confirmed: high school entirely in Ipatinga; moved to Belo Horizonte (capital) only for college (Communications, UniBH)
+- Matches what the deck already said — no slide changes needed
+- Only remaining open item: NY (7 years) vs. Denver start (2012) timeline math, still unresolved
+
 ## 2026-09-28 (part 2) — Placeholders resolved, one new wrinkle flagged
 
 - Confirmed: university is UniBH (not "Univega"); hospital tenure is 13 years — both applied to the deck

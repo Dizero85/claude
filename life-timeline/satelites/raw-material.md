@@ -21,6 +21,10 @@ Two things to flag to Di directly, don't guess:
 
 The deck's Belo Horizonte and New York slides were NOT changed based on this recap — they still reflect the original, more detailed narrative (college in BH, no NY duration stated). Only the two confirmed facts above (UniBH, 13 years) were applied.
 
+**Resolved (same day, part 3):** Di confirmed directly — grew up, went to school, and graduated high school all in Ipatinga. Then moved to the capital, Belo Horizonte, for college (Communications at UniBH). "Belo Horizonte High School" in the recap above was just an imprecise recap, not a real change. The deck's Belo Horizonte slide was already correct as written — no edit needed.
+
+Still open: the New York (7 years) vs. Denver (started 2012) timeline math — see above, unresolved.
+
 ## Session 2026-09-28 — Di said "let's start here" (green light to begin building)
 
 **Ipatinga (childhood/school):**
