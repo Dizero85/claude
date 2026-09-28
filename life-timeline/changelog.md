@@ -5,6 +5,13 @@
 
 ---
 
+## 2026-09-28 (part 7) — First photos: New York collage slide
+
+- Di sent 5 NYC photos (Times Square x2 duplicate, 9/11 Memorial, 2 skyline views), asked for a fun/creative collage
+- Uploaded 4 distinct photos as artifact assets, added a new `new-york-photos` slide (polaroid-style scrapbook collage, no text beyond a light caption) right after the existing New York chapter slide
+- Deck is now 10 slides
+- This slide's layout is the template to reuse for future photo additions to other chapters
+
 ## 2026-09-28 (part 6) — Added Denver Walk / TV interviews + a "life outside work" slide; Di stepping away for photos
 
 - Denver slide's third card now names the Denver Walk for Colorectal Cancer specifically (was generic "TV spokesperson")

@@ -35,7 +35,12 @@ Part 6 (same day): Di added detail to the Denver chapter — he was part of the 
 - Updated the existing Denver slide's third card to name the Denver Walk specifically (was generic "TV spokesperson")
 - Added a new slide, `denver-life`, between Denver and Brazil — "life outside work" (hiking, camping, good times), no chapter number (a side-note to Chapter 4, not a new chapter)
 
-Di then said he's going to go get photos and "put them in between these lines" — expect a pause here. When he returns with images: read `project/deck.json` fresh, and for each photo, `<img src="/_blob/<id>">` after uploading the file as an asset via the Artifact tool (`asset:true`), following the deck's own image workflow in `artifact-type/reference/images.md` if more detail is needed. Good candidate slides for photos, roughly in order of how well they'd land: ipatinga (swimming), denver-life (hiking/camping), denver (TV interviews/Walk), new-york, belo-horizonte, brazil, cover.
+Part 7 (same day): **First photos arrived** — 5 NYC photos (Times Square, 9/11 Memorial, 2 skyline views from an observation deck; one was an exact duplicate of the Times Square shot, skipped). Di asked for "something fun, creative... a collage." Built:
+- Uploaded 4 distinct photos as artifact assets (`/_blob/<id>` urls, see the deck's own files for the ids)
+- Added a new slide, `new-york-photos`, right after the existing New York text slide — a polaroid-style scrapbook collage (white-bordered, drop-shadowed, slightly rotated photo cards), no bullet text, just the photos plus a light caption "New York City — 2007 to 2012" and "A few frames from those years."
+- Deck is now 10 slides
+
+Still no photos for the other chapters. Good remaining candidates, roughly in order of how well they'd land: ipatinga (swimming), denver-life (hiking/camping), denver (TV interviews/Walk), belo-horizonte, brazil, cover. The `new-york-photos` slide is the template/pattern to reuse for future photo-collage slides — same polaroid-card approach (white padding, box-shadow, slight rotate, position:absolute within a position:relative container). Upload workflow: Artifact `publish` with `asset:true` and `file_paths` (or `file_path` for one), then reference the returned url verbatim in `<img src="...">`.
 
 Full raw material is in `satelites/raw-material.md`.
 
