@@ -5,6 +5,13 @@
 
 ---
 
+## 2026-09-28 (part 10) — Second hobby: live music / concerts
+
+- Di sent 10 concert photos (club and stadium shows, a couple of named artists) — his second hobby is live music, especially big stadium shows
+- Added a new slide, `hobbies-concerts`, right after `hobbies` — used the photo-grid pattern (5x2) since 10 photos didn't suit the polaroid-scatter style
+- Deck is now 12 slides
+- Confirms the plan from part 9: hobbies get split one-per-slide rather than combined
+
 ## 2026-09-28 (part 9) — New "hobbies" slide: beach travel
 
 - Di sent 4 Brazil vacation photos (beach x3, colonial-town plaza x1), asked for a dedicated hobbies slide — beach trips are his first named hobby
