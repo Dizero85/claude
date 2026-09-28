@@ -5,6 +5,15 @@
 
 ---
 
+## 2026-09-28 — First draft deck built
+
+- Di confirmed enough material and said "let's start here" — built the first draft
+- Created a 7-slide deck using the Artifact "Slides" type: https://claude.ai/artifact/WQoCraSQzZ2A8dCvVAH5qL
+- Covers chapters 1-4: Ipatinga (childhood + 15-year swimming career), Belo Horizonte (Communications degree), New York (English studies, restaurant work, dog walking), Denver (patient navigation career, TV/spokesperson work)
+- Two placeholders left visible on the slides: university name, and exact years at the hospital (12 vs 14, conflicting across sessions — used "more than a decade" as a safe placeholder)
+- No photos yet; text/icon-only draft
+- Still missing: chapter 5 (why he moved back to Brazil) — deck currently closes with a "to be continued" slide
+
 ## 2026-09-01 — Di started telling the story (stages 1-3, partial)
 
 - Purpose confirmed: get-to-know-me intro deck for the team

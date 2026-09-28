@@ -18,7 +18,16 @@ Create a timeline-style presentation telling the story of Di's life — a storyl
 
 ## Current Status
 
-**Gathering material — partway through the story.** Di has given stages 1-2 (from Ipatinga/Belo Horizonte to New York to Denver) and started stage 3 (Denver Health, 12 years). He paused deliberately ("let's stop there, I'll continue later") before finishing stage 3 and reaching stage 4. Full raw material is in `satelites/raw-material.md`. Don't draft actual slide text yet — wait until he has given enough for at least one full stage plus photos, or ask him if he wants a skeleton now.
+**First draft deck built.** Di gave enough material for chapters 1-4 (Ipatinga/swimming, Belo Horizonte, New York, Denver) and said "let's start here" — read as the green light to build, not to keep waiting. Built a 7-slide deck using the Artifact "Slides" type (16:9, presents live, downloads as PDF/PPTX from its Share menu):
+
+**Deck:** https://claude.ai/artifact/WQoCraSQzZ2A8dCvVAH5qL — "My Story — From Ipatinga to Denver"
+Slides: cover → the journey (4-city overview) → Ipatinga (swimming career) → Belo Horizonte (college) → New York (English/restaurants/dog walking) → Denver (patient navigation career) → closing ("to be continued")
+
+Two things left as visible placeholders on the slides, flagged in speaker notes too:
+- Belo Horizonte slide: `[University name]` — the name he gave ("Univega") didn't parse cleanly, needs his confirmation
+- Denver slide: years at the hospital shown as "more than a decade" — he's said both 12 and 14 years in different sessions, not resolved
+
+No photos yet — deck is text/icon-only for now. Still waiting on stage 5 (why he moved back to Brazil) before the story is complete for a team audience. Full raw material is in `satelites/raw-material.md`.
 
 Scope confirmed on 2026-09-01 (first pass):
 

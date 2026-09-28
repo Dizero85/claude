@@ -2,9 +2,50 @@
 
 > Di's own words/facts, captured as given, session by session.
 > Don't polish or reframe here — this is the source material. Reframing happens when drafting actual slides.
-> Last updated: 2026-09-01
+> Last updated: 2026-09-28
 
 ---
+
+## Session 2026-09-28 — Di said "let's start here" (green light to begin building)
+
+**Ipatinga (childhood/school):**
+- Grew up in Ipatinga, went to school there
+- Did a lot of activities, but the big one was **competitive swimming — 15 years**, started at **age 3**
+- Had a successful swimming career: at age **12-13**, ranked among the **top times in Brazil in the 100m butterfly**
+- Went to many competitions, won a lot of medals
+
+**Belo Horizonte (college):**
+- After high school, moved to Belo Horizonte (state capital)
+- Studied **Communications with emphasis in Advertising/Publicity** (his correction — first said "no emphasis," then corrected himself to "with emphasis in publicity and advertisement")
+- University name still needs confirming — see note below
+
+**New York (right after graduating):**
+- Moved to NYC the month he graduated
+- Studied **English for 2 years**
+- Worked in **restaurants**
+- Did **dog walking in Central Park**
+- (Previous session said "lived in New York for 7 years" total — this session only accounts for 2 years of English study + undated work; doesn't contradict, just incomplete. Don't merge/resolve, just note both.)
+
+**Denver, Colorado (career):**
+- Moved to Denver, got a **patient navigation certificate**
+- Worked at **a public hospital** — for **14 years** (this session's number — previous session said 12 years at Denver Health; not the same number, don't resolve myself)
+- Started **end of 2011 / beginning of 2012**
+- Very successful in **cancer screening**
+- Did **many TV appearances**
+- Was **spokesperson for colorectal cancer for the county of Denver**
+
+Di said "let's start here" — read as the green light to begin drafting the deck with what's been given, not a request to keep gathering before building.
+
+### Discrepancies to flag to Di (don't resolve myself)
+1. **Years at the hospital/Denver Health:** 12 years (session 1) vs 14 years (session 2) — which is correct?
+2. **Timeline math:** end of 2007 (US arrival) + 7 years in New York ≈ end of 2014 leaving NY, but this session says the Denver Health/hospital job started beginning of 2012 — that's ~2.5 years overlap unaccounted for. Worth asking Di to walk through the NY→Denver transition date.
+3. Is "the public hospital" the same employer as "Denver Health" from session 1, or a different place? (Reads like the same place, but confirm.)
+
+### Still open
+- University name in Belo Horizonte (still unconfirmed)
+- Activate Care: role, dates, how it fits (not mentioned this session)
+- Stage 4 proper: why he moved back to Brazil, framed for the team
+- Photos for any stage
 
 ## Session 2026-09-01 (part 2)
 
