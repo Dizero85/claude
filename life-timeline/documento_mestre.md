@@ -27,7 +27,7 @@ Both placeholders resolved and applied to the deck (2026-09-28 part 2): universi
 
 The "Belo Horizonte High School" wording was resolved (2026-09-28 part 3): confirmed as just an imprecise recap — high school was in Ipatinga, college (UniBH) in Belo Horizonte, matching what the deck already said. No deck change needed.
 
-Still open: "7 years in New York" doesn't reconcile with the hospital starting in 2012 (see `satelites/raw-material.md` for the math). Deck currently doesn't state an NY duration, so this isn't blocking, but worth resolving before he presents.
+Resolved (part 4): Di gave precise dates — NY end of 2007, Denver 2012, Denver Health start **December 2012**. Treating this as accurate over the earlier "7 years" claim (dates > round numbers). NY duration works out to ~4-5 years. Deck doesn't state an NY duration, so no slide change was needed. This also lines up December 2012 + 13 years ≈ end of 2025 at Denver Health, consistent with Activate Care coming after and ending recently (per root claude.md).
 
 No photos yet — deck is text/icon-only for now. Still waiting on stage 5 (why he moved back to Brazil) before the story is complete for a team audience. Full raw material is in `satelites/raw-material.md`.
 

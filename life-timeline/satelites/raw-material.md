@@ -23,7 +23,9 @@ The deck's Belo Horizonte and New York slides were NOT changed based on this rec
 
 **Resolved (same day, part 3):** Di confirmed directly — grew up, went to school, and graduated high school all in Ipatinga. Then moved to the capital, Belo Horizonte, for college (Communications at UniBH). "Belo Horizonte High School" in the recap above was just an imprecise recap, not a real change. The deck's Belo Horizonte slide was already correct as written — no edit needed.
 
-Still open: the New York (7 years) vs. Denver (started 2012) timeline math — see above, unresolved.
+**Resolved (same day, part 4):** Di gave precise dates: moved to New York end of 2007, moved to Denver in 2012, started at Denver Health in **December 2012**. This puts NY at roughly 4-5 years, not the "7 years" he said twice earlier — treating this dated version as the accurate one since it's anchored to specific months/years rather than a round number. Didn't ask him to explicitly reconcile the two; if he brings up "7 years" again, flag the conflict rather than silently picking one.
+
+With December 2012 + 13 years ≈ December 2025 at Denver Health, that also lines up with root claude.md's note that Activate Care came after Denver Health, briefly, before he lost that job and moved back to Brazil (2026) — the pieces now fit.
 
 ## Session 2026-09-28 — Di said "let's start here" (green light to begin building)
 

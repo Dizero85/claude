@@ -5,6 +5,13 @@
 
 ---
 
+## 2026-09-28 (part 4) — NY/Denver timeline resolved with precise dates
+
+- Di gave exact dates: moved to NY end of 2007, moved to Denver in 2012, started at Denver Health December 2012
+- This puts NY at ~4-5 years, not the "7 years" said twice earlier — using the dated version as accurate
+- December 2012 + 13 years ≈ end of 2025, which now lines up with Activate Care coming afterward and ending recently, per root claude.md
+- No deck changes needed — it never stated an NY duration
+
 ## 2026-09-28 (part 3) — "Belo Horizonte High School" wrinkle resolved
 
 - Di confirmed: high school entirely in Ipatinga; moved to Belo Horizonte (capital) only for college (Communications, UniBH)
