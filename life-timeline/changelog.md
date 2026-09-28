@@ -5,6 +5,12 @@
 
 ---
 
+## 2026-09-28 (part 14) — Fixed busy/upside-down New York photos
+
+- Di said the New York photos looked busy and one appeared upside down at the smaller merged-slide size
+- Replaced the tilted/overlapping polaroid scatter on `new-york` with a plain straight 4-across grid, no rotation — matches the `denver-life`/`hobbies-concerts` grid pattern
+- The other photo-scatter slides (`hobbies`) are untouched since they have the full slide to themselves and no issue was flagged there
+
 ## 2026-09-28 (part 13) — Denver career detail: CHW -> patient navigator, ACS award
 
 - Di gave the real career arc: 2 years as a Community Health Worker (Medicaid intake, Medicare Savings, public programs, Denver's immigrant community), then transferred to Patient Navigator focused on colorectal cancer screening and gastroenterological health, plus national travel and an American Cancer Society award

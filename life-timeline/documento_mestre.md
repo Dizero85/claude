@@ -70,6 +70,8 @@ This didn't fit as an addition to the existing single Denver slide without overl
 - `denver` (Chapter 4, unchanged position, dark): now a two-era career arc — CHW first, Patient Navigator after — replacing the old single "patient navigation" framing. Kept the "13 years, started December 2012" stat as a supporting line under the heading. Hospital photos stayed put.
 - `denver-achievements` (new, light, no chapter number, placed right after `denver` and before `denver-life`): TV interviews & the Denver Walk, national travel, the ACS award — the recognition/impact slide, kept separate from the role description.
 
+Part 14 (same day): Di reviewed and said the New York photos looked "busy" and one appeared "upside down" at the smaller merged-slide size. Replaced the tilted/overlapping polaroid-scatter treatment on `new-york` with a plain, straight 4-across grid (no rotation, no overlap) — same pattern as `denver-life`/`hobbies-concerts`. This removes the only remaining polaroid-scatter treatment that was fighting for space with real text on the same slide; the two dedicated photo slides (`hobbies`, and the achievements/collage-style ones) keep their scatter/rotation since those have the full slide to themselves and Di hasn't flagged an issue there.
+
 Deck is now 13 slides. Still no photos for Belo Horizonte, Brazil, or the cover.
 
 Two patterns now established for reuse:
