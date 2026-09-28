@@ -60,7 +60,17 @@ Applied:
 - **De-boxed the stat/content cards deck-wide**: removed white/dark fill + shadow + border-radius from `journey`, `belo-horizonte`, `denver` (stat cards only — the 2 pinned hospital photos kept their polaroid-photo treatment), `brazil`, and `ipatinga`'s stat pills. New pattern: a thin `border-top:3px solid #DD9A3D` + generous top padding, text directly on the slide's own background — editorial/rule-based instead of "dashboard card." Icons, photos (polaroid scatter + grid), and typography untouched — those were explicitly praised.
 - This is now the deck's established visual language for any future content slides: **no filled/shadowed boxes for text; top-rule accents only. Photos keep their polaroid or grid treatment.**
 
-Still no photos for Belo Horizonte, Brazil, or the cover.
+Part 13 (same day): Di gave much richer detail on the Denver career itself — this was previously flattened to "certified in patient navigation." Now:
+- **First 2 years: Community Health Worker (CHW)** — Medicaid intake, Medicare Savings, and other public programs to get people into the hospital; focus on Denver's immigrant community
+- **After 2 years, transferred to Patient Navigator** (the remaining ~11 of the 13 years) — colorectal cancer screening specifically, building a career in gastroenterological health, helping patients get colonoscopies as prevention
+- Traveled around the US for this work
+- Won an **American Cancer Society award** for the colorectal cancer work in Denver
+
+This didn't fit as an addition to the existing single Denver slide without overloading it, so split into two:
+- `denver` (Chapter 4, unchanged position, dark): now a two-era career arc — CHW first, Patient Navigator after — replacing the old single "patient navigation" framing. Kept the "13 years, started December 2012" stat as a supporting line under the heading. Hospital photos stayed put.
+- `denver-achievements` (new, light, no chapter number, placed right after `denver` and before `denver-life`): TV interviews & the Denver Walk, national travel, the ACS award — the recognition/impact slide, kept separate from the role description.
+
+Deck is now 13 slides. Still no photos for Belo Horizonte, Brazil, or the cover.
 
 Two patterns now established for reuse:
 - **Photo grid** (denver-life): `display:grid` of `<img object-fit:cover>` tiles, good for many photos of one theme

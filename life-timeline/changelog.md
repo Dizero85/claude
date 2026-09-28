@@ -5,6 +5,12 @@
 
 ---
 
+## 2026-09-28 (part 13) — Denver career detail: CHW -> patient navigator, ACS award
+
+- Di gave the real career arc: 2 years as a Community Health Worker (Medicaid intake, Medicare Savings, public programs, Denver's immigrant community), then transferred to Patient Navigator focused on colorectal cancer screening and gastroenterological health, plus national travel and an American Cancer Society award
+- Split into two slides: `denver` now tells the two-era role arc (CHW -> Patient Navigator); new `denver-achievements` (no chapter number, light bg) holds the recognition (TV/Walk, travel, ACS award), placed right after `denver`
+- Deck is now 13 slides
+
 ## 2026-09-28 (part 12) — Visual refresh: de-boxed the deck, merged New York slides
 
 - Di reviewed the deck: New York felt empty apart from its photo slide, and he doesn't want the "boxy" card look (compared it to a past presentation he didn't like) — but said the photo montages are great, keep those
