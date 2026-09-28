@@ -5,6 +5,14 @@
 
 ---
 
+## 2026-09-28 (part 15) — TV interview photo, more Colorado photos, third hobby (sports)
+
+- Di sent 4 photos: basketball arena crowd, aerial Colorado city, snowy mountain valley, and himself on Univision Colorado giving a TV interview in a Denver Health jacket
+- `denver-achievements`: added the Univision photo as a pinned accent next to "TV interviews & the Denver Walk"
+- `denver-life`: grid grew from 12 to 14 photos, reconfigured 4x3 -> 7x2
+- New `hobbies-sports` slide added after `hobbies-concerts` — single large hero photo (no rotation, kept calm per the last "too busy" feedback), third named hobby: watching live sports
+- Deck is now 14 slides
+
 ## 2026-09-28 (part 14) — Fixed busy/upside-down New York photos
 
 - Di said the New York photos looked busy and one appeared upside down at the smaller merged-slide size

@@ -72,7 +72,12 @@ This didn't fit as an addition to the existing single Denver slide without overl
 
 Part 14 (same day): Di reviewed and said the New York photos looked "busy" and one appeared "upside down" at the smaller merged-slide size. Replaced the tilted/overlapping polaroid-scatter treatment on `new-york` with a plain, straight 4-across grid (no rotation, no overlap) — same pattern as `denver-life`/`hobbies-concerts`. This removes the only remaining polaroid-scatter treatment that was fighting for space with real text on the same slide; the two dedicated photo slides (`hobbies`, and the achievements/collage-style ones) keep their scatter/rotation since those have the full slide to themselves and Di hasn't flagged an issue there.
 
-Deck is now 13 slides. Still no photos for Belo Horizonte, Brazil, or the cover.
+Part 15 (same day): Di sent 4 more photos — a basketball arena crowd shot, an aerial Colorado city view, a snowy mountain valley, and himself on **Univision Colorado (Noticias)** in a Denver Health jacket, giving a TV interview. Applied:
+- `denver-achievements`: added the Univision photo as a pinned corner accent next to the "TV interviews & the Denver Walk" item — direct visual proof, same treatment as the hospital photos on the `denver` slide
+- `denver-life`: added the 2 Colorado scenery photos to the existing grid, now 14 photos, reconfigured from 4x3 to 7x2 to fit
+- New third hobby slide, `hobbies-sports` (after `hobbies-concerts`, before `closing`): a single large hero photo of the arena crowd, no rotation (kept it calm per the "busy" feedback from part 14) — Di's third named hobby is watching live sports/going to games
+
+Deck is now 14 slides. Still no photos for Belo Horizonte, Brazil, or the cover.
 
 Two patterns now established for reuse:
 - **Photo grid** (denver-life): `display:grid` of `<img object-fit:cover>` tiles, good for many photos of one theme
