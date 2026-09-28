@@ -5,6 +5,13 @@
 
 ---
 
+## 2026-09-28 (part 8) — 14 Denver photos: photo grid + hospital corner accent
+
+- Di sent 14 photos: 12 outdoors/city (mountains, hikes, snow, Red Rocks, Big Blue Bear, aerial Boulder) and 2 from the hospital he worked at
+- `denver-life` slide redesigned: 3 icon cards replaced with a 4x3 photo grid of all 12 outdoor/city photos
+- `denver` slide: added the 2 hospital photos as a small pinned polaroid pair, top-right corner; narrowed the heading width so it doesn't collide
+- Two reusable photo patterns now established: grid (many photos) and polaroid scatter (a few photos, decorative)
+
 ## 2026-09-28 (part 7) — First photos: New York collage slide
 
 - Di sent 5 NYC photos (Times Square x2 duplicate, 9/11 Memorial, 2 skyline views), asked for a fun/creative collage

@@ -40,7 +40,15 @@ Part 7 (same day): **First photos arrived** — 5 NYC photos (Times Square, 9/11
 - Added a new slide, `new-york-photos`, right after the existing New York text slide — a polaroid-style scrapbook collage (white-bordered, drop-shadowed, slightly rotated photo cards), no bullet text, just the photos plus a light caption "New York City — 2007 to 2012" and "A few frames from those years."
 - Deck is now 10 slides
 
-Still no photos for the other chapters. Good remaining candidates, roughly in order of how well they'd land: ipatinga (swimming), denver-life (hiking/camping), denver (TV interviews/Walk), belo-horizonte, brazil, cover. The `new-york-photos` slide is the template/pattern to reuse for future photo-collage slides — same polaroid-card approach (white padding, box-shadow, slight rotate, position:absolute within a position:relative container). Upload workflow: Artifact `publish` with `asset:true` and `file_paths` (or `file_path` for one), then reference the returned url verbatim in `<img src="...">`.
+Part 8 (same day): Di sent **14 Denver photos** — 12 outdoors/city (mountains, hikes, snow, Red Rocks, the Big Blue Bear, aerial Boulder) and 2 from the hospital where he worked. Applied:
+- `denver-life`: replaced the 3 generic icon cards with an actual 4x3 photo grid (all 12 outdoor/city photos) — real photos beat icons, so the icons are gone from this slide now
+- `denver` (career slide): added the 2 hospital photos as a small pinned polaroid-style pair in the top-right corner; narrowed the heading's width slightly so it doesn't collide with them
+
+Still no photos for: Ipatinga (swimming), Belo Horizonte, Brazil, cover. Two patterns now established for reuse:
+- **Photo grid** (denver-life): `display:grid` of `<img object-fit:cover>` tiles, good for many photos of one theme
+- **Polaroid scatter** (new-york-photos, and the small corner pair on denver): white-padded cards, box-shadow, slight `rotate()`, `position:absolute` — good for a handful of photos as a creative accent
+
+Upload workflow: Artifact `publish` with `asset:true` and `file_paths` (or `file_path` for one), then reference the returned url verbatim in `<img src="...">`.
 
 Full raw material is in `satelites/raw-material.md`.
 
