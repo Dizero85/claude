@@ -5,6 +5,14 @@
 
 ---
 
+## 2026-09-28 (part 5) — Story complete: added Chapter 5 (back to Brazil)
+
+- Di gave the final chapter: after 14-15 years in Colorado, moved back to Brazil to be close to his mother, family, and longtime friends
+- Added an 8th slide, "brazil" (Chapter 5), between Denver and the closing slide
+- Rewrote the closing slide from "to be continued" to a "full circle" ending — the 5-chapter arc is now complete
+- Deliberately used the family/roots framing he gave, not the job-loss reason from root claude.md — flagged in the slide's speaker notes as a separate, more private topic if it comes up
+- Remaining work on this deck is now purely visual: photos per chapter, whenever Di has them
+
 ## 2026-09-28 (part 4) — NY/Denver timeline resolved with precise dates
 
 - Di gave exact dates: moved to NY end of 2007, moved to Denver in 2012, started at Denver Health December 2012

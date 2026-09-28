@@ -29,7 +29,9 @@ The "Belo Horizonte High School" wording was resolved (2026-09-28 part 3): confi
 
 Resolved (part 4): Di gave precise dates — NY end of 2007, Denver 2012, Denver Health start **December 2012**. Treating this as accurate over the earlier "7 years" claim (dates > round numbers). NY duration works out to ~4-5 years. Deck doesn't state an NY duration, so no slide change was needed. This also lines up December 2012 + 13 years ≈ end of 2025 at Denver Health, consistent with Activate Care coming after and ending recently (per root claude.md).
 
-No photos yet — deck is text/icon-only for now. Still waiting on stage 5 (why he moved back to Brazil) before the story is complete for a team audience. Full raw material is in `satelites/raw-material.md`.
+**Story now complete — 8 slides.** Di gave stage 5 on 2026-09-28 (part 5): after 14-15 years in Colorado, moved back to Brazil to be close to his mother, family, and longtime friends. Added a "Chapter 5 — Back to Brazil" slide (family-focused framing, not the job-loss angle from root claude.md — that's a deliberate choice for a team-facing "get to know me" deck, flagged in the slide's speaker notes as a separate, more private conversation if anyone asks). Rewrote the closing slide from "to be continued" to a "full circle" wrap-up, since all 5 planned chapters are now in.
+
+No photos yet — deck is text/icon-only. Next step is purely visual (photos per chapter), not narrative — the story itself doesn't need more content unless Di wants to add something. Full raw material is in `satelites/raw-material.md`.
 
 Scope confirmed on 2026-09-01 (first pass):
 
