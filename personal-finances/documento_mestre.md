@@ -44,7 +44,8 @@ Stable but under-earning. Goal (Phase A): ~US$2,000/month total = +~US$450/month
 - [x] Define income target — Phase A: reach ~US$2,000/month TOTAL (+~US$450/month extra, in USD). Phase B later: +US$2,000 extra (2026-10-01)
 - [ ] Check MedicaidSoft contract for side-work / non-compete / conflict-of-interest rules
 - [x] Research income opportunities — see satelites/phase-a-income-options.md (2026-10-01)
-- [ ] Pick Phase A option and take first action
+- [ ] Publish Upwork profile (draft in satelites/upwork-profile-draft.md)
+- [ ] Choose and enroll in a 40-hour interpreter course (options in satelites/interpreter-course-options.md)
 - [ ] Evaluate cost of living comparison: Brazil vs NYC vs Colorado
 
 ## Important Decisions
