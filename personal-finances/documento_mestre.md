@@ -45,7 +45,7 @@ Stable but under-earning. Goal (Phase A): ~US$2,000/month total = +~US$450/month
 - [ ] Check MedicaidSoft contract for side-work / non-compete / conflict-of-interest rules
 - [x] Research income opportunities — see satelites/phase-a-income-options.md (2026-10-01)
 - [ ] Publish Upwork profile (draft in satelites/upwork-profile-draft.md)
-- [ ] Choose and enroll in a 40-hour interpreter course (options in satelites/interpreter-course-options.md)
+- [ ] Email training@multilingual-tech.com to confirm self-paced course (US$289) is CCHI/NBCMI-accepted, then enroll (options in satelites/interpreter-course-options.md)
 - [ ] Evaluate cost of living comparison: Brazil vs NYC vs Colorado
 
 ## Important Decisions

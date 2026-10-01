@@ -10,7 +10,8 @@ Most remote medical interpreting companies require a 40-hour training certificat
 
 | Provider | Price | Format | Notes |
 |---|---|---|---|
-| Multilingual Technologies (MLT) | ~US$289 | Online | Cheapest. Any language pair. Covers ethics, terminology, HIPAA, remote/VRI. **Confirm it's on CCHI's approved list before paying** |
+| Multilingual Technologies (MLT) — self-paced | ~US$289 | Online video, 1 year access | Cheapest. Any language pair. Certificate of 40 hrs + 1 free exam retry |
+| Multilingual Technologies (MLT) — live intensive | ~US$395 | 5-day live online class, max 8 students | MLT says this course is CCHI-approved and listed on CCHI's site; also accepted by Boostlingo's interpreter network |
 | Interpreter University | ~US$599 | Self-paced | |
 | MasterWord Institute | ~US$625 | Intensive | |
 | Medical Interpreting Training School (MITS) | ~US$640 | Online, 1 year access | States approval by CCHI and NBCMI |
@@ -19,7 +20,7 @@ Most remote medical interpreting companies require a 40-hour training certificat
 
 ## Recommendation
 
-- **Tight budget:** MLT (~US$289) — only after confirming CCHI/NBCMI acceptance
+- **Cheapest secure path (chosen 2026-10-01):** MLT self-paced (~US$289 ≈ R$1,270). Before paying, email training@multilingual-tech.com to confirm the self-paced version (not only the live one) is CCHI/NBCMI-accepted. If not → MLT live (~US$395)
 - **Best balance:** MITS (~US$640) — clearly approved, 1 year to finish at your own pace
 
 ## Language pair choice
@@ -31,6 +32,9 @@ Di is trilingual (EN/PT/ES). Spanish interpreting has far more demand than Portu
 CCHI publishes its list of approved online programs: https://cchicertification.org/prerequisite-programs/online/
 
 ## Sources
+
+- https://www.multilingual-tech.com/mlts-40-hour-medical-interpreter-and-terminology-course-approved-and-recommended-by-cchi/
+- https://academy.multilingual-tech.com/
 
 - https://www.multilingual-tech.com/product/40-hour-medical-interpreter-training/
 - https://medicalinterpretingtrainingschool.com/40-hour-program-all-languages/
