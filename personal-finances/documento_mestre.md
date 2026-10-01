@@ -30,7 +30,7 @@ Managing Di's personal finances and exploring income growth opportunities using 
 
 ## Current Status
 
-Stable but under-earning. Goal: grow income beyond the MedicaidSoft salary. Exact numbers not yet mapped.
+Stable but under-earning. Goal: +US$2,000/month extra in USD on top of MedicaidSoft. Proposed path: remote PT↔EN medical interpreting first, then certification + consulting to raise hourly rate.
 
 ## Rules of operation
 
@@ -41,7 +41,7 @@ Stable but under-earning. Goal: grow income beyond the MedicaidSoft salary. Exac
 
 - [ ] Map current monthly expenses (Brazil + CO home costs)
 - [x] Identify current income sources — MedicaidSoft salary, ~R$6,800–7,400/month in BRL (2026-10-01)
-- [ ] Define income target (how much more, by when, and what for)
+- [x] Define income target — +US$2,000/month extra, earned in USD (2026-10-01). Deadline TBD
 - [ ] Check MedicaidSoft contract for side-work / non-compete / conflict-of-interest rules
 - [ ] Research AI-assisted income opportunities that match Di's background
 - [ ] Evaluate cost of living comparison: Brazil vs NYC vs Colorado
