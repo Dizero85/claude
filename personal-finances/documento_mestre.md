@@ -19,7 +19,7 @@ Managing Di's personal finances and exploring income growth opportunities using 
 
 - Living in Brazil, back in his hometown — working from home
 - Employed remotely at MedicaidSoft (main income source) — works noon to 8 pm (Brazil time); mornings are free. Job is relaxed — Di has capacity to add other income work
-- Salary: ~R$3,400 every 15 days (~R$6,800–7,400/month), paid in BRL — well below his Colorado pay, but covers a good life in Brazil
+- Salary: ~R$3,400 every 15 days, paid in BRL — Di says it equals ~US$1,500–1,600/month at current rates — well below his Colorado pay, but covers a good life in Brazil
 - Home in Wheat Ridge, CO (owned with wife)
 - Building community locally, little by little
 
@@ -30,7 +30,7 @@ Managing Di's personal finances and exploring income growth opportunities using 
 
 ## Current Status
 
-Stable but under-earning. Goal: +US$2,000/month extra in USD on top of MedicaidSoft. Proposed path: remote PT↔EN medical interpreting first, then certification + consulting to raise hourly rate.
+Stable but under-earning. Goal: ~US$2,000/month (total vs. extra not yet confirmed). Proposed path: remote PT↔EN medical interpreting first, then certification + consulting to raise hourly rate.
 
 ## Rules of operation
 
@@ -41,7 +41,7 @@ Stable but under-earning. Goal: +US$2,000/month extra in USD on top of MedicaidS
 
 - [ ] Map current monthly expenses (Brazil + CO home costs)
 - [x] Identify current income sources — MedicaidSoft salary, ~R$6,800–7,400/month in BRL (2026-10-01)
-- [x] Define income target — +US$2,000/month extra, earned in USD (2026-10-01). Deadline TBD
+- [ ] Define income target — Di wants ~US$2,000/month; CONFIRM: total income (+~US$450) or extra on top of salary (+US$2,000)?
 - [ ] Check MedicaidSoft contract for side-work / non-compete / conflict-of-interest rules
 - [ ] Research AI-assisted income opportunities that match Di's background
 - [ ] Evaluate cost of living comparison: Brazil vs NYC vs Colorado
