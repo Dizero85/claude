@@ -18,7 +18,7 @@ Managing Di's personal finances and exploring income growth opportunities using 
 ## Current Situation
 
 - Living in Brazil, back in his hometown — working from home
-- Employed remotely at MedicaidSoft (main income source)
+- Employed remotely at MedicaidSoft (main income source) — works noon to 8 pm (Brazil time); mornings are free
 - Salary is well below his Colorado pay, but covers a good life in Brazil
 - Home in Wheat Ridge, CO (owned with wife)
 - Building community locally, little by little
