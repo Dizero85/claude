@@ -2,7 +2,7 @@
 
 > Living document: scope, status, pending items, decisions.
 > Update throughout sessions. The agent reads this BEFORE working.
-> Last updated: 2026-06-09
+> Last updated: 2026-10-01
 
 ---
 
@@ -17,10 +17,11 @@ Managing Di's personal finances and exploring income growth opportunities using 
 
 ## Current Situation
 
-- Currently in Brazil (lower cost of living than Colorado)
+- Living in Brazil, back in his hometown — working from home
+- Employed remotely at MedicaidSoft (main income source)
+- Salary is well below his Colorado pay, but covers a good life in Brazil
 - Home in Wheat Ridge, CO (owned with wife)
-- Between jobs after Activate Care ended CO contract
-- Exploring: stay in Brazil, NYC opportunity, or other US remote work
+- Building community locally, little by little
 
 ## Stakeholders
 
@@ -29,7 +30,7 @@ Managing Di's personal finances and exploring income growth opportunities using 
 
 ## Current Status
 
-Exploration phase — financial picture not yet fully mapped.
+Stable but under-earning. Goal: grow income beyond the MedicaidSoft salary. Exact numbers not yet mapped.
 
 ## Rules of operation
 
@@ -39,13 +40,16 @@ Exploration phase — financial picture not yet fully mapped.
 ## Open Pending Items
 
 - [ ] Map current monthly expenses (Brazil + CO home costs)
-- [ ] Identify current income sources (if any)
+- [x] Identify current income sources — MedicaidSoft salary (2026-10-01)
+- [ ] Define income target (how much more, by when, and what for)
 - [ ] Research AI-assisted income opportunities that match Di's background
 - [ ] Evaluate cost of living comparison: Brazil vs NYC vs Colorado
 
 ## Important Decisions
 
 *(format: **DD/MM/YYYY** — Decision — Reason)*
+
+- **01/10/2026** — Based in Brazil, working remotely for MedicaidSoft — lower cost of living makes the lower salary workable
 
 ## Next Steps
 

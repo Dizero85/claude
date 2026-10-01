@@ -2,7 +2,7 @@
 
 > Living document: scope, status, pending items, decisions.
 > Update throughout sessions. The agent reads this BEFORE working.
-> Last updated: 2026-06-09
+> Last updated: 2026-10-01
 
 ---
 
@@ -32,7 +32,7 @@ Land a remote role in healthcare (patient navigation, community health, health e
 
 ## Current Status
 
-Exploration phase — clarifying options (stay in Brazil, NYC, or other US remote role).
+Employed remotely at MedicaidSoft, living in Brazil (hometown). Pay is well below Colorado level — open to better-paying remote roles or growth inside MedicaidSoft.
 
 ## Rules of operation
 
@@ -43,13 +43,15 @@ Exploration phase — clarifying options (stay in Brazil, NYC, or other US remot
 
 - [ ] Update resume to reflect Activate Care role and departure
 - [ ] Clarify what the NYC opportunity actually entails
-- [ ] Define priority: Brazil-based remote vs US-based remote vs NYC
+- [x] Define priority: Brazil-based remote — decided, working from Brazil (2026-10-01)
 - [ ] Identify top 5 job boards / platforms for remote healthcare roles
 - [ ] Explore if Brazilian healthcare orgs hire for Di's profile
 
 ## Important Decisions
 
 *(format: **DD/MM/YYYY** — Decision — Reason)*
+
+- **01/10/2026** — Accepted remote role at MedicaidSoft, based in Brazil — stable income, good quality of life
 
 ## Next Steps
 
