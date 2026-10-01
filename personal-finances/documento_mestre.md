@@ -19,7 +19,7 @@ Managing Di's personal finances and exploring income growth opportunities using 
 
 - Living in Brazil, back in his hometown — working from home
 - Employed remotely at MedicaidSoft (main income source) — works noon to 8 pm (Brazil time); mornings are free. Job is relaxed — Di has capacity to add other income work
-- Salary is well below his Colorado pay, but covers a good life in Brazil
+- Salary: ~R$3,400 every 15 days (~R$6,800–7,400/month), paid in BRL — well below his Colorado pay, but covers a good life in Brazil
 - Home in Wheat Ridge, CO (owned with wife)
 - Building community locally, little by little
 
@@ -40,7 +40,7 @@ Stable but under-earning. Goal: grow income beyond the MedicaidSoft salary. Exac
 ## Open Pending Items
 
 - [ ] Map current monthly expenses (Brazil + CO home costs)
-- [x] Identify current income sources — MedicaidSoft salary (2026-10-01)
+- [x] Identify current income sources — MedicaidSoft salary, ~R$6,800–7,400/month in BRL (2026-10-01)
 - [ ] Define income target (how much more, by when, and what for)
 - [ ] Check MedicaidSoft contract for side-work / non-compete / conflict-of-interest rules
 - [ ] Research AI-assisted income opportunities that match Di's background
