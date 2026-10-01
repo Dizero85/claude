@@ -43,7 +43,8 @@ Stable but under-earning. Goal (Phase A): ~US$2,000/month total = +~US$450/month
 - [x] Identify current income sources — MedicaidSoft salary, ~R$6,800–7,400/month in BRL (2026-10-01)
 - [x] Define income target — Phase A: reach ~US$2,000/month TOTAL (+~US$450/month extra, in USD). Phase B later: +US$2,000 extra (2026-10-01)
 - [ ] Check MedicaidSoft contract for side-work / non-compete / conflict-of-interest rules
-- [ ] Research AI-assisted income opportunities that match Di's background
+- [x] Research income opportunities — see satelites/phase-a-income-options.md (2026-10-01)
+- [ ] Pick Phase A option and take first action
 - [ ] Evaluate cost of living comparison: Brazil vs NYC vs Colorado
 
 ## Important Decisions

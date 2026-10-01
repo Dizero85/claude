@@ -13,4 +13,4 @@
 
 ## Satellite files (in `satelites/`)
 
-(none yet — will be created as needed, via `optimize OS`)
+- [phase-a-income-options.md](satelites/phase-a-income-options.md) — Phase A income options, pay, and Brazil restrictions (2026-10-01)
