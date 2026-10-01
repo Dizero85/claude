@@ -30,7 +30,7 @@ Managing Di's personal finances and exploring income growth opportunities using 
 
 ## Current Status
 
-Stable but under-earning. Goal: ~US$2,000/month (total vs. extra not yet confirmed). Proposed path: remote PT↔EN medical interpreting first, then certification + consulting to raise hourly rate.
+Stable but under-earning. Goal (Phase A): ~US$2,000/month total = +~US$450/month extra, ~4–5 hrs/week in the mornings. Proposed path: remote PT↔EN medical interpreting first, then certification + consulting to raise hourly rate.
 
 ## Rules of operation
 
@@ -41,7 +41,7 @@ Stable but under-earning. Goal: ~US$2,000/month (total vs. extra not yet confirm
 
 - [ ] Map current monthly expenses (Brazil + CO home costs)
 - [x] Identify current income sources — MedicaidSoft salary, ~R$6,800–7,400/month in BRL (2026-10-01)
-- [ ] Define income target — Di wants ~US$2,000/month; CONFIRM: total income (+~US$450) or extra on top of salary (+US$2,000)?
+- [x] Define income target — Phase A: reach ~US$2,000/month TOTAL (+~US$450/month extra, in USD). Phase B later: +US$2,000 extra (2026-10-01)
 - [ ] Check MedicaidSoft contract for side-work / non-compete / conflict-of-interest rules
 - [ ] Research AI-assisted income opportunities that match Di's background
 - [ ] Evaluate cost of living comparison: Brazil vs NYC vs Colorado
@@ -51,6 +51,7 @@ Stable but under-earning. Goal: ~US$2,000/month (total vs. extra not yet confirm
 *(format: **DD/MM/YYYY** — Decision — Reason)*
 
 - **01/10/2026** — Based in Brazil, working remotely for MedicaidSoft — lower cost of living makes the lower salary workable
+- **01/10/2026** — Start with Phase A target (+~US$450/month) before bigger goals — small, reachable win first; keeps mornings free for health
 
 ## Next Steps
 
