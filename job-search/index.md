@@ -22,3 +22,4 @@
 - [medicaidsoft-interview-prep.md](satelites/medicaidsoft-interview-prep.md) — MedicaidSoft interview prep (2026-06-10)
 - [homera-health-application.md](satelites/homera-health-application.md) — Homera Health application: resume section + cover letter (2026-06-10)
 - [linkedin-update-2026-10.md](satelites/linkedin-update-2026-10.md) — LinkedIn update after MedicaidSoft: headline, experience entry, About, Open to Work (DRAFT, 2026-10-11)
+- [resume-v3-customer-experience.md](satelites/resume-v3-customer-experience.md) — resume v3: customer experience / support operations focus (English, DRAFT, 2026-10-11)

@@ -5,6 +5,12 @@
 
 ---
 
+## 2026-10-11 — Resume v3 (customer experience) drafted
+
+- Rewrote an AI-generated CX resume honestly: removed invented claims (marketplace, fake certification, invented titles), added MedicaidSoft, Lem Springsteen, AI/Zoho placeholders
+
+---
+
 ## 2026-10-11 — MedicaidSoft job ended; LinkedIn update drafted
 
 - Created satelites/linkedin-update-2026-10.md (headline, experience entry, About, skills, Open to Work, optional post)
