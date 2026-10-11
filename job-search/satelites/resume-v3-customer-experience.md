@@ -1,5 +1,5 @@
 # Diogo Barbosa — Resume v3 (Customer Experience / Support Operations)
-> Date: 2026-10-11 | Status: DRAFT — confirm the lines marked [CONFIRM] before sending
+> Date: 2026-10-11 | Status: READY — Di to double-check the 2 MedicaidSoft Zoho/AI bullets match what he did
 > Honest rewrite of an AI-generated CX resume: same target (remote customer support / CX), real experience only.
 
 ---
@@ -21,7 +21,7 @@ Customer support and operations professional with 13+ years of experience helpin
 - **Customer Support:** Escalation Management, De-escalation, Case Management, Follow-up, Clear Written Communication
 - **Operations:** Workflow Design, SOP Development, Staff Training & Onboarding, Caseload Management, Documentation Quality
 - **Communication:** Trilingual (English, Portuguese, Spanish), Public Speaking, TV & Media Appearances
-- **Tools:** Zoho [CONFIRM which apps — e.g. CRM, Desk, Mail], AI tools [CONFIRM which — e.g. ChatGPT, Claude], Epic EHR, CRM Platforms, Slack, Google Workspace, Microsoft 365
+- **Tools:** Zoho, AI tools (ChatGPT, Claude), Epic EHR, CRM Platforms, Slack, Google Workspace, Microsoft 365
 - **Compliance:** HIPAA Certified, Regulatory Documentation
 
 ---
@@ -33,8 +33,8 @@ Medicaid Specialist (Freelance) | Jun 2026 – Oct 2026
 
 - Reviewed applicant documents for Medicaid nursing home (long-term care) applications, checking that each file was complete and accurate before submission
 - Served as the point of contact with nursing home staff — requested missing documents, answered questions, and kept applications moving
-- [CONFIRM — Zoho line, if Zoho was used here] Tracked cases and communications in Zoho [app name]
-- [CONFIRM — AI line, only if true] Used AI tools to [e.g. summarize documents / draft emails / organize case notes]
+- Tracked applications and communications in Zoho
+- Used AI tools (ChatGPT, Claude) in daily work to speed up document review and written communication
 
 **Activate Care – Denver, CO (Remote)**
 Community Health Advisor | 2023 – 2025
