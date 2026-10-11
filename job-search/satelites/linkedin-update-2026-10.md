@@ -6,7 +6,9 @@
 
 ## 1. Headline
 
-Patient Navigator & Community Health Worker | Medicaid & Care Navigation | Trilingual EN · PT · ES | 13+ Years U.S. Healthcare | Open to Remote Roles
+Patient Navigator & Community Health Worker | Medicaid & Care Navigation | Trilingual: English · Spanish · Portuguese | 13+ Years U.S. Healthcare | Open to Remote Roles
+
+> Languages spelled out on purpose: recruiters search "Spanish", not "ES".
 
 ---
 
