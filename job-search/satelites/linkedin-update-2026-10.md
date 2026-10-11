@@ -1,5 +1,5 @@
 # LinkedIn Update — After MedicaidSoft
-> Date: 2026-10-11 | Status: DRAFT — fill the [brackets] before posting
+> Date: 2026-10-11 | Status: READY to post
 > Builds on: [linkedin-about.md](linkedin-about.md)
 
 ---
@@ -14,7 +14,7 @@ Patient Navigator & Community Health Worker | Medicaid & Care Navigation | Trili
 
 **Title:** Medicaid Specialist
 **Company:** MedicaidSoft
-**Employment type:** Full-time *[confirm]*
+**Employment type:** Freelance (full-time hours)
 **Location:** Remote
 **Dates:** Jun 2026 – Oct 2026
 
@@ -22,11 +22,8 @@ Patient Navigator & Community Health Worker | Medicaid & Care Navigation | Trili
 
 MedicaidSoft builds software that helps elder law attorneys prepare Medicaid long-term care applications.
 
-- Supported Medicaid long-term care applications, including income and asset eligibility, spousal protections (CSRA/MMNA), and 5-year look-back reviews *[confirm — keep only what you actually did]*
-- Guided [attorneys / law firm staff / families] through [the application process / the software] *[pick who you actually helped]*
-- [Optional: one number — e.g. "Handled X applications across Y states"]
-
-> Only keep lines that are true. A short, honest entry is better than a padded one.
+- Reviewed applicant documents for Medicaid nursing home (long-term care) applications, checking that each file was complete and accurate before submission
+- Served as the point of contact with nursing home staff — requested missing documents, answered questions, and kept applications moving
 
 ---
 
@@ -89,6 +86,14 @@ I specialize in connecting people to resources, navigating complex systems, and 
 > I'm trilingual (English, Portuguese, Spanish) and looking for remote roles in patient navigation, community health, care coordination, or Medicaid/benefits support.
 >
 > If you know of an opening or someone I should talk to, I'd be grateful for an intro. Thank you!
+
+---
+
+## Interview answer — "Why did MedicaidSoft end?"
+
+> "It was a full-time freelance contract with a small startup. Their application volume dropped, so there wasn't enough work to keep a contractor on, and the contract ended. I'm glad I did it — I learned Medicaid long-term care eligibility from the inside."
+
+Short, true, nothing negative. Don't add more unless they ask.
 
 ---
 
