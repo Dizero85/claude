@@ -2,7 +2,7 @@
 
 > Living document: scope, status, pending items, decisions.
 > Update throughout sessions. The agent reads this BEFORE working.
-> Last updated: 2026-06-09
+> Last updated: 2026-10-11
 
 ---
 
@@ -21,6 +21,7 @@ Land a remote role in healthcare (patient navigation, community health, health e
 - Colon cancer prevention specialist
 - Denver Health (public hospital)
 - Activate Care (lost job when CO contract ended)
+- MedicaidSoft — Medicaid Specialist, remote (2026; job ended, dates TBD)
 - Based in Brazil currently; home in Wheat Ridge, CO
 - Potential NYC opportunity with a close friend (details TBD)
 
@@ -32,7 +33,7 @@ Land a remote role in healthcare (patient navigation, community health, health e
 
 ## Current Status
 
-Exploration phase — clarifying options (stay in Brazil, NYC, or other US remote role).
+Job ended at MedicaidSoft (Oct 2026). Back to active search — updating LinkedIn first.
 
 ## Rules of operation
 
@@ -41,6 +42,9 @@ Exploration phase — clarifying options (stay in Brazil, NYC, or other US remot
 
 ## Open Pending Items
 
+- [ ] Fill [brackets] in satelites/linkedin-update-2026-10.md (dates, duties) and publish on LinkedIn
+- [ ] Add MedicaidSoft entry to resumes (v1 + v2, EN + PT)
+- [ ] Prepare one neutral sentence for interviews on why MedicaidSoft ended
 - [ ] Update resume to reflect Activate Care role and departure
 - [ ] Clarify what the NYC opportunity actually entails
 - [ ] Define priority: Brazil-based remote vs US-based remote vs NYC

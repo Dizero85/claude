@@ -5,6 +5,13 @@
 
 ---
 
+## 2026-10-11 — MedicaidSoft job ended; LinkedIn update drafted
+
+- Created satelites/linkedin-update-2026-10.md (headline, experience entry, About, skills, Open to Work, optional post)
+- Master document: status and pending items updated
+
+---
+
 ## 2026-06-09 — Context created
 
 - Folder initialized via instalador-os.md

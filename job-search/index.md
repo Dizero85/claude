@@ -1,7 +1,7 @@
 # job-search — Index
 
 > Catalog of all files in this folder.
-> Updated: 2026-06-09
+> Updated: 2026-10-11
 
 ## Main files
 
@@ -21,3 +21,4 @@
 - [linkedin-about.md](satelites/linkedin-about.md) — LinkedIn About section (updated 2026-06-10)
 - [medicaidsoft-interview-prep.md](satelites/medicaidsoft-interview-prep.md) — MedicaidSoft interview prep (2026-06-10)
 - [homera-health-application.md](satelites/homera-health-application.md) — Homera Health application: resume section + cover letter (2026-06-10)
+- [linkedin-update-2026-10.md](satelites/linkedin-update-2026-10.md) — LinkedIn update after MedicaidSoft: headline, experience entry, About, Open to Work (DRAFT, 2026-10-11)
