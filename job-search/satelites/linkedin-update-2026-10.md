@@ -16,7 +16,7 @@ Patient Navigator & Community Health Worker | Medicaid & Care Navigation | Trili
 **Company:** MedicaidSoft
 **Employment type:** Full-time *[confirm]*
 **Location:** Remote
-**Dates:** [Month] 2026 – [Month] 2026
+**Dates:** Jun 2026 – Oct 2026
 
 **Description:**
 
@@ -54,7 +54,7 @@ I specialize in connecting people to resources, navigating complex systems, and 
 
 **Keywords:** Community Health Worker | Patient Navigator | Medicaid Specialist | Cultural Liaison | Bilingual Outreach | SDOH | Care Coordination | Community Engagement | Health Equity | Epic EHR | Remote | Trilingual | Latino Outreach | Brazilian Portuguese
 
-📍 U.S. Citizen based in [Belo Horizonte, Brazil — confirm current location] — available for remote roles across U.S. and international time zones
+📍 U.S. Citizen based in Belo Horizonte, Brazil — available for remote roles across U.S. and international time zones
 📩 diogobarbosa85@gmail.com
 
 ---
