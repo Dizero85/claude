@@ -5,6 +5,12 @@
 
 ---
 
+## 2026-10-11 — MedicaidSoft added to resumes v1/v2 (EN + PT)
+
+- Added MedicaidSoft job + Zoho and AI tools (ChatGPT, Claude) to all 4 older resumes
+
+---
+
 ## 2026-10-11 — Resume v3 (customer experience) drafted
 
 - Rewrote an AI-generated CX resume honestly: removed invented claims (marketplace, fake certification, invented titles), added MedicaidSoft, Lem Springsteen, AI/Zoho placeholders
