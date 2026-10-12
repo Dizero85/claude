@@ -1,5 +1,5 @@
 # Job Leads — October 2026
-> Found: 2026-10-12 via web search | Status: NOT VERIFIED as open — Di must open each link and check
+> Found: 2026-10-12 via web search | Status: ❌ Di checked 2026-10-12 — almost all EXPIRED. Do not use the leads table. Job sites list below is still useful.
 > Claude's session could not open job sites directly (blocked), so dates come from search summaries only.
 
 ---
