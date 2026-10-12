@@ -5,6 +5,12 @@
 
 ---
 
+## 2026-10-12 — Seema RPM Care Navigator application
+
+- Tailored resume + email for Remote Patient Monitoring Care Navigator (Seema); flagged low pay (USD 1,000–1,200/mo)
+
+---
+
 ## 2026-10-12 — Job leads search
 
 - Created satelites/job-leads-2026-10.md: 7 leads + job sites list; flagged U.S.-residency risk

@@ -24,3 +24,4 @@
 - [linkedin-update-2026-10.md](satelites/linkedin-update-2026-10.md) — LinkedIn update after MedicaidSoft: headline, experience entry, About, Open to Work (DRAFT, 2026-10-11)
 - [resume-v3-customer-experience.md](satelites/resume-v3-customer-experience.md) — resume v3: customer experience / support operations focus (English, DRAFT, 2026-10-11)
 - [job-leads-2026-10.md](satelites/job-leads-2026-10.md) — remote job leads + job sites to check (2026-10-12, not verified open)
+- [seema-rpm-care-navigator-application.md](satelites/seema-rpm-care-navigator-application.md) — Seema RPM Care Navigator: tailored resume + application email (2026-10-12)
