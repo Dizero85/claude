@@ -46,6 +46,7 @@ Job ended at MedicaidSoft (Oct 2026). Back to active search — updating LinkedI
 - [ ] Publish satelites/linkedin-update-2026-10.md on LinkedIn
 - [x] Add MedicaidSoft entry to resumes (v1 + v2, EN + PT) — with Zoho + AI tools
 - [x] Confirm AI tools + Zoho details for resume-v3-customer-experience.md (ChatGPT, Claude, Zoho — at MedicaidSoft)
+- [ ] Check job-leads-2026-10.md links: still open? Brazil eligible? Apply to best fits
 - [x] Prepare one neutral sentence for interviews on why MedicaidSoft ended (in linkedin-update-2026-10.md)
 - [ ] Update resume to reflect Activate Care role and departure
 - [ ] Clarify what the NYC opportunity actually entails

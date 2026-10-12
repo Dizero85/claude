@@ -5,6 +5,12 @@
 
 ---
 
+## 2026-10-12 — Job leads search
+
+- Created satelites/job-leads-2026-10.md: 7 leads + job sites list; flagged U.S.-residency risk
+
+---
+
 ## 2026-10-11 — MedicaidSoft added to resumes v1/v2 (EN + PT)
 
 - Added MedicaidSoft job + Zoho and AI tools (ChatGPT, Claude) to all 4 older resumes
