@@ -57,3 +57,4 @@ Senior Care Navigator / Clinical Operations Lead | 2012 – 2023
 - Community Health Worker (CHW) Certification
 - HIPAA Compliance Certified
 - National Professional Certification in Customer Service (USA)
+- Career Ready Colorado Certificate (Business Operations)

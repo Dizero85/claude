@@ -57,3 +57,4 @@ Navegador Sênior de Cuidados / Líder de Operações Clínicas | 2012 – 2023
 - Certificação de Agente Comunitário de Saúde (CHW)
 - Certificação em Conformidade HIPAA
 - Certificação Nacional Profissional em Atendimento ao Cliente (EUA)
+- Career Ready Colorado Certificate (Operações de Negócios)

@@ -66,6 +66,7 @@ Personal Assistant | 2010 – 2012
 
 - Bachelor's Degree in Communications — University of Belo Horizonte
 - National Professional Certification in Customer Service (USA)
+- Career Ready Colorado Certificate (Business Operations)
 - HIPAA Compliance Certified
 - Community Health Worker (CHW) Certification
 - Patient Navigation Collaborative Certification — Colorado *(contributing member in its development)*
