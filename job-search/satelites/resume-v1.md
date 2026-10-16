@@ -16,13 +16,21 @@ High-impact Clinical Operations Professional and U.S. Citizen with over 13 years
 
 - **Care Coordination:** SDOH Screenings, Resource Mapping, Case Management, Patient Advocacy
 - **Program Building:** Workflow Design (SOPs), Intake Process Optimization, KPI Tracking
-- **Technology:** Epic EHR, CRM Platforms, Telehealth Tools, Google Workspace, Microsoft 365
+- **Technology:** Epic EHR, Zoho, AI tools (ChatGPT, Claude), CRM Platforms, Telehealth Tools, Google Workspace, Microsoft 365
 - **Compliance:** HIPAA Certified, Regulatory Documentation, Quality Assurance
 - **Communication:** Trilingual (English, Portuguese, Spanish), Motivational Interviewing, De-escalation
 
 ---
 
 ## Professional Experience
+
+**MedicaidSoft – Remote**
+Medicaid Specialist (Freelance) | Jun 2026 – Oct 2026
+
+- Reviewed applicant documents for Medicaid nursing home (long-term care) applications, checking that each file was complete and accurate before submission
+- Served as the point of contact with nursing home staff — requested missing documents, answered questions, and kept applications moving
+- Tracked applications and communications in Zoho
+- Used AI tools (ChatGPT, Claude) in daily work to speed up document review and written communication
 
 **Activate Care – Denver, CO (Remote)**
 Community Health Advisor / Clinical Advocate | 2023 – 2025
@@ -49,3 +57,4 @@ Senior Care Navigator / Clinical Operations Lead | 2012 – 2023
 - Community Health Worker (CHW) Certification
 - HIPAA Compliance Certified
 - National Professional Certification in Customer Service (USA)
+- Career Ready Colorado Certificate (Business Operations)
