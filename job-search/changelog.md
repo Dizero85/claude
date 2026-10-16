@@ -5,6 +5,13 @@
 
 ---
 
+## 2026-10-16 — BH Complete Solutions TA Intern application
+
+- Match check (medium: skills fit, intern level) + recruiting-focused resume + message
+- Flagged issues in Di's ICON resume version (placeholder degree, invented 100% claims, second LinkedIn URL)
+
+---
+
 ## 2026-10-12 — Seema RPM Care Navigator application
 
 - Tailored resume + email for Remote Patient Monitoring Care Navigator (Seema); flagged low pay (USD 1,000–1,200/mo)
