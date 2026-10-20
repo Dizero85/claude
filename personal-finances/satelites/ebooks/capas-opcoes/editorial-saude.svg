@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1600" preserveAspectRatio="xMidYMid slice" width="1000" height="1600">
+<style>@import url("../_build/fonts.css");</style>
+<defs><radialGradient id="papel" cx=".3" cy=".2" r="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#E6DCCB"/></radialGradient></defs>
+<rect width="1000" height="1600" fill="#F4EFE6"/>
+<rect x="0" y="0" width="1000" height="1600" fill="url(#papel)" opacity=".5"/>
+<text x="90" y="200" font-family="Manrope" font-size="24" font-weight="800" letter-spacing="9" fill="#151515">BOAONDA</text>
+<text x="910" y="200" text-anchor="end" font-family="Manrope" font-size="22" font-weight="600" letter-spacing="6" fill="#151515" fill-opacity=".6">REEDUCAÇÃO ALIMENTAR</text>
+<line x1="90" y1="228" x2="910" y2="228" stroke="#151515" stroke-width="2"/>
+<text x="90" y="420" font-family="Fraunces" font-weight="300" font-size="150" letter-spacing="-5" fill="#151515">Emagrecer</text><text x="90" y="570" font-family="Fraunces" font-style="italic" font-weight="300" font-size="150" letter-spacing="-5" fill="#B9472F">sem neura</text>
+<circle cx="640" cy="1060" r="256" fill="none" stroke="#1A1A1A" stroke-opacity=".2" stroke-width="2"/><path d="M640 1060 L640 830 A230 230 0 0 0 640 1290 Z" fill="#7C9A6B"/><path d="M640 1060 L640 830 A230 230 0 0 1 870 1060 Z" fill="#B9472F"/><path d="M640 1060 L870 1060 A230 230 0 0 1 640 1290 Z" fill="#D9A441"/><g stroke="#F4EFE6" stroke-width="8"><line x1="640" y1="830" x2="640" y2="1290"/><line x1="640" y1="1060" x2="870" y2="1060"/></g>
+<line x1="90" y1="1340" x2="910" y2="1340" stroke="#151515" stroke-width="2"/>
+<text x="90" y="1390" font-family="Manrope" font-size="28" font-weight="400" fill="#151515" fill-opacity=".7">Comida de verdade, sem dieta da moda</text><text x="90" y="1430" font-family="Manrope" font-size="28" font-weight="400" fill="#151515" fill-opacity=".7">e sem passar fome.</text>
+<text x="910" y="1390" text-anchor="end" font-family="Fraunces" font-style="italic" font-weight="300" font-size="30" fill="#B9472F">21 Dias</text>
+</svg>

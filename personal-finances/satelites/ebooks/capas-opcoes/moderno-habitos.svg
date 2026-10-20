@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1600" preserveAspectRatio="xMidYMid slice" width="1000" height="1600">
+<style>@import url("../_build/fonts.css");</style>
+<defs><filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="110"/></filter><filter id="grao"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 1 0"/></filter></defs>
+<rect width="1000" height="1600" fill="#0C0A24"/>
+<g filter="url(#blur)"><circle cx="260" cy="1150" r="420" fill="#6D4AFF"/><circle cx="820" cy="1320" r="320" fill="#FF4FA3"/><circle cx="780" cy="860" r="220" fill="#FF9A5A"/></g>
+<rect width="1000" height="1600" filter="url(#grao)" opacity=".10"/>
+<text x="920" y="1440" text-anchor="end" font-family="Manrope" font-weight="800" font-size="440" letter-spacing="-20" fill="none" stroke="#FFFFFF" stroke-opacity=".55" stroke-width="3">30</text>
+<rect x="80" y="160" width="250" height="56" rx="28" fill="#FFFFFF" fill-opacity=".08" stroke="#FFFFFF" stroke-opacity=".35" stroke-width="2"/>
+<text x="205" y="197" text-anchor="middle" font-family="Manrope" font-size="22" font-weight="600" letter-spacing="5" fill="#FFFFFF">30 DIAS</text>
+<text x="920" y="197" text-anchor="end" font-family="Manrope" font-size="22" font-weight="800" letter-spacing="8" fill="#FFFFFF">BOAONDA</text>
+<text x="80" y="430" font-family="Manrope" font-weight="800" font-size="136" letter-spacing="-6" fill="#FFFFFF">hábitos</text><text x="80" y="562" font-family="Manrope" font-weight="800" font-size="136" letter-spacing="-6" fill="#FFB38A">que ficam.</text>
+<text x="80" y="652" font-family="Manrope" font-size="28" font-weight="400" fill="#FFFFFF" fill-opacity=".78">O método de 30 dias para vencer</text><text x="80" y="692" font-family="Manrope" font-size="28" font-weight="400" fill="#FFFFFF" fill-opacity=".78">a procrastinação.</text>
+<rect x="80" y="1440" width="840" height="1.5" fill="#FFFFFF" fill-opacity=".3"/>
+<text x="80" y="1490" font-family="Manrope" font-size="20" font-weight="600" letter-spacing="6" fill="#FFFFFF" fill-opacity=".75">DESENVOLVIMENTO PESSOAL</text>
+</svg>

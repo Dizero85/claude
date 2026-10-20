@@ -22,3 +22,8 @@ Para cada e-book:
 - **Cores e diagramação**: edite `_build/style.css`.
 - **Gerar tudo de novo**: rode `NODE_PATH=$(npm root -g) node _build/build.js` (a marca padrão é **BoaOnda**; para trocar, use `MARCA="Outro Nome"` antes do comando).
 
+
+## Opções de capa (`capas-opcoes/`)
+
+Três estilos alternativos para cada livro: **A · Editorial**, **B · Premium Noir** e **C · Gradiente Moderno**. Veja a comparação em `capas-opcoes/prancha-comparativa.png`.
+Para regerar: `python3 capas-opcoes/gerar.py && NODE_PATH=$(npm root -g) node capas-opcoes/renderizar.js`.
