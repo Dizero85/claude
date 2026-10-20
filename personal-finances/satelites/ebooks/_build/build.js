@@ -22,9 +22,14 @@ const pandoc = (args) => execFileSync("pandoc", args, { stdio: "inherit", env: {
   const browser = await chromium.launch();
   const page = await browser.newPage();
 
-  for (const l of LIVROS) {
+  // LIVRO=01-financas gera só esse volume (a imagem da coleção usa as capas já geradas em dist/)
+  for (const l of LIVROS.filter((x) => !process.env.LIVRO || x.pasta === process.env.LIVRO)) {
     const dir = path.join(ROOT, l.pasta);
-    const md = path.join(dir, "ebook.md");
+    // Texto em partes (texto/*.md, em ordem) + caderno de trabalho (só no PDF)
+    const textos = fs.readdirSync(path.join(dir, "texto")).filter((f) => f.endsWith(".md")).sort().map((f) => path.join(dir, "texto", f));
+    if (!textos.length) throw new Error(`${l.pasta}: nenhum capítulo em texto/`);
+    const caderno = path.join(dir, "caderno.md");
+    const mdPdf = fs.existsSync(caderno) ? [...textos, caderno] : textos;
     const svg = fs.readFileSync(path.join(dir, "capa.svg"), "utf8");
     const out = (ext) => path.join(DIST, `${l.arquivo}.${ext}`);
     const tmp = (n) => path.join(DIST, `.${l.arquivo}-${n}`);
@@ -49,7 +54,7 @@ const pandoc = (args) => execFileSync("pandoc", args, { stdio: "inherit", env: {
 
     // 3) Miolo: Markdown -> HTML diagramado -> PDF com número de página
     const html = tmp("miolo.html");
-    pandoc([md, "-s", "--toc", "--toc-depth=1", "--template", path.join(__dirname, "template.html"),
+    pandoc([...mdPdf, "-s", "--toc", "--toc-depth=1", "--template", path.join(__dirname, "template.html"),
       "-M", `author=${MARCA}`, "-V", `theme=${l.tema}`, "-V", `kicker=${l.kicker}`,
       "-V", `css=file://${path.join(__dirname, "style.css")}`, "-V", `fonts=file://${path.join(__dirname, "fonts.css")}`, "-o", html]);
     await page.goto(`file://${html}`);
@@ -65,7 +70,7 @@ const pandoc = (args) => execFileSync("pandoc", args, { stdio: "inherit", env: {
     execFileSync("pdfunite", [tmp("capa.pdf"), tmp("miolo.pdf"), out("pdf")]);
 
     // 5) EPUB (Kindle aceita EPUB via KDP)
-    pandoc([md, "-o", out("epub"), "--toc", "--toc-depth=1", "-M", `author=${MARCA}`,
+    pandoc([...textos, "-o", out("epub"), "--toc", "--toc-depth=1", "-M", `author=${MARCA}`,
       "--epub-cover-image", out("capa.png"), "--css", path.join(__dirname, "epub.css")]);
 
     for (const n of ["capa.pdf", "miolo.pdf", "miolo.html"]) fs.rmSync(tmp(n), { force: true });

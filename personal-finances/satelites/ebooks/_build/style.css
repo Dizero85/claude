@@ -2,7 +2,7 @@
 :root { --ink:#1d1d1f; --muted:#5b5b63; --line:#e6e2dc; }
 /* Paleta "Premium Noir": tom escuro de cada volume + dourado comum à coleção */
 body { --accent2:#A8853A; --soft2:#F7F2E6; --serif:"Cormorant Garamond", Georgia, serif; }
-.rosto .titulo, .sumario h2, main h1, blockquote { font-variant-numeric: lining-nums; }
+.rosto .titulo, .sumario h2, main h1, blockquote, .folha h2 { font-variant-numeric: lining-nums; }
 body.financas { --accent:#123D2E; --soft:#EFF3F0; }
 body.saude    { --accent:#5C2418; --soft:#F6EEEB; }
 body.habitos  { --accent:#27235E; --soft:#EFEEF6; }
@@ -12,7 +12,7 @@ body.habitos  { --accent:#27235E; --soft:#EFEEF6; }
 html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 body {
   margin: 0; color: var(--ink);
-  font-family: "Inter", Arial, sans-serif; font-size: 10pt; line-height: 1.6;
+  font-family: "Inter", Arial, sans-serif; font-size: 10.5pt; line-height: 1.65;
   counter-reset: cap;
 }
 
@@ -40,6 +40,7 @@ main h1:not(.unnumbered)::before {
 }
 main h1::after { content: ""; display: block; width: 44px; height: 4px; border-radius: 2px; background: var(--accent2); margin-top: 12px; }
 h2 { font-size: 13pt; color: var(--accent); margin: 20px 0 6px; break-after: avoid; }
+h3 { font-size: 11pt; color: var(--accent); margin: 16px 0 4px; break-after: avoid; }
 p { margin: 0 0 9px; }
 strong { color: var(--accent); }
 ul, ol { padding-left: 18px; margin: 0 0 10px; }
@@ -51,7 +52,9 @@ blockquote {
 blockquote p { margin: 0; }
 
 /* Tabelas */
-table { width: 100%; border-collapse: collapse; margin: 10px 0 14px; font-size: 8.4pt; line-height: 1.4; break-inside: avoid; }
+table { width: 100%; border-collapse: collapse; margin: 10px 0 14px; font-size: 8.4pt; line-height: 1.4; }
+tr { break-inside: avoid; }
+thead { display: table-header-group; }
 th { background: var(--accent); color: #fff; text-align: left; padding: 6px 7px; font-weight: 600; }
 td { padding: 6px 7px; border-bottom: 1px solid var(--line); vertical-align: top; }
 tbody tr:nth-child(even) td { background: #faf9f7; }
@@ -66,5 +69,19 @@ td strong { color: var(--ink); }
 
 /* Listas de checagem */
 ul.task-list { list-style: none; padding-left: 0; }
-ul.task-list li { padding: 3px 0; }
+ul.task-list li { padding: 1px 0; }
+p, li { orphans: 3; widows: 3; }
 ul.task-list input { width: 13px; height: 13px; margin: 0 8px 0 0; vertical-align: -2px; accent-color: var(--accent); }
+
+/* Páginas de abertura das Partes */
+main h1.parte { text-align: center; margin-top: 50mm; font-size: 34pt; }
+main h1.parte::after { margin: 16px auto 0; }
+main h1.parte + p { text-align: center; color: var(--muted); font-family: var(--serif); font-size: 14pt; line-height: 1.4; max-width: 92mm; margin: 18px auto 0; break-after: page; }
+
+/* Caderno de trabalho: cada folha começa em página nova */
+.folha { break-before: page; }
+.folha h2 { margin-top: 0; font-family: var(--serif); font-weight: 600; font-size: 18pt; }
+.folha table { break-inside: auto; }
+.folha td { height: 8.5mm; }
+.folha p { color: var(--muted); }
+.linhas { border-bottom: 1px solid var(--line); height: 8.5mm; }

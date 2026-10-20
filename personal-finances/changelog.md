@@ -5,6 +5,12 @@
 
 ---
 
+## 2026-10-20 — E-books ampliados para 114–125 páginas
+
+- Textos reescritos e ampliados (Partes I–III, estudos de caso, roteiros, mitos, FAQ, 25 receitas)
+- Caderno de trabalho com folhas diárias/semanais gerado por `_build/caderno.py` (só no PDF)
+- Vol. I: 125 págs · Vol. II: 124 págs · Vol. III: 114 págs; versões curtas guardadas como `ebook-v1.md`
+
 ## 2026-10-20 — Identidade Premium Noir aplicada
 
 - Marca BoaOnda aplicada; 3 estilos de capa testados, escolhido o Premium Noir
