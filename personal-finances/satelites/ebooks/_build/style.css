@@ -1,8 +1,11 @@
 /* Diagramação compartilhada dos e-books (PDF A5). Cada livro troca só as cores. */
 :root { --ink:#1d1d1f; --muted:#5b5b63; --line:#e6e2dc; }
-body.financas { --accent:#0E4A39; --accent2:#C9962B; --soft:#EEF6F2; --soft2:#FBF4E2; }
-body.saude    { --accent:#D9553E; --accent2:#3A8F5C; --soft:#FFF1EA; --soft2:#EAF5EE; }
-body.habitos  { --accent:#4B3BC4; --accent2:#E07A45; --soft:#EFEDFF; --soft2:#FFF0E7; }
+/* Paleta "Premium Noir": tom escuro de cada volume + dourado comum à coleção */
+body { --accent2:#A8853A; --soft2:#F7F2E6; --serif:"Cormorant Garamond", Georgia, serif; }
+.rosto .titulo, .sumario h2, main h1, blockquote { font-variant-numeric: lining-nums; }
+body.financas { --accent:#123D2E; --soft:#EFF3F0; }
+body.saude    { --accent:#5C2418; --soft:#F6EEEB; }
+body.habitos  { --accent:#27235E; --soft:#EFEEF6; }
 
 @page { size: A5; }
 * { box-sizing: border-box; }
@@ -16,24 +19,24 @@ body {
 /* Folha de rosto */
 .rosto { padding-top: 40mm; break-after: page; }
 .rosto .kicker { color: var(--accent2); font-weight: 700; letter-spacing: .18em; font-size: 8pt; text-transform: uppercase; }
-.rosto .titulo { font-size: 30pt; line-height: 1.05; margin: 10px 0 12px; color: var(--accent); letter-spacing: -.02em; }
+.rosto .titulo { font-family: var(--serif); font-weight: 600; font-size: 36pt; line-height: 1; margin: 10px 0 12px; color: var(--accent); letter-spacing: -.02em; }
 .rosto .sub { font-size: 12pt; color: var(--muted); margin: 0; }
 .rosto .barra { width: 56px; height: 5px; border-radius: 3px; background: var(--accent2); margin: 22px 0; }
 .rosto .marca { font-size: 8pt; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); margin-top: 60mm; }
 
 /* Sumário */
 .sumario { break-after: page; }
-.sumario h2 { font-size: 20pt; color: var(--accent); margin: 0 0 16px; }
+.sumario h2 { font-family: var(--serif); font-weight: 600; font-size: 26pt; color: var(--accent); margin: 0 0 16px; }
 .sumario ul { list-style: none; padding: 0; margin: 0; counter-reset: s; }
 .sumario li { border-bottom: 1px solid var(--line); padding: 9px 0; }
 .sumario a { color: var(--ink); text-decoration: none; font-weight: 600; font-size: 11pt; }
 
 /* Capítulos */
-main h1 { break-before: page; font-size: 22pt; line-height: 1.15; color: var(--accent); margin: 0 0 18px; letter-spacing: -.015em; padding-top: 4mm; }
+main h1 { break-before: page; font-family: var(--serif); font-weight: 600; font-size: 28pt; line-height: 1.05; color: var(--accent); margin: 0 0 18px; letter-spacing: -.015em; padding-top: 4mm; }
 main h1:not(.unnumbered)::before {
   counter-increment: cap; content: "Capítulo " counter(cap);
   display: block; font-size: 8pt; letter-spacing: .2em; text-transform: uppercase;
-  color: var(--accent2); font-weight: 700; margin-bottom: 8px;
+  color: var(--accent2); font-weight: 700; margin-bottom: 8px; font-family: "Inter", Arial, sans-serif;
 }
 main h1::after { content: ""; display: block; width: 44px; height: 4px; border-radius: 2px; background: var(--accent2); margin-top: 12px; }
 h2 { font-size: 13pt; color: var(--accent); margin: 20px 0 6px; break-after: avoid; }
@@ -43,7 +46,7 @@ ul, ol { padding-left: 18px; margin: 0 0 10px; }
 li { margin-bottom: 3px; }
 blockquote {
   margin: 12px 0; padding: 10px 14px; border-left: 4px solid var(--accent2);
-  background: var(--soft2); border-radius: 0 8px 8px 0; font-style: italic;
+  background: var(--soft2); border-radius: 0 8px 8px 0; font-style: italic; font-family: var(--serif); font-size: 12.5pt; line-height: 1.4;
 }
 blockquote p { margin: 0; }
 

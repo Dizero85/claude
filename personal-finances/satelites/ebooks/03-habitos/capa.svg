@@ -1,52 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1600" preserveAspectRatio="xMidYMid slice" width="1000" height="1600">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="0.6" y2="1">
-      <stop offset="0" stop-color="#2A2370"/>
-      <stop offset="1" stop-color="#120F33"/>
-    </linearGradient>
-    <linearGradient id="fill" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#8B6CFF"/>
-      <stop offset="1" stop-color="#FF9F6B"/>
-    </linearGradient>
-    <radialGradient id="glow" cx="0.8" cy="0.15" r="0.6">
-      <stop offset="0" stop-color="#8B6CFF" stop-opacity="0.45"/>
-      <stop offset="1" stop-color="#8B6CFF" stop-opacity="0"/>
-    </radialGradient>
-  </defs>
-  <rect width="1000" height="1600" fill="url(#bg)"/>
-  <rect width="1000" height="1600" fill="url(#glow)"/>
-  <!-- tracker 6x5 = 30 dias; 22 marcados -->
-  <g transform="translate(110 790)">
-    <g id="done" fill="url(#fill)">
-      <rect x="0"   y="0" width="100" height="100" rx="22"/><rect x="132" y="0" width="100" height="100" rx="22"/>
-      <rect x="264" y="0" width="100" height="100" rx="22"/><rect x="396" y="0" width="100" height="100" rx="22"/>
-      <rect x="528" y="0" width="100" height="100" rx="22"/><rect x="660" y="0" width="100" height="100" rx="22"/>
-      <rect x="0"   y="132" width="100" height="100" rx="22"/><rect x="132" y="132" width="100" height="100" rx="22"/>
-      <rect x="264" y="132" width="100" height="100" rx="22"/><rect x="528" y="132" width="100" height="100" rx="22"/>
-      <rect x="660" y="132" width="100" height="100" rx="22"/>
-      <rect x="0"   y="264" width="100" height="100" rx="22"/><rect x="132" y="264" width="100" height="100" rx="22"/>
-      <rect x="264" y="264" width="100" height="100" rx="22"/><rect x="396" y="264" width="100" height="100" rx="22"/>
-      <rect x="528" y="264" width="100" height="100" rx="22"/><rect x="660" y="264" width="100" height="100" rx="22"/>
-      <rect x="0"   y="396" width="100" height="100" rx="22"/><rect x="132" y="396" width="100" height="100" rx="22"/>
-      <rect x="264" y="396" width="100" height="100" rx="22"/><rect x="396" y="396" width="100" height="100" rx="22"/>
-      <rect x="528" y="396" width="100" height="100" rx="22"/>
-    </g>
-    <g fill="none" stroke="#ffffff" stroke-opacity="0.25" stroke-width="5">
-      <rect x="396" y="132" width="100" height="100" rx="22"/>
-      <rect x="660" y="396" width="100" height="100" rx="22"/>
-      <rect x="0" y="528" width="100" height="100" rx="22"/><rect x="132" y="528" width="100" height="100" rx="22"/>
-      <rect x="264" y="528" width="100" height="100" rx="22"/><rect x="396" y="528" width="100" height="100" rx="22"/>
-      <rect x="528" y="528" width="100" height="100" rx="22"/><rect x="660" y="528" width="100" height="100" rx="22"/>
-    </g>
-    <!-- check no último dia marcado -->
-    <path d="M553 448 L572 468 L604 428" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
-  </g>
-  <g font-family="Inter, 'Inter Display', Arial, sans-serif">
-    <text x="80" y="205" fill="#FFB38A" font-size="34" font-weight="700" letter-spacing="8">DESENVOLVIMENTO PESSOAL</text>
-    <text x="80" y="340" fill="#ffffff" font-size="150" font-weight="800" letter-spacing="-4">Hábitos</text>
-    <text x="80" y="495" fill="#ffffff" font-size="150" font-weight="800" letter-spacing="-4">que <tspan fill="#FFB38A">ficam</tspan></text>
-    <text x="80" y="590" fill="#ffffff" fill-opacity="0.82" font-size="38" font-weight="500">O método de 30 dias para vencer</text>
-    <text x="80" y="640" fill="#ffffff" fill-opacity="0.82" font-size="38" font-weight="500">a procrastinação.</text>
-    <text x="80" y="1490" fill="#ffffff" fill-opacity="0.7" font-size="30" font-weight="600" letter-spacing="6">BOAONDA</text>
-  </g>
+<style>@import url("../_build/fonts.css");</style>
+<defs><radialGradient id="brilho" cx=".5" cy=".62" r=".55"><stop offset="0" stop-color="#34306E" stop-opacity=".9"/><stop offset="1" stop-color="#0B0A18" stop-opacity="0"/></radialGradient></defs>
+<rect width="1000" height="1600" fill="#0B0A18"/>
+<rect width="1000" height="1600" fill="url(#brilho)"/>
+<rect x="60" y="130" width="880" height="1340" fill="none" stroke="#D4B26A" stroke-opacity=".55" stroke-width="2"/>
+<rect x="74" y="144" width="852" height="1312" fill="none" stroke="#D4B26A" stroke-opacity=".25" stroke-width="1"/>
+<text x="500" y="230" text-anchor="middle" font-family="Manrope" font-size="22" font-weight="600" letter-spacing="14" fill="#D4B26A">BOAONDA</text>
+<line x1="440" y1="262" x2="560" y2="262" stroke="#D4B26A" stroke-opacity=".6" stroke-width="1.5"/>
+<text x="500" y="320" text-anchor="middle" font-family="Manrope" font-size="20" font-weight="600" letter-spacing="8" fill="#F3EDE0" fill-opacity=".6">DESENVOLVIMENTO PESSOAL</text>
+<text x="500" y="470" text-anchor="middle" font-family="Cormorant Garamond" font-weight="600" font-size="140" fill="#F3EDE0">Hábitos</text><text x="500" y="605" text-anchor="middle" font-family="Cormorant Garamond" font-style="italic" font-weight="500" font-size="128" fill="#D4B26A">que ficam</text>
+<g transform="translate(500 1030)"><line x1="0" y1="-120" x2="0" y2="-96" stroke="#D4B26A" stroke-opacity="1" stroke-width="5" stroke-linecap="round" transform="rotate(0)"/><line x1="0" y1="-120" x2="0" y2="-96" stroke="#D4B26A" stroke-opacity="1" stroke-width="5" stroke-linecap="round" transform="rotate(12)"/><line x1="0" y1="-120" x2="0" y2="-96" stroke="#D4B26A" stroke-opacity="1" stroke-width="5" stroke-linecap="round" transform="rotate(24)"/><line x1="0" y1="-120" x2="0" y2="-96" stroke="#D4B26A" stroke-opacity="1" stroke-width="5" stroke-linecap="round" transform="rotate(36)"/><line x1="0" y1="-120" x2="0" y2="-96" stroke="#D4B26A" stroke-opacity="1" stroke-width="5" stroke-linecap="round" transform="rotate(48)"/><line x1="0" y1="-120" x2="0" y2="-96" stroke="#D4B26A" stroke-opacity="1" stroke-width="5" stroke-linecap="round" transform="rotate(60)"/><line x1="0" y1="-120" x2="0" y2="-96" stroke="#D4B26A" stroke-opacity="1" stroke-width="5" stroke-linecap="round" transform="rotate(72)"/><line x1="0" y1="-120" x2="0" y2="-96" stroke="#D4B26A" stroke-opacity="1" stroke-width="5" stroke-linecap="round" transform="rotate(84)"/><line x1="0" y1="-120" x2="0" y2="-96" stroke="#D4B26A" stroke-opacity="1" stroke-width="5" stroke-linecap="round" transform="rotate(96)"/><line x1="0" y1="-120" x2="0" y2="-96" stroke="#D4B26A" stroke-opacity="1" stroke-width="5" stroke-linecap="round" transform="rotate(108)"/><line x1="0" y1="-120" x2="0" y2="-96" stroke="#D4B26A" stroke-opacity="1" stroke-width="5" stroke-linecap="round" transform="rotate(120)"/><line x1="0" y1="-120" x2="0" y2="-96" stroke="#D4B26A" stroke-opacity="1" stroke-width="5" stroke-linecap="round" transform="rotate(132)"/><line x1="0" y1="-120" x2="0" y2="-96" stroke="#D4B26A" stroke-opacity="1" stroke-width="5" stroke-linecap="round" transform="rotate(144)"/><line x1="0" y1="-120" x2="0" y2="-96" stroke="#D4B26A" stroke-opacity="1" stroke-width="5" stroke-linecap="round" transform="rotate(156)"/><line x1="0" y1="-120" x2="0" y2="-96" stroke="#D4B26A" stroke-opacity="1" stroke-width="5" stroke-linecap="round" transform="rotate(168)"/><line x1="0" y1="-120" x2="0" y2="-96" stroke="#D4B26A" stroke-opacity="1" stroke-width="5" stroke-linecap="round" transform="rotate(180)"/><line x1="0" y1="-120" x2="0" y2="-96" stroke="#D4B26A" stroke-opacity="1" stroke-width="5" stroke-linecap="round" transform="rotate(192)"/><line x1="0" y1="-120" x2="0" y2="-96" stroke="#D4B26A" stroke-opacity="1" stroke-width="5" stroke-linecap="round" transform="rotate(204)"/><line x1="0" y1="-120" x2="0" y2="-96" stroke="#D4B26A" stroke-opacity="1" stroke-width="5" stroke-linecap="round" transform="rotate(216)"/><line x1="0" y1="-120" x2="0" y2="-96" stroke="#D4B26A" stroke-opacity="1" stroke-width="5" stroke-linecap="round" transform="rotate(228)"/><line x1="0" y1="-120" x2="0" y2="-96" stroke="#D4B26A" stroke-opacity="1" stroke-width="5" stroke-linecap="round" transform="rotate(240)"/><line x1="0" y1="-120" x2="0" y2="-96" stroke="#D4B26A" stroke-opacity="1" stroke-width="5" stroke-linecap="round" transform="rotate(252)"/><line x1="0" y1="-120" x2="0" y2="-96" stroke="#ffffff" stroke-opacity="0.18" stroke-width="5" stroke-linecap="round" transform="rotate(264)"/><line x1="0" y1="-120" x2="0" y2="-96" stroke="#ffffff" stroke-opacity="0.18" stroke-width="5" stroke-linecap="round" transform="rotate(276)"/><line x1="0" y1="-120" x2="0" y2="-96" stroke="#ffffff" stroke-opacity="0.18" stroke-width="5" stroke-linecap="round" transform="rotate(288)"/><line x1="0" y1="-120" x2="0" y2="-96" stroke="#ffffff" stroke-opacity="0.18" stroke-width="5" stroke-linecap="round" transform="rotate(300)"/><line x1="0" y1="-120" x2="0" y2="-96" stroke="#ffffff" stroke-opacity="0.18" stroke-width="5" stroke-linecap="round" transform="rotate(312)"/><line x1="0" y1="-120" x2="0" y2="-96" stroke="#ffffff" stroke-opacity="0.18" stroke-width="5" stroke-linecap="round" transform="rotate(324)"/><line x1="0" y1="-120" x2="0" y2="-96" stroke="#ffffff" stroke-opacity="0.18" stroke-width="5" stroke-linecap="round" transform="rotate(336)"/><line x1="0" y1="-120" x2="0" y2="-96" stroke="#ffffff" stroke-opacity="0.18" stroke-width="5" stroke-linecap="round" transform="rotate(348)"/><text y="22" text-anchor="middle" font-family="Cormorant Garamond" font-weight="600" font-size="64" fill="#D4B26A">30</text></g>
+<text x="500" y="1250" text-anchor="middle" font-family="Manrope" font-size="26" font-weight="400" fill="#F3EDE0" fill-opacity=".72">O método de 30 dias para vencer</text><text x="500" y="1290" text-anchor="middle" font-family="Manrope" font-size="26" font-weight="400" fill="#F3EDE0" fill-opacity=".72">a procrastinação.</text>
+<text x="500" y="1400" text-anchor="middle" font-family="Manrope" font-size="20" font-weight="600" letter-spacing="10" fill="#D4B26A">COLEÇÃO · VOL. III · 30 DIAS</text>
 </svg>

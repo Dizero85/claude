@@ -48,6 +48,7 @@ Exploration phase — financial picture not yet fully mapped.
 
 *(format: **DD/MM/YYYY** — Decision — Reason)*
 
+- **20/10/2026** — Identidade visual Premium Noir e formato de coleção (Vol. I–III) — dá seriedade e valoriza a venda do combo
 - **20/10/2026** — Criar 3 e-books low ticket (finanças, saúde, hábitos) — nichos mais citados como líderes de venda; produto digital de baixo custo para testar renda com IA
 
 ## Next Steps

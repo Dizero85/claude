@@ -14,6 +14,9 @@ Para cada e-book:
 - `.pdf`: versão diagramada em A5 com capa, sumário clicável e números de página. Serve para Hotmart, Kiwify ou envio direto.
 - `.epub`: versão para Kindle (Amazon KDP), Apple Books e Google Play Livros.
 - `.capa.png`: capa em 1600×2560 px, a proporção recomendada pela Amazon. Também serve para anúncios e para a página de vendas.
+- `colecao-boaonda.png`: os 3 volumes lado a lado, para vender a coleção.
+
+**Identidade visual:** estilo *Premium Noir* (Coleção BoaOnda, Vol. I–III). As capas anteriores estão guardadas em `capa-v1.svg` em cada pasta.
 
 ## Como editar
 
@@ -25,5 +28,5 @@ Para cada e-book:
 
 ## Opções de capa (`capas-opcoes/`)
 
-Três estilos alternativos para cada livro: **A · Editorial**, **B · Premium Noir** e **C · Gradiente Moderno**. Veja a comparação em `capas-opcoes/prancha-comparativa.png`.
+Estilo escolhido: **B · Premium Noir**. Três estilos alternativos para cada livro: **A · Editorial**, **B · Premium Noir** e **C · Gradiente Moderno**. Veja a comparação em `capas-opcoes/prancha-comparativa.png`.
 Para regerar: `python3 capas-opcoes/gerar.py && NODE_PATH=$(npm root -g) node capas-opcoes/renderizar.js`.

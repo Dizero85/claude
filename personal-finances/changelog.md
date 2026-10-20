@@ -5,6 +5,12 @@
 
 ---
 
+## 2026-10-20 — Identidade Premium Noir aplicada
+
+- Marca BoaOnda aplicada; 3 estilos de capa testados, escolhido o Premium Noir
+- E-books viram a "Coleção BoaOnda" (Vol. I, II, III); miolo com títulos em serifa e paleta da capa
+- Nova imagem `dist/colecao-boaonda.png` para vender a coleção
+
 ## 2026-10-20 — 3 e-books criados para venda
 
 - Pesquisa dos nichos de e-book mais vendidos: finanças, saúde/emagrecimento, desenvolvimento pessoal

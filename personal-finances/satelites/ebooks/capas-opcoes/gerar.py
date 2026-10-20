@@ -10,17 +10,17 @@ MARCA = "BOAONDA"
 
 LIVROS = {
     "financas": dict(
-        kicker="FINANÇAS PESSOAIS", prazo="90 DIAS", num="90",
+        kicker="FINANÇAS PESSOAIS", vol="I", prazo="90 DIAS", num="90",
         linhas=["Saia do", "Vermelho"], enfase="em 90 dias",
         sub=["Quite dívidas, organize o dinheiro", "e monte sua primeira reserva."],
     ),
     "saude": dict(
-        kicker="REEDUCAÇÃO ALIMENTAR", prazo="21 DIAS", num="21",
+        kicker="REEDUCAÇÃO ALIMENTAR", vol="II", prazo="21 DIAS", num="21",
         linhas=["Emagrecer"], enfase="sem neura",
         sub=["Comida de verdade, sem dieta da moda", "e sem passar fome."],
     ),
     "habitos": dict(
-        kicker="DESENVOLVIMENTO PESSOAL", prazo="30 DIAS", num="30",
+        kicker="DESENVOLVIMENTO PESSOAL", vol="III", prazo="30 DIAS", num="30",
         linhas=["Hábitos"], enfase="que ficam",
         sub=["O método de 30 dias para vencer", "a procrastinação."],
     ),
@@ -148,7 +148,7 @@ def noir(chave, l):
 {"".join(tit)}
 {noir_emblema(chave)}
 {sub}
-<text x="500" y="1400" text-anchor="middle" font-family="Manrope" font-size="20" font-weight="600" letter-spacing="10" fill="{OURO}">GUIA PRÁTICO · {l["prazo"]}</text>'''
+<text x="500" y="1400" text-anchor="middle" font-family="Manrope" font-size="20" font-weight="600" letter-spacing="10" fill="{OURO}">COLEÇÃO · VOL. {l["vol"]} · {l["prazo"]}</text>'''
     defs = (f'<radialGradient id="brilho" cx=".5" cy=".62" r=".55"><stop offset="0" stop-color="{c["brilho"]}" stop-opacity=".9"/>'
             f'<stop offset="1" stop-color="{c["fundo"]}" stop-opacity="0"/></radialGradient>')
     return svg(corpo, defs)

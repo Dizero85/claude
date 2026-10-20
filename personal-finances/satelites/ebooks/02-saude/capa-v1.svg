@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1600" preserveAspectRatio="xMidYMid slice" width="1000" height="1600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFF6EE"/>
+      <stop offset="1" stop-color="#FFE3D1"/>
+    </linearGradient>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#B4532A" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+  <rect width="1000" height="1600" fill="url(#bg)"/>
+  <!-- folhas decorativas -->
+  <g fill="#3A8F5C" opacity="0.18">
+    <path d="M640 1480 C720 1400 840 1400 920 1480 C840 1560 720 1560 640 1480Z"/>
+  </g>
+  <!-- o prato: metade legumes, 1/4 proteína, 1/4 carboidrato -->
+  <g transform="translate(500 1110)" filter="url(#sh)">
+    <circle r="330" fill="#ffffff"/>
+    <circle r="300" fill="#F7F1EA"/>
+    <path d="M0 0 L0 -270 A270 270 0 0 0 0 270 Z" fill="#4CAF6E"/>
+    <path d="M0 0 L0 -270 A270 270 0 0 1 270 0 Z" fill="#E8674F"/>
+    <path d="M0 0 L270 0 A270 270 0 0 1 0 270 Z" fill="#F4B740"/>
+    <g stroke="#F7F1EA" stroke-width="10"><line x1="0" y1="-275" x2="0" y2="275"/><line x1="0" y1="0" x2="275" y2="0"/></g>
+    <!-- texturas -->
+    <g fill="#2F7D4C"><circle cx="-150" cy="-110" r="26"/><circle cx="-90" cy="40" r="22"/><circle cx="-170" cy="90" r="18"/><circle cx="-80" cy="-180" r="16"/></g>
+    <g fill="#C94F3A"><circle cx="110" cy="-130" r="20"/><circle cx="170" cy="-70" r="14"/></g>
+    <g fill="#E3A12A"><circle cx="120" cy="120" r="18"/><circle cx="70" cy="190" r="12"/><circle cx="180" cy="70" r="12"/></g>
+  </g>
+  <!-- garfo e faca -->
+  <g fill="#C9B6A6">
+    <rect x="95" y="840" width="18" height="520" rx="9"/>
+    <rect x="887" y="840" width="18" height="520" rx="9"/>
+  </g>
+  <!-- selo 21 dias -->
+  <g transform="translate(820 690)">
+    <circle r="92" fill="#E8674F"/>
+    <text text-anchor="middle" y="6" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="70" font-weight="800">21</text>
+    <text text-anchor="middle" y="48" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="4">DIAS</text>
+  </g>
+  <g font-family="Inter, 'Inter Display', Arial, sans-serif">
+    <text x="80" y="205" fill="#E8674F" font-size="34" font-weight="700" letter-spacing="8">SAÚDE · REEDUCAÇÃO ALIMENTAR</text>
+    <text x="80" y="340" fill="#2A211C" font-size="140" font-weight="800" letter-spacing="-4">Emagrecer</text>
+    <text x="80" y="490" fill="#E8674F" font-size="140" font-weight="800" letter-spacing="-4">sem neura</text>
+    <text x="80" y="580" fill="#4A3B33" font-size="38" font-weight="500">Comida de verdade, sem dieta da moda</text>
+    <text x="80" y="630" fill="#4A3B33" font-size="38" font-weight="500">e sem passar fome.</text>
+    <text x="80" y="1490" fill="#4A3B33" fill-opacity="0.75" font-size="30" font-weight="600" letter-spacing="6">BOAONDA</text>
+  </g>
+</svg>

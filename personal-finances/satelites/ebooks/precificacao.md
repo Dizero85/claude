@@ -20,13 +20,13 @@ Fontes de mercado (blogs da Hotmart, HeroSpark, Sellfy, ContaAzul e relatórios 
 | Saia do Vermelho em 90 Dias | R$ 47,00 | R$ 19,90 | R$ 27,90 | R$ 19,90 |
 | Emagrecer Sem Neura | R$ 49,00 | R$ 19,90 | R$ 29,90 | R$ 19,90 |
 | Hábitos que Ficam | R$ 37,00 | R$ 14,90 | R$ 19,90 | R$ 14,90 |
-| **Combo com os 3** | R$ 77,70 | — | **R$ 57,90** | — |
+| **Coleção BoaOnda (Vol. I, II e III)** | R$ 77,70 | — | **R$ 57,90** | — |
 
 **Lógica de cada preço:**
 - **Saúde** tem o preço mais alto porque traz plano, receitas e lista de compras, e a dor ("quero emagrecer") é a de maior urgência.
 - **Finanças** fica logo abaixo. Quem está endividado é sensível a preço, mas paga para sair da dor.
 - **Hábitos** é o mais barato. É o e-book mais curto e funciona como "porta de entrada" para o combo.
-- **Combo**: sai 25% mais barato que comprar os três separados. Esse é o principal motor do ticket médio.
+- **Coleção BoaOnda**: sai 25% mais barata que comprar os três volumes separados. Esse é o principal motor do ticket médio. A identidade Premium Noir, com volumes numerados, reforça a ideia de "coleção completa". Use `dist/colecao-boaonda.png` na página de vendas.
 
 ## Quanto sobra por venda (estimativa)
 
@@ -37,7 +37,7 @@ Taxas de referência: Hotmart ~9,9% + R$ 1,00 por venda; Amazon KDP paga 70% de 
 | Finanças (Hotmart) | R$ 27,90 | R$ 3,76 | **R$ 24,14** |
 | Saúde (Hotmart) | R$ 29,90 | R$ 3,96 | **R$ 25,94** |
 | Hábitos (Hotmart) | R$ 19,90 | R$ 2,97 | **R$ 16,93** |
-| Combo (Hotmart) | R$ 57,90 | R$ 6,73 | **R$ 51,17** |
+| Coleção (Hotmart) | R$ 57,90 | R$ 6,73 | **R$ 51,17** |
 | Qualquer um no Kindle a R$ 19,90 | R$ 19,90 | ~30% | **~R$ 13,90** |
 
 ## Aumentando o ticket médio (sem criar muito mais)
@@ -45,7 +45,7 @@ Taxas de referência: Hotmart ~9,9% + R$ 1,00 por venda; Amazon KDP paga 70% de 
 | Estratégia | Exemplo | Preço sugerido |
 |---|---|---|
 | **Order bump** (oferta de 1 clique no checkout) | Planilha de controle de gastos (Finanças) / Cardápio de 4 semanas (Saúde) / Tracker imprimível de 90 dias (Hábitos) | R$ 9,90 |
-| **Upsell para o combo** | Depois da compra de um e-book: "leve os outros 2 por R$ 34,90" | R$ 34,90 |
+| **Upsell para a coleção** | Depois da compra de um volume: "complete a coleção: leve os outros 2 por R$ 34,90" | R$ 34,90 |
 | **Garantia de 7 dias** | Obrigatória no CDC para compra online, então use isso como argumento | — |
 
 ## Cuidado com anúncios pagos
