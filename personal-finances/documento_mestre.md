@@ -2,7 +2,7 @@
 
 > Living document: scope, status, pending items, decisions.
 > Update throughout sessions. The agent reads this BEFORE working.
-> Last updated: 2026-06-09
+> Last updated: 2026-10-20
 
 ---
 
@@ -41,11 +41,14 @@ Exploration phase — financial picture not yet fully mapped.
 - [ ] Map current monthly expenses (Brazil + CO home costs)
 - [ ] Identify current income sources (if any)
 - [ ] Research AI-assisted income opportunities that match Di's background
+- [ ] E-books: trocar "SUA MARCA" pelo nome real, revisar textos, publicar (Hotmart/Kiwify + Amazon KDP) — ver `satelites/ebooks/`
 - [ ] Evaluate cost of living comparison: Brazil vs NYC vs Colorado
 
 ## Important Decisions
 
 *(format: **DD/MM/YYYY** — Decision — Reason)*
+
+- **20/10/2026** — Criar 3 e-books low ticket (finanças, saúde, hábitos) — nichos mais citados como líderes de venda; produto digital de baixo custo para testar renda com IA
 
 ## Next Steps
 

@@ -1,7 +1,7 @@
 # personal-finances — Index
 
 > Catalog of all files in this folder.
-> Updated: 2026-06-09
+> Updated: 2026-10-20
 
 ## Main files
 
@@ -13,4 +13,5 @@
 
 ## Satellite files (in `satelites/`)
 
-(none yet — will be created as needed, via `optimize OS`)
+- [satelites/ebooks/README.md](satelites/ebooks/README.md) — 3 e-books (finanças, saúde, hábitos): texto, capas, PDF/EPUB
+- [satelites/ebooks/precificacao.md](satelites/ebooks/precificacao.md) — preços, margens e estratégia de venda dos e-books

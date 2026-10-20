@@ -1,0 +1,67 @@
+/* Diagramação compartilhada dos e-books (PDF A5). Cada livro troca só as cores. */
+:root { --ink:#1d1d1f; --muted:#5b5b63; --line:#e6e2dc; }
+body.financas { --accent:#0E4A39; --accent2:#C9962B; --soft:#EEF6F2; --soft2:#FBF4E2; }
+body.saude    { --accent:#D9553E; --accent2:#3A8F5C; --soft:#FFF1EA; --soft2:#EAF5EE; }
+body.habitos  { --accent:#4B3BC4; --accent2:#E07A45; --soft:#EFEDFF; --soft2:#FFF0E7; }
+
+@page { size: A5; }
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body {
+  margin: 0; color: var(--ink);
+  font-family: "Inter", Arial, sans-serif; font-size: 10pt; line-height: 1.6;
+  counter-reset: cap;
+}
+
+/* Folha de rosto */
+.rosto { padding-top: 40mm; break-after: page; }
+.rosto .kicker { color: var(--accent2); font-weight: 700; letter-spacing: .18em; font-size: 8pt; text-transform: uppercase; }
+.rosto .titulo { font-size: 30pt; line-height: 1.05; margin: 10px 0 12px; color: var(--accent); letter-spacing: -.02em; }
+.rosto .sub { font-size: 12pt; color: var(--muted); margin: 0; }
+.rosto .barra { width: 56px; height: 5px; border-radius: 3px; background: var(--accent2); margin: 22px 0; }
+.rosto .marca { font-size: 8pt; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); margin-top: 60mm; }
+
+/* Sumário */
+.sumario { break-after: page; }
+.sumario h2 { font-size: 20pt; color: var(--accent); margin: 0 0 16px; }
+.sumario ul { list-style: none; padding: 0; margin: 0; counter-reset: s; }
+.sumario li { border-bottom: 1px solid var(--line); padding: 9px 0; }
+.sumario a { color: var(--ink); text-decoration: none; font-weight: 600; font-size: 11pt; }
+
+/* Capítulos */
+main h1 { break-before: page; font-size: 22pt; line-height: 1.15; color: var(--accent); margin: 0 0 18px; letter-spacing: -.015em; padding-top: 4mm; }
+main h1:not(.unnumbered)::before {
+  counter-increment: cap; content: "Capítulo " counter(cap);
+  display: block; font-size: 8pt; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--accent2); font-weight: 700; margin-bottom: 8px;
+}
+main h1::after { content: ""; display: block; width: 44px; height: 4px; border-radius: 2px; background: var(--accent2); margin-top: 12px; }
+h2 { font-size: 13pt; color: var(--accent); margin: 20px 0 6px; break-after: avoid; }
+p { margin: 0 0 9px; }
+strong { color: var(--accent); }
+ul, ol { padding-left: 18px; margin: 0 0 10px; }
+li { margin-bottom: 3px; }
+blockquote {
+  margin: 12px 0; padding: 10px 14px; border-left: 4px solid var(--accent2);
+  background: var(--soft2); border-radius: 0 8px 8px 0; font-style: italic;
+}
+blockquote p { margin: 0; }
+
+/* Tabelas */
+table { width: 100%; border-collapse: collapse; margin: 10px 0 14px; font-size: 8.4pt; line-height: 1.4; break-inside: avoid; }
+th { background: var(--accent); color: #fff; text-align: left; padding: 6px 7px; font-weight: 600; }
+td { padding: 6px 7px; border-bottom: 1px solid var(--line); vertical-align: top; }
+tbody tr:nth-child(even) td { background: #faf9f7; }
+td strong { color: var(--ink); }
+
+/* Caixas de destaque */
+.dica, .alerta, .exercicio { border-radius: 10px; padding: 11px 14px 4px; margin: 14px 0; break-inside: avoid; font-size: 9.4pt; }
+.dica { background: var(--soft); border-left: 5px solid var(--accent); }
+.alerta { background: #FFF4E5; border-left: 5px solid #E39B17; }
+.exercicio { background: #fff; border: 2px dashed var(--accent2); }
+.exercicio strong:first-child, .dica strong:first-child, .alerta strong:first-child { display: block; margin-bottom: 4px; }
+
+/* Listas de checagem */
+ul.task-list { list-style: none; padding-left: 0; }
+ul.task-list li { padding: 3px 0; }
+ul.task-list input { width: 13px; height: 13px; margin: 0 8px 0 0; vertical-align: -2px; accent-color: var(--accent); }
