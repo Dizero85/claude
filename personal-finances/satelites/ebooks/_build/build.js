@@ -7,7 +7,7 @@ const { chromium } = require("playwright");
 
 const ROOT = path.resolve(__dirname, "..");
 const DIST = path.join(ROOT, "dist");
-const MARCA = process.env.MARCA || "Sua Marca";
+const MARCA = process.env.MARCA || "BoaOnda";
 
 const LIVROS = [
   { pasta: "01-financas", arquivo: "saia-do-vermelho-em-90-dias", tema: "financas", kicker: "Guia prático · Finanças" },

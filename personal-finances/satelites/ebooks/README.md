@@ -20,6 +20,5 @@ Para cada e-book:
 - **Texto**: edite o arquivo `ebook.md` dentro da pasta do e-book.
 - **Capa**: edite o arquivo `capa.svg`. Ele abre no navegador, no Inkscape ou no Figma.
 - **Cores e diagramação**: edite `_build/style.css`.
-- **Gerar tudo de novo**: rode `NODE_PATH=$(npm root -g) MARCA="Nome da Sua Marca" node _build/build.js`.
+- **Gerar tudo de novo**: rode `NODE_PATH=$(npm root -g) node _build/build.js` (a marca padrão é **BoaOnda**; para trocar, use `MARCA="Outro Nome"` antes do comando).
 
-> ⚠️ Antes de vender, troque **"SUA MARCA"** nas capas (`capa.svg`) e na variável `MARCA` pelo nome real da empresa.

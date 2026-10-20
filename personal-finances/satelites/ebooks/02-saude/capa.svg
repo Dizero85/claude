@@ -11,8 +11,7 @@
   <rect width="1000" height="1600" fill="url(#bg)"/>
   <!-- folhas decorativas -->
   <g fill="#3A8F5C" opacity="0.18">
-    <path d="M900 120 C980 200 980 320 900 400 C820 320 820 200 900 120Z"/>
-    <path d="M60 1480 C140 1400 260 1400 340 1480 C260 1560 140 1560 60 1480Z"/>
+    <path d="M640 1480 C720 1400 840 1400 920 1480 C840 1560 720 1560 640 1480Z"/>
   </g>
   <!-- o prato: metade legumes, 1/4 proteína, 1/4 carboidrato -->
   <g transform="translate(500 1110)" filter="url(#sh)">
@@ -44,6 +43,6 @@
     <text x="80" y="490" fill="#E8674F" font-size="140" font-weight="800" letter-spacing="-4">sem neura</text>
     <text x="80" y="580" fill="#4A3B33" font-size="38" font-weight="500">Comida de verdade, sem dieta da moda</text>
     <text x="80" y="630" fill="#4A3B33" font-size="38" font-weight="500">e sem passar fome.</text>
-    <text x="80" y="1490" fill="#4A3B33" fill-opacity="0.75" font-size="30" font-weight="600" letter-spacing="6">SUA MARCA</text>
+    <text x="80" y="1490" fill="#4A3B33" fill-opacity="0.75" font-size="30" font-weight="600" letter-spacing="6">BOAONDA</text>
   </g>
 </svg>

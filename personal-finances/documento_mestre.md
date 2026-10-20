@@ -41,7 +41,7 @@ Exploration phase — financial picture not yet fully mapped.
 - [ ] Map current monthly expenses (Brazil + CO home costs)
 - [ ] Identify current income sources (if any)
 - [ ] Research AI-assisted income opportunities that match Di's background
-- [ ] E-books: trocar "SUA MARCA" pelo nome real, revisar textos, publicar (Hotmart/Kiwify + Amazon KDP) — ver `satelites/ebooks/`
+- [ ] E-books (marca BoaOnda aplicada): revisar textos, publicar (Hotmart/Kiwify + Amazon KDP) — ver `satelites/ebooks/`
 - [ ] Evaluate cost of living comparison: Brazil vs NYC vs Colorado
 
 ## Important Decisions
