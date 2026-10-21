@@ -8,7 +8,7 @@
 
 ## Abertura — Para quem é este ebook
 
-Vou começar sendo honesto: eu não escrevi este ebook sentado numa pilha de dinheiro. Depois de mais de 12 anos trabalhando na área da saúde, perdi o emprego de uma hora para outra. O contrato da empresa acabou, e o salário acabou junto. Foi aí que eu entendi, na prática, o que é depender de uma única fonte de renda.
+Vou começar sendo honesto: a maioria das pessoas está a um imprevisto do aperto. Uma demissão, um contrato que não é renovado, uma conta de hospital. Quando existe uma única fonte de renda, basta ela parar para tudo parar junto.
 
 Se você está aqui, provavelmente sente alguma versão disso. Talvez você seja estudante e o dinheiro nunca feche o mês. Talvez tenha um bom emprego, mas sinta que está a uma demissão do aperto. Talvez esteja mudando de carreira ou carregando uma fatura de cartão que só cresce. Ou talvez já seja organizado e queira acelerar: quitar tudo, investir melhor, comprar um imóvel.
 
@@ -94,7 +94,7 @@ Faça uma lista sem filtro: o que você faz no trabalho, o que os amigos te pede
 
 Existem dois caminhos. A **renda ativa** troca tempo por dinheiro: freelas, aulas, consultorias. Plataformas como Workana, 99Freelas e Fiverr conectam você a clientes. É o jeito mais rápido de ver o primeiro real entrar. A **renda escalável** é diferente: você cria uma vez e vende muitas vezes, como um ebook, um curso ou um modelo de planilha. Demora mais para começar, mas não depende das suas horas.
 
-Quer um exemplo real? Este ebook. Ele nasceu de uma experiência que eu vivi, foi organizado com a ajuda de inteligência artificial e pode ser vendido enquanto eu faço outra coisa.
+Quer um exemplo real? Este ebook. Ele foi escrito uma vez, organizado com a ajuda de inteligência artificial e pode ser vendido muitas vezes, enquanto eu faço outra coisa.
 
 Sobre a IA, sendo honesto: ela acelera muito os rascunhos, a pesquisa e a revisão. Mas não substitui o que você sabe. Quem não entende do assunto produz conteúdo raso, e o cliente percebe.
 
@@ -186,7 +186,7 @@ Se você quer ir mais longe e mais rápido, com acompanhamento, [OFERTA: descrev
 
 ## Notas para revisão (não vão para o ebook)
 
-- **Abertura:** usa a história real do Di (perda do emprego depois de 12+ anos na saúde) sem citar o nome da empresa. Confirmar se quer expor isso e quanto detalhe dar.
+- **História pessoal:** o Di pediu para não incluir a história dele no ebook (2026-10-21). Não reintroduzir.
 - **Capítulos 1, 2, 7 e Fechamento:** os exemplos são casos ilustrativos com números redondos, não pessoas reais.
 - **Dados para checar antes de publicar:** rotativo acima de 400% a.a. e teto de 100% (Lei 14.690/2023); desemprego acima de 14% em 2020–2021 (IBGE/PNAD); FGC de R$ 250 mil por CPF por instituição; isenção de IR para LCI/LCA; história de Ronald Read (Morgan Housel, *A Psicologia Financeira*).
 - **Capítulo 6:** a tabela usa 10% a.a. nominal, antes de IR e inflação; os números foram calculados, não estimados.

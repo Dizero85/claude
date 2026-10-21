@@ -5,6 +5,10 @@
 
 ---
 
+## 2026-10-21 — História pessoal removida do ebook
+
+- Abertura reescrita sem a história do Di; exemplo do capítulo 5 ajustado para não citar experiência pessoal
+
 ## 2026-10-21 — Seções do ebook em rascunho v1
 
 - Escrita uma seção por capítulo (abertura, capítulos 1–8 e fechamento), cada uma com linguagem simples, um exemplo concreto e menos de 250 palavras
