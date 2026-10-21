@@ -1,7 +1,7 @@
 # personal-finances — Index
 
 > Catalog of all files in this folder.
-> Updated: 2026-06-09
+> Updated: 2026-10-21
 
 ## Main files
 
@@ -13,4 +13,4 @@
 
 ## Satellite files (in `satelites/`)
 
-(none yet — will be created as needed, via `optimize OS`)
+- [satelites/ebook_financas_renda_extra_esboco.md](satelites/ebook_financas_renda_extra_esboco.md) — esboço do ebook "Finanças e Renda Extra" (20–30 páginas)
