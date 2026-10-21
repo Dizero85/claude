@@ -1,5 +1,6 @@
 # Ebook — Finanças e Renda Extra (seções em rascunho v1)
 
+> Título: *Plano B Já — Reserva, renda extra e metas: os três pilares de uma vida financeira estável*
 > Uma seção curta por capítulo, escrita na voz do Di: direta, honesta e sem promessas de enriquecimento.
 > Regras: linguagem simples, um exemplo concreto por seção, menos de 250 palavras.
 > Base: [ebook_financas_renda_extra_esboco.md](ebook_financas_renda_extra_esboco.md) · Rascunho: 2026-10-21

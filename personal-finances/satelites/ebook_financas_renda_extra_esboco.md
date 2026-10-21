@@ -3,7 +3,7 @@
 > Status: esboço de estrutura · Meta: 20–30 páginas · Criado: 2026-10-21
 > Público: estudantes, profissionais que querem diversificar renda, pessoas em transição de carreira, quem busca proteção contra instabilidade econômica, e quem já sente as próprias dores financeiras e está disposto a investir em soluções — de iniciantes a quem quer acelerar metas (quitar cartão, comprar imóvel).
 
-**Título provisório:** *Dinheiro com Rumo: organize, proteja e multiplique sua renda*
+**Título:** *Plano B Já — Reserva, renda extra e metas: os três pilares de uma vida financeira estável*
 
 ---
 
@@ -101,4 +101,5 @@
 
 - [ ] Confirmar o país de referência (Brasil, EUA ou ambos) — muda produtos de investimento, impostos e plataformas citadas.
 - [ ] Definir a oferta paga do fechamento (planilha, mentoria, curso).
-- [ ] Escolher título final e tom de voz.
+- [x] Escolher título final (definido em 2026-10-21).
+- [ ] Confirmar tom de voz final.

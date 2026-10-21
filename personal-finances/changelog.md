@@ -5,6 +5,11 @@
 
 ---
 
+## 2026-10-21 — Título do ebook definido
+
+- Título escolhido: *Plano B Já — Reserva, renda extra e metas: os três pilares de uma vida financeira estável*
+- Esboço e arquivo de seções atualizados
+
 ## 2026-10-21 — História pessoal removida do ebook
 
 - Abertura reescrita sem a história do Di; exemplo do capítulo 5 ajustado para não citar experiência pessoal

@@ -47,6 +47,8 @@ Exploration phase — financial picture not yet fully mapped.
 
 *(format: **DD/MM/YYYY** — Decision — Reason)*
 
+- **21/10/2026** — Título do ebook: *Plano B Já — Reserva, renda extra e metas: os três pilares de uma vida financeira estável* — escolhido pelo Di entre 10 opções
+
 ## Next Steps
 
 1. Map current monthly expenses
