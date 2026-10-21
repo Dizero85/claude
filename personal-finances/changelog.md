@@ -5,6 +5,13 @@
 
 ---
 
+## 2026-10-21 — Ebook escrito, diagramado e precificado
+
+- Texto completo em `ebook-plano-b-ja/src/conteudo.md`, expandido a partir das seções v1
+- PDF A5 de 26 páginas, EPUB para Kindle, capa (Kindle, PNG e imagem quadrada) e bônus com os anexos
+- Preço sugerido: Hotmart R$ 27 no lançamento e R$ 47 cheio; Kindle R$ 19,90 (detalhes em `precificacao.md`)
+- Pendente: confirmar o nome na capa, checar dados e taxas, resolver o conflito KDP Select x Hotmart
+
 ## 2026-10-21 — Descrição de vendas do ebook
 
 - Criada a descrição de vendas em 4 frases, com tom calmo e confiável

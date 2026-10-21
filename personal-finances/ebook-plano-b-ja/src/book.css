@@ -1,0 +1,132 @@
+@font-face { font-family: "Fraunces"; src: url("fonts/Fraunces-latin.woff2") format("woff2"); font-weight: 100 900; }
+
+:root {
+  --ink: #13233A;
+  --text: #1F2633;
+  --muted: #5B6676;
+  --paper: #FFFDF8;
+  --cream: #F6F0E4;
+  --amber: #F2A93B;
+  --amber-soft: #FDF1DC;
+  --teal: #2F8573;
+  --teal-soft: #E5F2EE;
+  --rose: #C2533F;
+  --rose-soft: #FBE9E4;
+  --rule: #E4DDCF;
+}
+
+@page {
+  size: 148mm 210mm;
+  margin: 13mm 12mm 15mm;
+  background: var(--paper);
+  @bottom-left { content: "Plano B Já"; font: 600 7.5pt "Inter", sans-serif; color: #9AA3B0; letter-spacing: .08em; text-transform: uppercase; }
+  @bottom-right { content: counter(page); font: 600 8pt "Inter", sans-serif; color: var(--muted); }
+}
+@page front { @bottom-left { content: none; } @bottom-right { content: none; } }
+
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body {
+  margin: 0; background: var(--paper); color: var(--text);
+  font: 400 8.8pt/1.48 "Inter", sans-serif; hyphens: auto; font-feature-settings: "ss01", "cv11";
+}
+
+/* ---------- Front matter ---------- */
+.front { page: front; break-after: page; }
+.titlepage { display: flex; flex-direction: column; height: 172mm; }
+.titlepage .tp-kicker { font: 600 7.5pt "Inter"; letter-spacing: .28em; text-transform: uppercase; color: var(--muted); }
+.titlepage .tp-title { font: 900 46pt/.9 "Fraunces", serif; letter-spacing: -.03em; color: var(--ink); margin: 14mm 0 0; }
+.titlepage .tp-title span { color: var(--amber); }
+.titlepage .tp-sub { font: 500 14pt/1.3 "Fraunces", serif; color: var(--ink); margin-top: 8mm; max-width: 95mm; }
+.titlepage .tp-author { margin-top: auto; font: 600 9pt "Inter"; letter-spacing: .2em; text-transform: uppercase; color: var(--ink); }
+.titlepage .tp-legal { margin-top: 6mm; font-size: 7pt; line-height: 1.5; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 4mm; }
+
+.toc h2 { font: 800 24pt/1 "Fraunces", serif; color: var(--ink); margin: 0 0 9mm; letter-spacing: -.02em; }
+.toc ol { list-style: none; margin: 0; padding: 0; }
+.toc li { display: flex; align-items: baseline; gap: 3mm; padding: 2.6mm 0; border-bottom: 1px solid var(--rule); font-size: 9.5pt; }
+.toc li .n { font: 700 9pt "Inter"; color: var(--amber); width: 7mm; flex: none; }
+.toc li .t { flex: 1; color: var(--ink); font-weight: 500; }
+.toc li .p { font: 600 9pt "Inter"; color: var(--muted); font-variant-numeric: tabular-nums; }
+.toc li.sub .t { color: var(--muted); }
+.toc .pillar-tag { display: inline-block; margin-left: 2mm; font: 700 6.5pt "Inter"; letter-spacing: .08em; text-transform: uppercase; color: var(--teal); background: var(--teal-soft); padding: .6mm 1.6mm; border-radius: 1mm; vertical-align: 1px; }
+
+/* ---------- Chapter openers ---------- */
+section.level1 { break-before: page; }
+.opener {
+  margin: 0 0 5mm; padding: 7mm 7mm 5mm; border-radius: 2.5mm;
+  background: var(--ink); color: var(--cream);
+  position: relative; overflow: hidden;
+}
+.opener .num {
+  position: absolute; right: 6mm; top: 50%; transform: translateY(-50%);
+  font: 900 54pt/1 "Fraunces", serif; color: transparent; -webkit-text-stroke: 1.2px var(--amber); opacity: .9;
+}
+.opener .kicker { font: 600 7.5pt "Inter"; letter-spacing: .26em; text-transform: uppercase; color: var(--amber); }
+.opener .pillar { display: inline-block; margin-left: 3mm; font: 700 6.5pt "Inter"; letter-spacing: .1em; text-transform: uppercase; color: var(--ink); background: var(--cream); padding: .8mm 2mm; border-radius: 1mm; vertical-align: 1px; }
+.opener h1 { hyphens: manual; font: 800 18pt/1.1 "Fraunces", serif; letter-spacing: -.02em; margin: 4mm 0 0; max-width: 84mm; color: #fff; }
+.marker { display: block; height: 0; font-size: 6pt; line-height: 0; } /* pass-1 only: locates section pages */
+
+/* ---------- Body ---------- */
+h2 { font: 700 12pt/1.25 "Fraunces", serif; color: var(--ink); margin: 5mm 0 2mm; letter-spacing: -.01em; break-after: avoid; }
+p { margin: 0 0 2.4mm; orphans: 3; widows: 3; }
+strong { color: var(--ink); font-weight: 650; }
+ul, ol { margin: 0 0 3.5mm; padding-left: 5mm; }
+li { margin-bottom: .8mm; }
+li::marker { color: var(--amber); font-weight: 700; }
+
+.lead p { font: 500 10.4pt/1.4 "Fraunces", serif; color: var(--ink); margin-bottom: 4mm; }
+
+table { width: 100%; border-collapse: collapse; margin: 2mm 0 4mm; font-size: 8pt; line-height: 1.4; break-inside: avoid; font-variant-numeric: tabular-nums; }
+thead th { text-align: left; font-weight: 700; color: var(--ink); border-bottom: 1.5px solid var(--ink); padding: 1.4mm 2mm 1.4mm 0; }
+tbody td { border-bottom: 1px solid var(--rule); padding: 1.3mm 2mm 1.3mm 0; vertical-align: top; }
+
+.atencao, .acao, .destaque, .pilares, .aviso, .pratica table { break-inside: avoid; }
+.pratica, .atencao { -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.pratica { background: var(--teal-soft); border-left: 3px solid var(--teal); padding: 3mm 4mm 1mm; margin: 3mm 0 4mm; border-radius: 0 2mm 2mm 0; }
+.pratica table { margin-bottom: 3mm; }
+.pratica tbody td { border-color: #C9E2DA; }
+.atencao { background: var(--rose-soft); border-left: 3px solid var(--rose); padding: 3mm 4mm 1mm; margin: 3mm 0 4mm; border-radius: 0 2mm 2mm 0; }
+.atencao strong:first-child { color: var(--rose); }
+
+.acao { background: var(--ink); color: var(--cream); padding: 4mm 5mm 2mm; margin: 5mm 0 0; border-radius: 2.5mm; font-size: 8.5pt; }
+.acao > p:first-child strong { display: block; font: 600 7.5pt "Inter"; letter-spacing: .26em; text-transform: uppercase; color: var(--amber); margin-bottom: 1mm; }
+.acao ul, .checklist ul { list-style: none; padding: 0; }
+.acao li { color: #fff; }
+.acao li, .checklist li { display: flex; gap: 2.5mm; align-items: flex-start; }
+input[type=checkbox] { appearance: none; -webkit-appearance: none; flex: none; width: 3.4mm; height: 3.4mm; margin: 1mm 0 0; border: 1.4px solid var(--amber); border-radius: .8mm; background: transparent; }
+.checklist input[type=checkbox] { border-color: var(--teal); }
+
+.destaque p { font: 800 16pt/1.25 "Fraunces", serif; color: var(--ink); text-align: center; margin: 8mm 6mm; letter-spacing: -.01em; }
+.destaque p::before, .destaque p::after { content: ""; display: block; width: 14mm; height: 1.2mm; background: var(--amber); margin: 0 auto 4mm; border-radius: 1mm; }
+.destaque p::after { margin: 4mm auto 0; }
+
+.pilares ul { list-style: none; padding: 0; display: grid; gap: 2.5mm; margin: 4mm 0 5mm; }
+.pilares li { background: var(--cream); padding: 3mm 4mm; border-radius: 2mm; border-left: 3px solid var(--amber); margin: 0; }
+.pilares li:nth-child(1) { border-color: var(--teal); }
+.pilares li:nth-child(3) { border-color: var(--ink); }
+
+/* ---------- Abertura / fechamento / anexos ---------- */
+.abertura h1, .fechamento h1, .anexo h1 { font: 800 22pt/1.1 "Fraunces", serif; color: var(--ink); letter-spacing: -.02em; margin: 0 0 6mm; }
+.anexo h1 { font-size: 17pt; }
+.anexo h1::before, .abertura h1::before, .fechamento h1::before { content: ""; display: block; width: 14mm; height: 1.2mm; background: var(--amber); margin-bottom: 5mm; border-radius: 1mm; }
+
+.form table { font-size: 8.4pt; }
+.form td { height: 6.4mm; padding: 1mm 2mm 1mm 0; }
+.form td:not(:first-child) { border-left: 1px solid var(--rule); width: 17%; }
+.form thead th:not(:first-child) { width: 17%; }
+
+.glossario dl { margin: 0; columns: 2; column-gap: 7mm; }
+.glossario dt, .glossario dd { break-inside: avoid; }
+.glossario dt { font: 700 8.8pt "Inter"; color: var(--ink); margin-top: 2.2mm; break-after: avoid; }
+.glossario dd { margin: .3mm 0 0; font-size: 8.4pt; line-height: 1.4; color: var(--text); }
+.glossario dd p { margin: 0; }
+
+.checklist > p strong { display: block; font: 600 7.5pt "Inter"; letter-spacing: .22em; text-transform: uppercase; color: var(--teal); margin-top: 4mm; }
+.checklist ul { margin-bottom: 1mm; }
+.checklist li { font-size: 9.2pt; margin-bottom: 1.6mm; }
+
+.aviso { margin-top: 8mm; border-top: 1px solid var(--rule); padding-top: 4mm; }
+.aviso p { font-size: 7.5pt; line-height: 1.5; color: var(--muted); }
+
+/* Task-list items: pandoc wraps the checkbox and text in a <label>. */
+.acao li label, .checklist li label { display: flex; gap: 2.5mm; align-items: flex-start; }

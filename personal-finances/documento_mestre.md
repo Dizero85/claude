@@ -48,6 +48,7 @@ Exploration phase — financial picture not yet fully mapped.
 *(format: **DD/MM/YYYY** — Decision — Reason)*
 
 - **21/10/2026** — Título do ebook: *Plano B Já — Reserva, renda extra e metas: os três pilares de uma vida financeira estável* — escolhido pelo Di entre 10 opções
+- **21/10/2026** — Preço sugerido do ebook: Hotmart R$ 27 (lançamento) / R$ 47; Kindle R$ 19,90 — piso da faixa de referência da Hotmart (R$ 47–97) por ser curto e para iniciantes; aguardando confirmação do Di
 
 ## Next Steps
 

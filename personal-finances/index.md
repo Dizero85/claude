@@ -11,6 +11,11 @@
 - [changelog.md](changelog.md) — session history
 - [index.md](index.md) — this catalog
 
+## Ebook Plano B Já (in `ebook-plano-b-ja/`)
+
+- [ebook-plano-b-ja/README.md](ebook-plano-b-ja/README.md) — arquivos prontos (PDF, EPUB, capas) e como editar
+- [ebook-plano-b-ja/precificacao.md](ebook-plano-b-ja/precificacao.md) — preço sugerido, taxas e fontes
+
 ## Satellite files (in `satelites/`)
 
 - [satelites/ebook_financas_renda_extra_esboco.md](satelites/ebook_financas_renda_extra_esboco.md) — esboço do ebook "Finanças e Renda Extra" (20–30 páginas)

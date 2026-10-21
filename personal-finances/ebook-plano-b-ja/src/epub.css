@@ -1,0 +1,16 @@
+/* Kindle/EPUB: kept simple, since e-readers override most styling. */
+body { font-family: serif; line-height: 1.5; }
+h1 { font-size: 1.6em; line-height: 1.2; margin: 1em 0 .8em; page-break-before: always; }
+h1 .kicker { display: block; font-size: .5em; font-family: sans-serif; letter-spacing: .15em; text-transform: uppercase; color: #B9781B; margin-bottom: .4em; }
+h2 { font-size: 1.2em; margin: 1.4em 0 .5em; }
+.lead p { font-size: 1.1em; font-style: italic; }
+.pratica, .atencao, .acao { border-left: 4px solid #2F8573; padding: .4em .9em; margin: 1.2em 0; background: #EEF6F3; }
+.atencao { border-color: #C2533F; background: #FBEEEA; }
+.acao { border-color: #13233A; background: #F4F1EA; }
+.destaque p { font-size: 1.2em; font-weight: bold; text-align: center; margin: 1.5em 0; }
+table { border-collapse: collapse; width: 100%; margin: 1em 0; font-size: .9em; }
+th, td { border-bottom: 1px solid #CCC; padding: .3em .4em; text-align: left; }
+ul.task-list { list-style: none; padding-left: .5em; }
+dt { font-weight: bold; margin-top: .6em; }
+dd { margin-left: 0; }
+.aviso p { font-size: .8em; color: #555; }

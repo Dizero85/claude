@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Plano B Já · capa</title>
+<style>
+  @font-face { font-family: "Fraunces"; src: url("fonts/Fraunces-latin.woff2") format("woff2"); font-weight: 100 900; }
+  :root {
+    --ink: #13233A; --ink-2: #1B3150; --cream: #F6F0E4; --amber: #F2A93B; --teal: #3F9C88; --muted: #9FB0C6;
+  }
+  @page { margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 100%; height: 100%; background: var(--ink); }
+  body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .cover {
+    position: relative; width: 100vw; height: 100vh; overflow: hidden;
+    background:
+      radial-gradient(120% 70% at 85% 0%, #22406A 0%, transparent 60%),
+      linear-gradient(180deg, var(--ink) 0%, #0E1B2E 100%);
+    color: var(--cream); font-family: "Inter", sans-serif;
+    padding: 9rem 8rem 7rem;
+    display: flex; flex-direction: column;
+  }
+  .kicker {
+    font-weight: 600; letter-spacing: .32em; text-transform: uppercase;
+    font-size: 2.4rem; color: var(--muted);
+    display: flex; align-items: center; gap: 2rem;
+  }
+  .kicker::before { content: ""; width: 7rem; height: .5rem; background: var(--amber); display: block; }
+  h1 {
+    font-family: "Fraunces", serif; font-weight: 900; font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 0;
+    line-height: .86; letter-spacing: -.035em; margin-top: 6rem;
+    font-size: 23rem;
+  }
+  h1 .ja { color: var(--amber); display: block; position: relative; width: max-content; }
+  h1 .ja::after {
+    content: ""; position: absolute; left: .04em; right: -.06em; bottom: -.02em; height: .07em;
+    background: var(--amber); border-radius: 1rem; transform: rotate(-2deg);
+  }
+  .pillars {
+    flex: 1; display: flex; align-items: flex-end; gap: 4rem; margin: 6rem 0 5rem;
+  }
+  .pillar { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; height: 100%; }
+  .pillar .bar { border-radius: 2rem 2rem 0 0; position: relative; }
+  .pillar:nth-child(1) .bar { height: 42%; background: var(--teal); }
+  .pillar:nth-child(2) .bar { height: 66%; background: var(--amber); }
+  .pillar:nth-child(3) .bar { height: 92%; background: var(--cream); }
+  .pillar .bar::before {
+    content: ""; position: absolute; left: 18%; right: 18%; top: 3rem; height: .5rem;
+    background: rgba(19,35,58,.18); border-radius: 1rem;
+  }
+  .pillar .label {
+    margin-top: 2.4rem; font-weight: 700; font-size: 3.4rem; letter-spacing: -.01em; color: var(--cream);
+  }
+  .pillar .label span { display: block; font-weight: 500; font-size: 2.3rem; color: var(--muted); margin-top: .4rem; }
+  .base { height: .5rem; background: var(--muted); opacity: .4; margin-top: -5rem; margin-bottom: 4.5rem; }
+  .subtitle {
+    font-family: "Fraunces", serif; font-weight: 500; font-size: 4.6rem; line-height: 1.18;
+    color: var(--cream); letter-spacing: -.01em; max-width: 92%;
+  }
+  .author {
+    margin-top: 5rem; font-weight: 600; font-size: 2.6rem; letter-spacing: .26em; text-transform: uppercase; color: var(--muted);
+  }
+</style>
+</head>
+<body>
+  <div class="cover">
+    <div class="kicker">Finanças pessoais e renda extra</div>
+    <h1>Plano B<span class="ja">Já</span></h1>
+    <div class="pillars">
+      <div class="pillar"><div class="bar"></div><div class="label">Reserva<span>para se proteger</span></div></div>
+      <div class="pillar"><div class="bar"></div><div class="label">Renda extra<span>para não depender</span></div></div>
+      <div class="pillar"><div class="bar"></div><div class="label">Metas<span>para chegar</span></div></div>
+    </div>
+    <div class="subtitle">Reserva, renda extra e metas: os três pilares de uma vida financeira estável</div>
+    <div class="author">Diogo Barbosa</div>
+  </div>
+<script>
+  // 1rem = 1% of the cover width, so the same layout works at Kindle (1600×2560), A5 and square sizes.
+  const fit = () => document.documentElement.style.fontSize = (innerWidth / 100) + "px";
+  fit(); addEventListener("resize", fit);
+</script>
+</body>
+</html>
