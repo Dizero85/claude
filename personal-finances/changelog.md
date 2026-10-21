@@ -5,6 +5,11 @@
 
 ---
 
+## 2026-10-21 — Seções do ebook em rascunho v1
+
+- Escrita uma seção por capítulo (abertura, capítulos 1–8 e fechamento), cada uma com linguagem simples, um exemplo concreto e menos de 250 palavras
+- Arquivo: `satelites/ebook_financas_renda_extra_secoes.md` (traz notas de revisão e dados para checar)
+
 ## 2026-10-21 — Esboço do ebook "Finanças e Renda Extra"
 
 - Criada a estrutura de capítulos (8 capítulos + abertura, fechamento e anexos) com descrição de uma frase por seção

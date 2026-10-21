@@ -14,3 +14,4 @@
 ## Satellite files (in `satelites/`)
 
 - [satelites/ebook_financas_renda_extra_esboco.md](satelites/ebook_financas_renda_extra_esboco.md) — esboço do ebook "Finanças e Renda Extra" (20–30 páginas)
+- [satelites/ebook_financas_renda_extra_secoes.md](satelites/ebook_financas_renda_extra_secoes.md) — seções em rascunho v1 (uma por capítulo, <250 palavras, voz do Di)
