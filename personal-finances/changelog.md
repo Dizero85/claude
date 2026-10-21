@@ -5,6 +5,11 @@
 
 ---
 
+## 2026-10-21 — Descrição de vendas do ebook
+
+- Criada a descrição de vendas em 4 frases, com tom calmo e confiável
+- Arquivo: `satelites/ebook_plano_b_ja_descricao_vendas.md`
+
 ## 2026-10-21 — Título do ebook definido
 
 - Título escolhido: *Plano B Já — Reserva, renda extra e metas: os três pilares de uma vida financeira estável*

@@ -15,3 +15,4 @@
 
 - [satelites/ebook_financas_renda_extra_esboco.md](satelites/ebook_financas_renda_extra_esboco.md) — esboço do ebook "Finanças e Renda Extra" (20–30 páginas)
 - [satelites/ebook_financas_renda_extra_secoes.md](satelites/ebook_financas_renda_extra_secoes.md) — seções em rascunho v1 (uma por capítulo, <250 palavras, voz do Di)
+- [satelites/ebook_plano_b_ja_descricao_vendas.md](satelites/ebook_plano_b_ja_descricao_vendas.md) — descrição de vendas do ebook (4 frases)
