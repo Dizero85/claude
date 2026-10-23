@@ -1,7 +1,7 @@
 # job-search — Index
 
 > Catalog of all files in this folder.
-> Updated: 2026-06-09
+> Updated: 2026-10-11
 
 ## Main files
 
@@ -21,3 +21,9 @@
 - [linkedin-about.md](satelites/linkedin-about.md) — LinkedIn About section (updated 2026-06-10)
 - [medicaidsoft-interview-prep.md](satelites/medicaidsoft-interview-prep.md) — MedicaidSoft interview prep (2026-06-10)
 - [homera-health-application.md](satelites/homera-health-application.md) — Homera Health application: resume section + cover letter (2026-06-10)
+- [linkedin-update-2026-10.md](satelites/linkedin-update-2026-10.md) — LinkedIn update after MedicaidSoft: headline, experience entry, About, Open to Work (DRAFT, 2026-10-11)
+- [resume-v3-customer-experience.md](satelites/resume-v3-customer-experience.md) — resume v3: customer experience / support operations focus (English, DRAFT, 2026-10-11)
+- [job-leads-2026-10.md](satelites/job-leads-2026-10.md) — remote job leads + job sites to check (2026-10-12, not verified open)
+- [seema-rpm-care-navigator-application.md](satelites/seema-rpm-care-navigator-application.md) — Seema RPM Care Navigator: tailored resume + application email (2026-10-12)
+- [bh-complete-solutions-talent-acquisition-intern.md](satelites/bh-complete-solutions-talent-acquisition-intern.md) — BH Complete Solutions TA Intern: match check + tailored resume + message (2026-10-16)
+- [bilingual-virtual-administrator-home-care.md](satelites/bilingual-virtual-administrator-home-care.md) — Bilingual Virtual Administrator (SoCal home care): match check + tailored resume (2026-10-23)
