@@ -5,6 +5,12 @@
 
 ---
 
+## 2026-10-23 — Bilingual Virtual Administrator (home care) application
+
+- Match check (good) + tailored resume + form answer; flagged no California home care law experience
+
+---
+
 ## 2026-10-16 — BH Complete Solutions TA Intern application
 
 - Match check (medium: skills fit, intern level) + recruiting-focused resume + message
