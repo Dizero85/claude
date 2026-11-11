@@ -5,6 +5,14 @@
 
 ---
 
+## 2026-11-11 — Verified job leads
+
+- Allowed job sites in MeuOs environment (Di approved); checked company job boards directly
+- Created satelites/job-leads-2026-11.md: 7 U.S. remote healthcare roles + 2 Brazil/LatAm roles
+- Skipped BH Complete Solutions inventory role (weak fit)
+
+---
+
 ## 2026-11-11 — Denver Health end date corrected
 
 - Di confirmed he left Denver Health Dec 2022: all resumes/applications changed 2012–2023 → 2012–2022; Seema email 11 → 10 years; Virtual Administrator PDF rebuilt

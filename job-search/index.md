@@ -29,3 +29,4 @@
 - [bilingual-virtual-administrator-home-care.md](satelites/bilingual-virtual-administrator-home-care.md) — Bilingual Virtual Administrator (SoCal home care): match check + tailored resume (2026-10-23)
 - [linkedin-fixes-2026-11.md](satelites/linkedin-fixes-2026-11.md) — LinkedIn fix list from real profile PDF, paste-ready (2026-11-11)
 - [linkedin-posts-2026-11.md](satelites/linkedin-posts-2026-11.md) — 3 ready LinkedIn posts with Nov 2026 articles (2026-11-11)
+- [job-leads-2026-11.md](satelites/job-leads-2026-11.md) — VERIFIED open remote job leads, checked on company boards (2026-11-11)
