@@ -4,6 +4,10 @@
 
 ---
 
+## 2026-11-11 — New context: english-teaching
+
+- Added 3rd context `english-teaching/` with the 12-week "Speak to Travel" program book and teaching materials
+
 ## 2026-06-09 — Initial OS installation
 
 - Structure created via `instalador-os.md` (Penna/Lúcio architecture)
