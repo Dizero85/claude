@@ -107,3 +107,19 @@ Wording for HIPAA on LinkedIn: **"HIPAA Compliance Training"** with the employer
 - **Holyoke Community College** — "Student Health Coordinator", 1 month (Dec 2011). Not on any resume. Keep only if true and you want it; a 1-month job adds little. [ASK Di]
 - **Lem Springsteen (2010–2012)** isn't on LinkedIn. Optional — add only if applying to admin/assistant roles.
 - **Open to Work** — can't see it in the PDF. Check it's on: Remote, start immediately.
+
+---
+
+## Review #2 — 2026-11-11 (second PDF)
+
+**Fixed ✅:** MedicaidSoft added · Activate Care duplicates removed · Denver Health duplicate removed · ICON/"100%" text gone · Holyoke removed · HIPAA training + Career Ready Colorado added
+
+**Still to fix:**
+1. 🔴 **Headline was overwritten with the skills list** ("Process Redesign, Customer Onboarding, Problem Solving. Patient Navigation…"). Put back:
+   `Patient Navigator & Community Health Worker | Medicaid & Care Navigation | Trilingual: English · Spanish · Portuguese | 13+ Years U.S. Healthcare | Open to Remote Roles`
+2. 🔴 **Top Skills unchanged.** Profile → Skills → ✏️ → drag Patient Navigation, Care Coordination, Medicaid Eligibility to the top (add them first if missing).
+3. 🟡 **Activate Care start date changed** to Jan 2023 (was Dec 2023) → overlaps Denver Health (ends Dec 2023) by 11 months. Confirm the real start date.
+4. 🟡 **Activate Care: add "Remote"** as location type.
+5. 🟡 **About** still the June version, no line breaks, no Medicaid line.
+6. 🟡 **Two LinkedIn profiles** — diogobarbosa85@gmail.com belongs to the other one. Log into the old profile → close it (or ask LinkedIn Help to merge), then add the email here.
+7. 🟢 CHW certificate still missing (waiting on issuer). Denver Health title (Care Navigator vs Senior) still to confirm.
