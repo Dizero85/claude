@@ -18,11 +18,19 @@ Líder em Engajamento Comunitário e Consultor Cultural com mais de 13 anos de e
 - **Comunicação:** Trilíngue (Inglês, Português, Espanhol), Aparições na Mídia, Mensagens de Campanha, Storytelling
 - **Desenvolvimento de Programas:** Elaboração de Fluxos de Trabalho, Criação de POPs, Melhoria de Processos, Monitoramento de KPIs
 - **Consultoria:** Avaliação de Necessidades, Triagens de DSS, Comunicação Intercultural, Capacitação e Facilitação
-- **Tecnologia:** Epic EHR, Plataformas de CRM, Ferramentas de Telemedicina, Google Workspace, Microsoft 365
+- **Tecnologia:** Epic EHR, Zoho, Ferramentas de IA (ChatGPT, Claude), Plataformas de CRM, Ferramentas de Telemedicina, Google Workspace, Microsoft 365
 
 ---
 
 ## Experiência Profissional
+
+**MedicaidSoft – Remoto**
+Especialista em Medicaid (Freelancer) | Jun 2026 – Out 2026
+
+- Revisou documentos de solicitantes do Medicaid para casas de repouso (cuidados de longo prazo), verificando se cada processo estava completo e correto antes do envio
+- Atuou como ponto de contato com a equipe das casas de repouso — solicitou documentos pendentes, respondeu dúvidas e manteve os processos em andamento
+- Acompanhou processos e comunicações na plataforma Zoho
+- Utilizou ferramentas de IA (ChatGPT, Claude) no dia a dia para agilizar a revisão de documentos e a comunicação escrita
 
 **Activate Care – Denver, CO (Remoto)**
 Consultor de Saúde Comunitária / Defensor Cultural | 2023 – 2025
@@ -33,7 +41,7 @@ Consultor de Saúde Comunitária / Defensor Cultural | 2023 – 2025
 - Manteve padrões rigorosos de documentação em conformidade com exigências regulatórias
 
 **Denver Health – Denver, CO**
-Navegador Sênior de Cuidados / Líder de Mobilização Comunitária | 2012 – 2023
+Navegador Sênior de Cuidados / Líder de Mobilização Comunitária | 2012 – 2022
 
 - Atuou como porta-voz público do programa de prevenção do Câncer Gastrointestinal para comunidades hispanas — participou de entrevistas em televisão e palestrou em eventos comunitários para ampliar o alcance e a participação no programa
 - Redesenhou os fluxos de admissão e navegação para o tratamento de Câncer Gastrointestinal, estabelecendo o padrão ouro do departamento para o fluxo de pacientes
@@ -50,3 +58,4 @@ Navegador Sênior de Cuidados / Líder de Mobilização Comunitária | 2012 – 
 - Certificação de Agente Comunitário de Saúde (CHW)
 - Certificação em Conformidade HIPAA
 - Certificação Nacional Profissional em Atendimento ao Cliente (EUA)
+- Career Ready Colorado Certificate (Operações de Negócios)
