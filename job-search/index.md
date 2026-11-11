@@ -27,3 +27,4 @@
 - [seema-rpm-care-navigator-application.md](satelites/seema-rpm-care-navigator-application.md) — Seema RPM Care Navigator: tailored resume + application email (2026-10-12)
 - [bh-complete-solutions-talent-acquisition-intern.md](satelites/bh-complete-solutions-talent-acquisition-intern.md) — BH Complete Solutions TA Intern: match check + tailored resume + message (2026-10-16)
 - [bilingual-virtual-administrator-home-care.md](satelites/bilingual-virtual-administrator-home-care.md) — Bilingual Virtual Administrator (SoCal home care): match check + tailored resume (2026-10-23)
+- [linkedin-fixes-2026-11.md](satelites/linkedin-fixes-2026-11.md) — LinkedIn fix list from real profile PDF, paste-ready (2026-11-11)

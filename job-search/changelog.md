@@ -5,6 +5,13 @@
 
 ---
 
+## 2026-11-11 — LinkedIn profile review
+
+- Reviewed real profile PDF: MedicaidSoft missing, duplicate Activate Care/Denver Health entries, ICON clinical-trial wording + '100%' claims, old contact email
+- Created satelites/linkedin-fixes-2026-11.md
+
+---
+
 ## 2026-10-23 — Bilingual Virtual Administrator (home care) application
 
 - Match check (good) + tailored resume + form answer; flagged no California home care law experience
