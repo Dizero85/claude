@@ -10,6 +10,10 @@
 - [changelog.md](changelog.md) — session history
 - [index.md](index.md) — this catalog
 
+## PDF versions (in `pdf/`) — ready to print or send to students
+
+- 5 PDF copies of the satellite files below
+
 ## Word versions (in `word/`) — upload to Google Drive to open as Google Docs
 
 - 5 .docx copies of the satellite files below (same content, links removed)
