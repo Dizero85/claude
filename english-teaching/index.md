@@ -12,7 +12,8 @@
 
 ## PDF versions (in `pdf/`) — ready to print or send to students
 
-- 5 PDF copies of the satellite files below
+- `0 - Speak to Travel - Material Completo.pdf` — everything in one PDF (45 pages)
+- 5 separate PDFs, one per file
 
 ## Word versions (in `word/`) — upload to Google Drive to open as Google Docs
 
