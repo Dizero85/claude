@@ -11,7 +11,7 @@ A private English conversation program Di can sell and teach (online or in perso
 
 ## Objective
 
-1. Have a complete, ready-to-teach program book (done — v1)
+1. Have a complete, ready-to-teach program book (done — v1: 12-week program + 1-month Express)
 2. Get the first 1–3 paying students
 3. Refine the program with real classroom feedback
 
@@ -31,6 +31,7 @@ v1 of the program book and companion materials written (see `index.md`). Not yet
 
 *(format: **DD/MM/YYYY** — Decision — Reason)*
 
+- **11/11/2026** — Added Express 1-month version (12 sessions) for students who already know English — second product, with monthly maintenance as follow-up offer.
 - **11/11/2026** — Program = 12 weeks, 36 sessions, 3 phases (Unlock / Travel / Converse) — fits the "max 3 months, conversation only" request and gives checkpoints at W4, W8, W12.
 
 ## Next Steps

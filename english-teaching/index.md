@@ -13,6 +13,7 @@
 ## Satellite files (in `satelites/`)
 
 - [livro-do-programa.md](satelites/livro-do-programa.md) — **the program book**: method, session template, 12 weeks session by session, assessment, business notes
+- [programa-1-mes.md](satelites/programa-1-mes.md) — **Express 1-month version** (12 sessions) for students who know English but can't hold a conversation
 - [erros-de-brasileiros.md](satelites/erros-de-brasileiros.md) — pronunciation, false friends and "translated" sentences of Portuguese speakers, with fixes
 - [banco-de-entrevistas.md](satelites/banco-de-entrevistas.md) — role-play question bank: immigration, visa, hotel, restaurant, transport, doctor, small talk, job interview
 - [fichas-do-aluno.md](satelites/fichas-do-aluno.md) — student sheets: diagnostic, My Story card, weekly self-check, emergency card, final checklist & certificate
