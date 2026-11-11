@@ -10,6 +10,10 @@
 - [changelog.md](changelog.md) — session history
 - [index.md](index.md) — this catalog
 
+## Word versions (in `word/`) — upload to Google Drive to open as Google Docs
+
+- 5 .docx copies of the satellite files below (same content, links removed)
+
 ## Satellite files (in `satelites/`)
 
 - [livro-do-programa.md](satelites/livro-do-programa.md) — **the program book**: method, session template, 12 weeks session by session, assessment, business notes
