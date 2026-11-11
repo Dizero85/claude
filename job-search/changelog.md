@@ -5,6 +5,12 @@
 
 ---
 
+## 2026-11-11 — Denver Health end date corrected
+
+- Di confirmed he left Denver Health Dec 2022: all resumes/applications changed 2012–2023 → 2012–2022; Seema email 11 → 10 years; Virtual Administrator PDF rebuilt
+
+---
+
 ## 2026-11-11 — LinkedIn profile review
 
 - Reviewed real profile PDF: MedicaidSoft missing, duplicate Activate Care/Denver Health entries, ICON clinical-trial wording + '100%' claims, old contact email

@@ -41,7 +41,7 @@ Consultor de Saúde Comunitária / Defensor Cultural | 2023 – 2025
 - Manteve padrões rigorosos de documentação em conformidade com exigências regulatórias
 
 **Denver Health – Denver, CO**
-Navegador Sênior de Cuidados / Líder de Mobilização Comunitária | 2012 – 2023
+Navegador Sênior de Cuidados / Líder de Mobilização Comunitária | 2012 – 2022
 
 - Atuou como porta-voz público do programa de prevenção do Câncer Gastrointestinal para comunidades hispanas — participou de entrevistas em televisão e palestrou em eventos comunitários para ampliar o alcance e a participação no programa
 - Redesenhou os fluxos de admissão e navegação para o tratamento de Câncer Gastrointestinal, estabelecendo o padrão ouro do departamento para o fluxo de pacientes

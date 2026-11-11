@@ -41,7 +41,7 @@ Consultor de Saúde Comunitária / Defensor Clínico | 2023 – 2025
 - Identificou lacunas nos planos de cuidado e colaborou com a liderança para ajustar protocolos
 
 **Denver Health – Denver, CO**
-Navegador Sênior de Cuidados / Líder de Operações Clínicas | 2012 – 2023
+Navegador Sênior de Cuidados / Líder de Operações Clínicas | 2012 – 2022
 
 - Redesenhou os procedimentos de admissão e navegação para o tratamento de Câncer Gastrointestinal, estabelecendo o padrão ouro do departamento para o fluxo de pacientes
 - Atuou como principal ponto de contato clínico, orientando equipes júnior e garantindo a precisão dos dados no sistema Epic EHR

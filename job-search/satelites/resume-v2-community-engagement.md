@@ -41,7 +41,7 @@ Community Health Advisor / Cultural Advocate | 2023 – 2025
 - Maintained rigorous documentation standards in compliance with regulatory requirements
 
 **Denver Health – Denver, CO**
-Senior Care Navigator / Community Outreach Lead | 2012 – 2023
+Senior Care Navigator / Community Outreach Lead | 2012 – 2022
 
 - Served as the public face of the GI Cancer prevention program for Spanish-speaking communities — appeared in TV interviews and spoke at community events to drive awareness and program participation
 - Redesigned intake and navigation workflows for Gastrointestinal Cancer treatment, establishing the department's gold standard for patient flow

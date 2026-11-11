@@ -19,7 +19,7 @@ Land a remote role in healthcare (patient navigation, community health, health e
 - Patient Navigator — 12+ years
 - Community Health Worker / Advisor
 - Colon cancer prevention specialist
-- Denver Health (public hospital)
+- Denver Health (public hospital) — Dec 2012 – Dec 2022 (confirmed by Di 2026-11-11)
 - Activate Care (lost job when CO contract ended)
 - Lem Springsteen (music producer), Edgewater NJ — Personal Assistant, 2010–2012 (calendar, appointments, organization)
 - MedicaidSoft — Medicaid Specialist, remote, full-time freelance (Jun 2026 – Oct 2026); reviewed nursing home Medicaid applicant documents, liaison with nursing homes; ended for lack of work

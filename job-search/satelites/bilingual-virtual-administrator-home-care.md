@@ -70,7 +70,7 @@ Community Health Advisor | 2023 – 2025
 - Flagged gaps in processes and worked with leadership to fix them
 
 **Denver Health – Denver, CO**
-Senior Care Navigator | 2012 – 2023
+Senior Care Navigator | 2012 – 2022
 
 - Coordinated between patients, clinicians, and community partners — the go-to contact for complex cases
 - Served Spanish-speaking patients and families daily; public face of the GI Cancer prevention program for Spanish-speaking communities

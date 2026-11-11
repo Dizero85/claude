@@ -48,7 +48,7 @@ Community Health Advisor | 2023 – 2025
 - Flagged gaps in care plans and worked with leadership to adjust protocols
 
 **Denver Health – Denver, CO**
-Senior Care Navigator | 2012 – 2023
+Senior Care Navigator | 2012 – 2022
 
 - Primary point of escalation for complex patient cases — stayed calm, assessed the situation, and routed concerns to the right clinical team
 - Coordinated care as the liaison between clinicians, patients, and community partners, making sure follow-up actually happened
@@ -78,7 +78,7 @@ Hello Jawwad,
 
 I'm applying for the Remote Patient Monitoring Care Navigator position. My resume is attached.
 
-I bring 13+ years of patient outreach and care navigation in the U.S. healthcare system, including 11 years at Denver Health, where I was the escalation point for complex patient cases, and two years of fully remote care management at Activate Care. Calling patients, assessing how they're doing, escalating to the clinical team by protocol, and documenting every step in the EHR is the work I've done for years.
+I bring 13+ years of patient outreach and care navigation in the U.S. healthcare system, including 10 years at Denver Health, where I was the escalation point for complex patient cases, and two years of fully remote care management at Activate Care. Calling patients, assessing how they're doing, escalating to the clinical team by protocol, and documenting every step in the EHR is the work I've done for years.
 
 I'm comfortable learning new platforms (I've used Epic, Zoho, and CRM tools), I'm HIPAA certified, and I'm available Monday–Friday, 9:00 a.m.–6:00 p.m. CST. I also speak Spanish and Portuguese, which can help with patient outreach.
 
@@ -95,5 +95,5 @@ linkedin.com/in/diogobarbosahealth
 
 - **Pay:** USD 1,000–1,200/month (~USD 6–7/hour). Very low by U.S. standards; it's an offshore rate. Decide if it's worth it for you in Brazil.
 - **Schedule in Brazil time:** ~11:00–20:00 until Nov 1; ~12:00–21:00 after the U.S. clock change.
-- **Gaps to be ready for in interview:** no direct experience monitoring blood pressure/heart rate alerts, and no Athena EHR. Honest answer: "I haven't used Athena, but I used Epic for 11 years and learned Zoho quickly — I pick up new systems fast."
+- **Gaps to be ready for in interview:** no direct experience monitoring blood pressure/heart rate alerts, and no Athena EHR. Honest answer: "I haven't used Athena, but I used Epic for 10 years and learned Zoho quickly — I pick up new systems fast."
 - **Safety:** never pay any fee, and don't send SSN or bank details until you have a written offer/contract.

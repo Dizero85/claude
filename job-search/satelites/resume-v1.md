@@ -41,7 +41,7 @@ Community Health Advisor / Clinical Advocate | 2023 – 2025
 - Identified gaps in care plans and collaborated with leadership to adjust protocols
 
 **Denver Health – Denver, CO**
-Senior Care Navigator / Clinical Operations Lead | 2012 – 2023
+Senior Care Navigator / Clinical Operations Lead | 2012 – 2022
 
 - Redesigned intake and navigation procedures for Gastrointestinal Cancer treatment, establishing the department's gold standard for patient flow
 - Served as primary clinical point of contact, mentoring junior staff and ensuring data precision within Epic EHR

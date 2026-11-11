@@ -7,7 +7,7 @@
 ## Resume Section — Leadership & Operations
 
 **Denver Health – Denver, CO**
-Senior Care Navigator / Clinical Operations Lead | 2012 – 2023
+Senior Care Navigator / Clinical Operations Lead | 2012 – 2022
 
 - Led onboarding and ongoing training of junior navigators on clinical workflows, documentation standards, and culturally competent communication
 - Served as primary point of escalation for complex patient cases — resolved high-stakes situations with empathy and professionalism under time pressure

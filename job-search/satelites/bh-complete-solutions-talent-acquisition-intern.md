@@ -66,7 +66,7 @@ Community Health Advisor | 2023 – 2025
 - Identified gaps in processes and worked with leadership to improve them
 
 **Denver Health – Denver, CO**
-Senior Care Navigator | 2012 – 2023
+Senior Care Navigator | 2012 – 2022
 
 - Ran intake for new patients — gathered information, assessed needs, and routed each person to the right next step
 - Trained and onboarded junior navigators on workflows, documentation, and communication
