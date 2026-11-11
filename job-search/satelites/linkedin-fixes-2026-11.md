@@ -90,10 +90,17 @@ Also add: Community Health, Bilingual Communication, HIPAA, Epic, Zoho.
 
 ## 7. Certifications — add the missing ones 🟢
 
-Already there: Customer Service, Patient Navigator Collaborative (Colorado), Customer Success e Gestão de Saúde.
-Add: **Community Health Worker (CHW) Certification**, **HIPAA Compliance**, **Career Ready Colorado Certificate (Business Operations)**.
+LinkedIn asks for "Issuing organization". Most likely issuers (web research 2026-11-11) — **Di must confirm on his own certificate paper/email**:
 
----
+| Certificate | Most likely issuer | Confirm |
+|---|---|---|
+| Patient Navigator Certificate (Colorado) — already on profile | Patient Navigator Training Collaborative (PNTC), Colorado School of Public Health, University of Colorado Anschutz | Name on certificate |
+| Community Health Worker (CHW) | **Either** Colorado Dept. of Public Health and Environment (CDPHE) — state CHW registry/credential, **or** PNTC (CHW training certificate, if earned in the same program) | Which name is on it? |
+| National Professional Certification in Customer Service — already on profile | NRF Foundation (National Retail Federation Foundation) | Name on certificate |
+| Career Ready Colorado Certificate | Colorado Department of Labor and Employment (CDLE), through a local workforce center (WorkKeys tests) | Level: Bronze/Silver/Gold/Platinum? |
+| HIPAA | No official government HIPAA certification exists — it's a training certificate from whoever gave the course (usually the employer: Denver Health or Activate Care) | Who gave the training? |
+
+Wording for HIPAA on LinkedIn: **"HIPAA Compliance Training"** with the employer as issuer — more accurate than "Certified".
 
 ## 8. Small things 🟢
 
