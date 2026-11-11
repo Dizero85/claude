@@ -123,3 +123,11 @@ Wording for HIPAA on LinkedIn: **"HIPAA Compliance Training"** with the employer
 5. 🟡 **About** still the June version, no line breaks, no Medicaid line.
 6. 🟡 **Two LinkedIn profiles** — diogobarbosa85@gmail.com belongs to the other one. Log into the old profile → close it (or ask LinkedIn Help to merge), then add the email here.
 7. 🟢 CHW certificate still missing (waiting on issuer). Denver Health title (Care Navigator vs Senior) still to confirm.
+
+---
+
+## Review #3 — 2026-11-11 (third PDF)
+
+**Fixed ✅:** Headline restored · Top skills now Bilingual Communications, Patient Navigation, Care Coordination
+**Changed:** Denver Health end date Dec 2023 → **Dec 2022** (removes overlap with Activate Care Jan 2023). ⚠️ Must be the REAL date — resumes say 2012–2023. Confirm with Di; if Dec 2022 is true, update all resumes to 2012–2022.
+**Still open:** About (June version, no line breaks, no Medicaid) · Activate Care not marked Remote · CHW certificate · two profiles/email · Skills section (not visible in PDF export)
