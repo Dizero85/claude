@@ -34,3 +34,4 @@
 - [pager-health-cover-letter.md](satelites/pager-health-cover-letter.md) + Diogo-Barbosa-Cover-Letter-Pager-Health.pdf — Pager Health cover letter (2026-11-11)
 - [two-chairs-client-outreach-specialist.md](satelites/two-chairs-client-outreach-specialist.md) + two-chairs-cover-letter.md + PDFs — Two Chairs Client Outreach Specialist (2026-11-11)
 - [included-health-virtual-care-advocate.md](satelites/included-health-virtual-care-advocate.md) + included-health-cover-letter.md + PDFs — Included Health Virtual Care Advocate (2026-11-11)
+- [ophelia-patient-engagement-specialist.md](satelites/ophelia-patient-engagement-specialist.md) + Diogo-Barbosa-Resume-Ophelia.pdf — Ophelia Patient Engagement Specialist; cover letter to be written by Di (2026-11-11)
