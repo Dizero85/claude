@@ -32,3 +32,4 @@
 - [job-leads-2026-11.md](satelites/job-leads-2026-11.md) — VERIFIED open remote job leads, checked on company boards (2026-11-11)
 - [pager-health-bilingual-care-coordinator.md](satelites/pager-health-bilingual-care-coordinator.md) + Diogo-Barbosa-Resume-Pager-Health.pdf — Pager Health Bilingual Care Coordinator (2026-11-11)
 - [pager-health-cover-letter.md](satelites/pager-health-cover-letter.md) + Diogo-Barbosa-Cover-Letter-Pager-Health.pdf — Pager Health cover letter (2026-11-11)
+- [two-chairs-client-outreach-specialist.md](satelites/two-chairs-client-outreach-specialist.md) + two-chairs-cover-letter.md + PDFs — Two Chairs Client Outreach Specialist (2026-11-11)
