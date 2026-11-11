@@ -12,9 +12,14 @@
 
 ## PDF versions (in `pdf/`) — ready to print or send to students
 
-- `00 - Apresentacao do Curso (Portugues).pdf` — Portuguese introduction for prospective students
+- `00 - Apresentacao do Curso (Portugues).pdf` — designed 5-page Portuguese brochure for prospective students (source: `design/apresentacao.html`)
 - `0 - Speak to Travel - Material Completo.pdf` — everything in one PDF (45 pages)
 - 5 separate PDFs, one per file
+
+## Design files (in `design/`)
+
+- `apresentacao.html` — the brochure design (brand: navy/coral/sun/teal, Fraunces + Plus Jakarta Sans)
+- `livro.css` — brand style used for the book PDFs
 
 ## Word versions (in `word/`) — upload to Google Drive to open as Google Docs
 

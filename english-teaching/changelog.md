@@ -4,6 +4,13 @@
 
 ---
 
+## 2026-11-11 — Brand redesign
+
+- New visual identity (navy, coral, yellow, teal; Fraunces + Plus Jakarta Sans)
+- Designed 5-page Portuguese brochure (`design/apresentacao.html` → `pdf/00 - ...`)
+- All book PDFs restyled; combined PDF now opens with the brochure
+- Fixed 3 tables that rendered as raw text (missing blank line before table)
+
 ## 2026-11-11 — Express 1-month program
 
 - Added `satelites/programa-1-mes.md`: 4 weeks × 3 sessions for students who already know English but freeze in conversation (fluency tools, real-speed travel, follow-ups, stories, opinions, interview, final)

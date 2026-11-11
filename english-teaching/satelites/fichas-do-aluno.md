@@ -18,6 +18,7 @@
 7. Usa bem WhatsApp áudio / YouTube / videochamada? ☐ Sim ☐ Mais ou menos ☐ Não
 
 ### Parte B — Speaking sample (in English — record audio)
+
 | # | Question | Answered? | Notes |
 |---|---|---|---|
 | 1 | What's your name? Where are you from? | ☐ | |

@@ -258,6 +258,7 @@ Each week lists: **Can-do goal · Core chunks · Pronunciation focus · Grammar-
 3. **If you don't understand, ask.** "Sorry, could you repeat that?" is 100% acceptable. Guessing is not.
 
 **Core chunks — typical questions and model answers:**
+
 | Officer asks | Model answer |
 |---|---|
 | What's the purpose of your visit? | Tourism. / I'm visiting my daughter. / For a conference. |

@@ -241,6 +241,7 @@ Use the same **6-area rubric (score 1–5, total /30)** from [`livro-do-programa
 **Check at:** Session 0 (diagnostic) → Session 6 (Full Trip checkpoint) → Session 12 (final).
 
 **Also measure these numbers. Students love seeing them improve:**
+
 | Measure | Session 0 | Session 12 |
 |---|---|---|
 | "Tell me about yourself" before they stop (seconds) | | |
