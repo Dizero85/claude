@@ -12,6 +12,7 @@
 
 ## PDF versions (in `pdf/`) — ready to print or send to students
 
+- `00 - Apresentacao do Curso (Portugues).pdf` — Portuguese introduction for prospective students
 - `0 - Speak to Travel - Material Completo.pdf` — everything in one PDF (45 pages)
 - 5 separate PDFs, one per file
 
@@ -21,6 +22,7 @@
 
 ## Satellite files (in `satelites/`)
 
+- [apresentacao.md](satelites/apresentacao.md) — **course introduction in Portuguese** for prospective students (both programs, what they'll achieve, how to start)
 - [livro-do-programa.md](satelites/livro-do-programa.md) — **the program book**: method, session template, 12 weeks session by session, assessment, business notes
 - [programa-1-mes.md](satelites/programa-1-mes.md) — **Express 1-month version** (12 sessions) for students who know English but can't hold a conversation
 - [erros-de-brasileiros.md](satelites/erros-de-brasileiros.md) — pronunciation, false friends and "translated" sentences of Portuguese speakers, with fixes
