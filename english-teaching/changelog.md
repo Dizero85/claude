@@ -4,6 +4,12 @@
 
 ---
 
+## 2026-11-12 — Books laid out as designed pages
+
+- Each book has a designed cover; each week opens on its own page with a colored banner (by phase)
+- Lesson parts are color-coded cards with icons (goal, phrases, pronunciation, grammar, role-plays, free talk, homework, Brazilian trap)
+- Phrases and interview questions shown as speech bubbles; program map turned into visual phase cards
+
 ## 2026-11-11 — Brand redesign
 
 - New visual identity (navy, coral, yellow, teal; Fraunces + Plus Jakarta Sans)

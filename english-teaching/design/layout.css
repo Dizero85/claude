@@ -1,0 +1,97 @@
+/* Designed layout layer, applied on top of livro.css by layout.js */
+@page cover { margin: 0; }
+
+/* ---------- COVER ---------- */
+.cover{page:cover;width:210mm;height:297mm;background:var(--navy);color:#fff;position:relative;overflow:hidden;break-after:page}
+.cover .c1{position:absolute;width:160mm;height:160mm;border-radius:50%;background:var(--coral);right:-55mm;top:-45mm}
+.cover .c2{position:absolute;width:62mm;height:62mm;border-radius:50%;background:var(--sun);right:60mm;top:82mm}
+.cover .c3{position:absolute;width:38mm;height:38mm;border-radius:50%;background:var(--teal);right:22mm;top:122mm}
+.cover .c4{position:absolute;width:130mm;height:130mm;border-radius:50%;border:1.5px solid rgba(255,255,255,.16);left:-70mm;top:-60mm}
+.cover .brand{position:absolute;left:18mm;top:18mm;font-weight:800;font-size:11pt;letter-spacing:.04em;display:flex;align-items:center;gap:8px}
+.cover .brand .dot{width:18px;height:18px;border-radius:50%;background:var(--coral);display:inline-block}
+.cover .cbody{position:absolute;left:18mm;right:18mm;bottom:36mm}
+.cover .ctag{display:inline-block;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);border-radius:30px;padding:6px 14px;font-size:8.5pt;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.cover .ctitle{font-family:Fraunces,serif;font-weight:900;font-size:40pt;line-height:1;letter-spacing:-.015em;margin:16px 0 18px;max-width:170mm}
+.cover .ctitle em{font-style:italic;font-weight:500;color:var(--sun);display:block;font-size:.62em;margin-top:8px}
+.cover .csub{font-size:10.5pt;color:rgba(255,255,255,.82);max-width:160mm;line-height:1.55}
+.cover .csub strong{color:#fff}
+.cover .csub p{margin:3px 0}
+.cover .cbar{position:absolute;left:18mm;right:18mm;bottom:14mm;border-top:1px solid rgba(255,255,255,.2);padding-top:10px;display:flex;justify-content:space-between;font-size:8pt;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.65)}
+
+/* ---------- SECTION HEADINGS ---------- */
+h2.sec{display:flex;align-items:center;gap:12px;border:0;margin:6px 0 14px;padding:0;font-size:20pt;line-height:1.1}
+h2.sec .num{flex:0 0 auto;width:46px;height:46px;border-radius:14px;background:var(--coral);color:#fff;display:grid;place-items:center;font-size:15pt;font-weight:900}
+h2.sec.nonum{border-bottom:3px solid var(--coral);padding-bottom:6px;display:inline-block}
+h2.newpage{break-before:page}
+h2.toch{font-size:16pt}
+ol.toc{list-style:none;padding:0;columns:2;column-gap:14px;counter-reset:t}
+ol.toc li{counter-increment:t;break-inside:avoid;background:var(--sand);border-radius:10px;padding:7px 10px 7px 40px;margin:0 0 6px;position:relative;font-weight:600;font-size:9.5pt}
+ol.toc li::before{content:counter(t,decimal-leading-zero);position:absolute;left:10px;top:7px;font-family:Fraunces,serif;font-weight:900;color:var(--coral)}
+
+/* ---------- PROGRAM MAP ---------- */
+.map{display:grid;gap:10px;margin:12px 0 16px}
+.map3{grid-template-columns:repeat(3,1fr)} .map4{grid-template-columns:repeat(2,1fr)}
+.mapcard{border-radius:18px;padding:16px 14px;color:#fff;break-inside:avoid}
+.mapcard.m0{background:var(--navy)} .mapcard.m1{background:var(--coral)} .mapcard.m2{background:var(--teal)} .mapcard.m3{background:#2E4580}
+.mlabel{font-size:7.5pt;font-weight:800;letter-spacing:.16em;text-transform:uppercase;opacity:.8}
+.mname{font-family:Fraunces,serif;font-weight:900;font-size:17pt;margin:4px 0}
+.mquote{font-family:Fraunces,serif;font-style:italic;font-size:9.5pt;opacity:.9;margin-bottom:8px}
+.mapcard ul{list-style:none;padding:0;margin:0}
+.mapcard li{display:flex;gap:8px;align-items:flex-start;border-top:1px solid rgba(255,255,255,.2);padding:6px 0;font-size:8.8pt;line-height:1.3}
+.mapcard li::marker{content:none}
+.mapcard li b{flex:0 0 22px;height:22px;border-radius:50%;background:rgba(255,255,255,.18);display:grid;place-items:center;font-size:8pt}
+.mapcard li i{color:var(--sun);font-style:normal}
+
+/* ---------- WEEK HERO ---------- */
+.hero{break-before:page;position:relative;overflow:hidden;border-radius:24px;padding:22px 24px;margin:0 0 16px;color:#fff;display:flex;gap:18px;align-items:center;min-height:120px}
+.hero.p1{background:var(--navy)} .hero.p2{background:var(--coral)} .hero.p3{background:var(--teal)}
+.hnum{font-family:Fraunces,serif;font-weight:900;font-size:58pt;line-height:.85;position:relative;z-index:1}
+.hnum small{display:block;font-family:"Plus Jakarta Sans",sans-serif;font-size:7.5pt;font-weight:800;letter-spacing:.25em;opacity:.75;margin-bottom:6px}
+.htxt{position:relative;z-index:1;flex:1;padding-right:70px}
+.hph{font-size:8pt;font-weight:800;letter-spacing:.18em;text-transform:uppercase;opacity:.8}
+.htitle{font-family:Fraunces,serif;font-weight:700;font-size:21pt;line-height:1.08;margin-top:4px}
+.hbadge{position:absolute;right:18px;bottom:16px;z-index:2;background:var(--sun);color:var(--navy);font-weight:800;font-size:8pt;letter-spacing:.12em;padding:6px 12px;border-radius:20px}
+.hc1{position:absolute;width:150px;height:150px;border-radius:50%;right:-40px;top:-60px;background:rgba(255,255,255,.12)}
+.hc2{position:absolute;width:60px;height:60px;border-radius:50%;right:80px;top:-20px;background:var(--sun);opacity:.9}
+.hero.p1 .hc2{background:var(--coral)} .hero.p2 .hc2{background:var(--sun)} .hero.p3 .hc2{background:var(--sun)}
+
+/* ---------- SESSION STRIP (Express) ---------- */
+.session{display:flex;align-items:center;gap:12px;background:var(--sand);border:1px solid var(--line);border-radius:16px;padding:10px 14px;margin:16px 0 8px;break-after:avoid}
+.snum{flex:0 0 38px;height:38px;border-radius:50%;background:var(--coral);color:#fff;display:grid;place-items:center;font-family:Fraunces,serif;font-weight:900;font-size:15pt}
+.slab{font-size:7.5pt;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.stitle{font-family:Fraunces,serif;font-weight:700;font-size:13pt;color:var(--navy)}
+ul.steps{list-style:none;padding:0 0 0 18px;border-left:3px dotted var(--coral);margin:0 0 8px 18px}
+ul.steps li{position:relative;padding:4px 0 4px 6px}
+ul.steps li::before{content:"";position:absolute;left:-26px;top:10px;width:11px;height:11px;border-radius:50%;background:#fff;border:3px solid var(--coral)}
+
+/* ---------- CARDS ---------- */
+.card{border-radius:16px;margin:10px 0;padding:0;overflow:hidden;border:1px solid var(--line);background:#fff;break-inside:avoid}
+.card .chead{display:flex;align-items:center;gap:8px;padding:8px 14px;font-size:8.5pt;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.card .cic{width:24px;height:24px;border-radius:8px;display:grid;place-items:center;background:rgba(255,255,255,.6)}
+.card .cbody2{padding:8px 14px 10px}
+.card .cbody2 > p:first-child{margin-top:0}
+.card table{margin:6px 0}
+.k-goal{background:#FFF4D6;border-color:#FFE19A} .k-goal .chead{color:#8A5A00}
+.k-goal .cbody2{font-family:Fraunces,serif;font-size:13pt;font-style:italic;color:var(--navy);padding-top:2px}
+.k-phrases{border:2px solid var(--coral-soft)} .k-phrases .chead{background:var(--coral);color:#fff} .k-phrases .cic{background:rgba(255,255,255,.2)}
+.k-pron .chead{background:var(--teal-soft);color:#0E6E66}
+.k-gram .chead{background:#E3E8F5;color:var(--navy)}
+.k-role .chead{background:var(--navy);color:#fff} .k-role .cic{background:rgba(255,255,255,.15)}
+.k-talk .chead{background:var(--teal);color:#fff} .k-talk .cic{background:rgba(255,255,255,.2)}
+.k-home{background:var(--sand)} .k-home .chead{color:#8A5A00}
+.k-trap{background:#FFF0EC;border:1.5px dashed var(--coral)} .k-trap .chead{color:#C2401F}
+.k-listen .chead{background:#E3F5F3;color:#0E6E66}
+.k-check{background:var(--navy);color:#fff;border:0} .k-check .chead{color:var(--sun)} .k-check strong{color:#fff}
+.k-note{background:#F3F6FB;border-color:#DCE3F0} .k-note .chead{color:var(--navy)}
+
+/* phrase bubbles */
+ul.bubbles{list-style:none;padding:0;margin:4px 0;display:grid;grid-template-columns:1fr 1fr;gap:6px}
+ul.bubbles li{background:var(--sand);border-radius:12px 12px 12px 3px;padding:6px 10px;margin:0;font-size:9.4pt;break-inside:avoid}
+ul.bubbles li::marker{content:none}
+
+/* callouts */
+blockquote.callout{background:#FFF4D6;border-left:5px solid var(--sun);border-radius:0 14px 14px 0}
+
+/* tables a touch more visual */
+th:first-child{border-top-left-radius:0}
+td:first-child{font-weight:600;color:var(--navy)}

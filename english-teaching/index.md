@@ -19,7 +19,8 @@
 ## Design files (in `design/`)
 
 - `apresentacao.html` — the brochure design (brand: navy/coral/sun/teal, Fraunces + Plus Jakarta Sans)
-- `livro.css` — brand style used for the book PDFs
+- `livro.css` — brand base style used for the book PDFs
+- `layout.css` + `layout.js` — designed page layout for the books (covers, week banners, lesson cards, phrase bubbles, visual program map)
 
 ## Word versions (in `word/`) — upload to Google Drive to open as Google Docs
 
